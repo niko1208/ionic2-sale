@@ -1,0 +1,31 @@
+<ion-header>
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+  <ion-navbar color="">
+    <ion-title>My Notifications</ion-title>
+    <div class='bt_clear' (click)="clear()">Clear</div>
+  </ion-navbar>
+  
+</ion-header>
+
+<ion-content class="detail_content">
+
+    <ion-item *ngFor="let item of keys;" [ngClass]="(item.isread=='0') ? 'unread': ''" (click)="goto(item.type, item.pid, item.id)">
+        <div class="div_img">
+            <img  class="late_img" src="assets/img/icon.png" *ngIf="item.type!='membership'"/>
+            <img  class="late_img" src="assets/img/{{item.temp}}" *ngIf="item.type=='membership'"/>
+        </div>
+        <div class="div_item_right">
+            <div class="name">New notification !</div>
+            <div class="cont">{{item.message}}</div>
+            <div class="date">{{item.date}}</div>
+        </div>
+    </ion-item>
+
+</ion-content>

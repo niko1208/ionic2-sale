@@ -1,0 +1,46 @@
+
+ion-header ion-navbar ion-searchbar input.searchbar-input
+{
+    background-color: green;
+    border-color: grey;
+    color:rosybrown;
+    box-shadow: none;
+}
+
+#secmore ion-item ion-icon{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    color: #1dafec;
+}
+#secmore ion-item .item-inner{
+    margin-left: 12px;
+    color: #3474e1;
+}
+
+.item_row
+{
+    background-color: greenyellow
+}
+.item_label
+{
+    -webkit-text-stroke-color: gray;
+    size: 20dp;
+    -webkit-text-fill-color: saddlebrown
+}
+
+.account_login_icon
+{
+    size: 400px;
+}
+
+.item-avatar  {
+width:100% !important;
+height : 200px;
+max-width: 100px !important;  //any size
+max-height: 200px; //any size
+}
+
+.hide{
+    display: none;
+}
+

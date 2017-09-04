@@ -1,0 +1,270 @@
+page-follow{
+
+.div_photo{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    border: 0px solid #ccc;
+    overflow: hidden;
+}
+.div_photo img{
+    width: 100%;
+    height: 100%;
+}
+.div_top{
+    padding: 10px;
+}
+.div_photo div{
+    position: absolute;
+    width: 100%;
+    display: block;
+    text-align: center;
+    left: 0;
+    top: 10px;
+    line-height: 20px;
+    color: #3474e1;
+    display: none;
+}
+
+.fleft{
+    display: inline-block;
+}
+.div_top .fright.div_30{
+    width: 40%;
+    vertical-align: top;
+    line-height: 24px;
+    text-align: center;
+    padding-top: 5px;
+}
+#bt_post_ad{
+    float: right;
+    width: 45%;
+    margin-top: -30px;
+}
+div.item-inner{
+    margin-left: 8px !important;
+}
+div.item-inner ion-label,
+div.item-inner ion-input input.text-input{
+    margin: 8px 8px 8px 0;
+}
+
+div.pp{
+    padding: 1px 5px;
+    height: 60px;
+    position: absolute;
+    top: 5px;
+    left: 20%;
+    width:78%;
+}
+div.pp img{
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-left: 0px;
+    margin-top: 4px;
+    margin-right: 10px;
+}
+div.pp div{
+    float: left;
+    width: 150px;
+    padding-top: 10px;
+    color: #3474e1;
+    font-weight: bold;
+}
+div.pp div small{
+    font-weight: normal;
+}
+div.pp div.state{
+    position: absolute;
+    border: 1px solid #3474e1;
+    background: #aaa;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    top: 34px;
+    left: 34px;
+    padding: 0;
+}
+div.pp div.state.on_1,
+.div_top div.state.on_1{
+    background: #37a000;
+}
+
+.div_top{
+    position: relative;
+}
+.div_top div.state{
+    position: absolute;
+    border: 2px solid #3474e1;
+    background: #aaa;
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    top: 60px;
+    left: 60px;
+    padding: 0;
+    z-index: 1;
+}
+#bt_follow{
+    width: 120px;
+    float: right;
+}
+.fright{
+    float: right;
+}
+.div_top .fright{
+    width: calc(100% - 80px);
+}
+.fright div{
+    font-size: 14px;
+    line-height: 18px;
+}
+.div_img{
+    width: 40px;
+    height: 40px;
+    border-radius: 60px;
+    overflow: hidden;
+    float: left;
+}
+.div_img img{
+    width: 100%;
+    height: 100%;
+}
+.div_tab{
+    border-bottom: 2px solid #387ef5;
+    margin-top: 5px;
+}
+.div_30p{
+    width: 49%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 0px;
+    background: #eee;
+    color: #333;
+}
+.div_30p.sel{
+    background: #387ef5;
+    color: #fff;
+}
+.div_item_right{
+    width: calc(100% - 40px);
+    float: right;
+}
+.follow{
+    border: 1px solid #ff0000;
+    color: #ff0000;
+    padding: 3px 5px;
+    border-radius: 50px;
+    float: right;
+    margin-top: 10px;
+}
+.follow.on_1{
+    background: #ff0000;
+    color: #fff;
+}
+.name{
+    padding-top: 10px;
+    padding-left: 10px;
+    float: left;
+}
+.div_cont{
+    display: none;
+}
+#div_ads .name{
+    font-weight: bold;
+    padding-top: 3px;
+    float: none;
+}
+#div_ads .div_item_right{
+    width: calc(100% - 80px);
+}
+#div_ads .div_img{
+    width: 80px;
+    height: 80px;
+    border-radius: 0px;
+}
+#div_ads .date{
+    font-size: 14px;
+    padding-top: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #777;
+    padding-left: 10px;
+}
+.div_top_mark{
+    border-bottom: 1px solid #eee;
+    height: 150px;
+    margin-left: 20px;
+
+}
+.mark{
+    font-size: 40px;
+    color: #333;
+    float: left;
+    margin-right: 20px;
+}
+.div_star ion-icon{
+    color: #f18e00;
+}
+.ruser{
+    font-size: 14px;
+    color: #aaa;
+}
+.rtitle{
+    color: #333;
+    font-size: 16px;
+    padding: 5px 0px;
+}
+.rcont{
+    color: #aaa;
+    font-size: 14px;
+}
+.more{
+    color: #387ef5;
+    text-align: right;
+    padding-top: 8px;
+    font-size: 14px;
+}
+.div_review ion-icon{
+    font-size: 22px;
+}
+.rdate{
+    float: right;
+    color: #aaa;
+    font-size: 14px;
+}
+.div_top_mark .c100{
+    font-size: 60px;
+}
+.div_20{
+    width: 20%;
+    float:left;
+}
+.ring_title{
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+}
+.overall_mark{
+    background: #f18e00;
+    padding: 2px 5px;
+    border-radius: 2px;
+    color: #fff;
+    float: left;
+    margin-right: 5px
+}
+.overall_star .div_star{
+    float: left;
+}
+#bt_review{
+    height: 3.2rem;
+    font-size: 1.2rem;
+}
+
+
+}

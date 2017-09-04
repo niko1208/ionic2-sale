@@ -1,0 +1,33 @@
+
+<ion-header>
+
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+   <ion-toolbar color="">
+        <ion-buttons color="secondary" clear>
+            <button ion-button color="secondary" clear (click)="goBack()" style="color:#fff">
+                <ion-icon name="arrow-round-back" icon-only>&nbsp; {{cate_name}} - {{cate_ar_name}}</ion-icon>
+            </button>
+        </ion-buttons>
+        <!--<ion-title>Details page</ion-title>-->
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content class="detail_content">
+
+      <ion-item-group *ngFor ="let data of keys_detail;let i = index" class="detail_group" (click)="OnClickItem(data.id);" >
+            <button class="detail_button item-icon-left" >
+              <img  style= "border-radius: 100%" src= {{data.img_url}} class="detail_img">
+              <ion-label class="detail_label" text-wrap>{{data.cate_name}}</ion-label>
+            </button>
+      </ion-item-group>
+
+</ion-content>

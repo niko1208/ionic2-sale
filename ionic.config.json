@@ -1,0 +1,14 @@
+{
+  "name": "sale",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/",
+      "proxyUrl": ""
+    }
+  ],
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

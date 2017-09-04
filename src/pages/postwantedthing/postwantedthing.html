@@ -1,0 +1,57 @@
+<!--
+  Generated template for the Postwantedthing page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+  <ion-navbar color="">
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <!--
+    <div class="category"  (click) ="gotoWantedPage();">Choose Category</div>
+    -->
+      <ion-item>
+        <!--<img src="img/motor3.jpg"></img>-->
+        <button style="background-image:'img/motor3.jpg';border-radius: 5%; margin-left:20px;width:90%;height: 200px;" (click)="presentActionSheet();">
+          <img style= "border-radius: 10%;width: 100%;height: 200px;" src= "{{pathForImage(lastImage)}}" class="detail_img" [hidden]="lastImage === null">
+          <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
+        </button>
+        <!--<button ion-button icon-left (click)="presentActionSheet()"> <ion-icon name="camera"></ion-icon>Select Image</button>-->
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label fixed style="color:black;">Title</ion-label>
+      <ion-input type="text" value="" id="Title" [(ngModel)]="post_title" required></ion-input>
+    </ion-item>
+    <ion-item style="height:100px;">
+      <ion-label fixed style="color:black;">Description</ion-label>
+      <ion-input type="text"  value="" id="Title" [(ngModel)]="post_desc"></ion-input>
+    </ion-item>
+
+
+      <ion-item>
+          <button ion-button  style="width:100%" (click)="clickPostButton()">
+              Send Post
+          </button>
+      </ion-item>
+
+  </ion-list>
+</ion-content>

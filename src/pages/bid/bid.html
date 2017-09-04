@@ -1,0 +1,46 @@
+<ion-header>
+  
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+  <ion-navbar color="">
+    <ion-title>Bid</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="late_content">
+
+<ion-item *ngFor="let item of keys; let i = index">
+    
+    <ion-card class="late_card" (click)="click_card(i);">
+    <!--
+    <div *ngIf="item.wanted=='1'" class="wanted">wanted</div>
+    -->
+    <div class="div_img">
+        <img  class="late_img" *ngFor="let itemurl of item.image_url;" src="{{itemurl}}"/>
+    </div>
+    <div class="div_content">
+        <div>
+        <span class='fleft pdate'>{{item.post_dt}}</span>
+        <span class='fright pprice'>{{item.price}} KWD</span>
+        <div class="clearfix"></div>
+        </div>
+        <div class="ptitle">{{item.title}}</div>
+    </div>
+
+    </ion-card>
+
+    <div class="div_right">
+        <div>{{item.nums}} Bids</div>
+        <div>Reached <font>{{item.bidprice}}</font> KWD</div>
+    </div>
+
+</ion-item>
+
+</ion-content>

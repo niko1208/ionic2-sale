@@ -1,0 +1,135 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+/*
+.tabs-md-primary .tabbar{
+    background: #fff;
+    color: #aaa;
+}
+.tabs-md-primary .tab-button, .tabs-md-primary .tab-button .tab-button-icon{
+    color: #888;
+}
+.tabs-md-primary .tab-button:hover:not(.disable-hover), .tabs-md-primary .tab-button[aria-selected=true], .tabs-md-primary .tab-button[aria-selected=true] .tab-button-icon{
+    color: #1dafec;
+}
+*/
+.fstatusbar{
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: 25px;
+    background: rgba(0,0,0,0.7);
+}
+.fstatusbar ion-icon{
+    float: right;
+    margin: 2px 6px;
+    margin-bottom: 0px;
+    color: #ddd;
+    font-size: 1.6em;
+}
+.fstatusbar img{
+    height: 100%;
+    float: right;
+    padding: 3px;
+    margin: 0px 6px;
+    max-width: 32px;
+}
+.badge{
+    background: #e44f0f;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    padding: 1px 1px;
+    font-size: 11px;
+    min-width: 14px;
+    position: absolute;
+    top: 1px;
+    right: 70px;
+}
+.div_icons,
+.div_icons1{
+    height: 38px;
+}
+.div_icons .div_icon,
+.div_icons1 .div_icon{
+    border-radius: 100px;
+    border: 2px solid #ccc;
+    background: #fff;
+    width: 34px;
+    height: 34px;
+    padding: 1px;
+    float: left;
+    margin-top: 3px;
+    margin-right: 3px;
+    text-align: center;
+}
+.div_icon.sel{
+    border: 2px solid rgba(241, 142, 0, 0.6);
+    background: rgba(255, 248, 219, 0.9);
+}
+.div_icons .div_icon img,
+.div_icons1 .div_icon img{
+    max-width: 94%;
+    max-height: 94%;
+}
+.div_icons1 .div_icon{
+    border: 0px;
+    background: transparent;
+}
+.div_icons1 .div_icon.sel{
+    border: 2px solid rgba(29, 175, 236, 0.35);
+    background: rgba(29, 175, 236, 0.17);
+}
+.div_icons1 .div_icon.sel img{
+    opacity: 1;
+}
+.div_icons1 .div_icon img{
+    max-height: auto;
+    opacity: 0.5;
+    max-width: 80%;
+    max-height: 80%;
+    margin-top: 8%;
+    display: inline-block;
+}
+.pop_img{
+    max-width: 100px;
+    margin: 10px auto;
+}
+.div_badge{
+    position: relative;
+}
+.tooltip{
+    position: absolute;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    left: 20px;
+    top: 50px;
+}
+.tooptip_show{
+    display: block;
+}
+
+ion-navbar.toolbar ion-title .toolbar-title{
+    color: #3474e1;
+}
+
+.about_title{
+    font-weight: bold;
+    font-size: 14px;
+    padding-top: 10px;
+}

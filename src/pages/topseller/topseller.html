@@ -1,0 +1,100 @@
+
+<ion-header>
+
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+   <ion-navbar color="">
+    <ion-title>Top seller</ion-title>
+   </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="detail_content">
+
+    <ion-item  *ngFor="let item of keys; let i = index" [ngClass]="{'highlight':(item.points>=1000)}">
+        <div class="membership" *ngIf="item.membership != '' && item.membership != 'Basic'"><span>{{item.membership}}</span></div>
+        
+        <div class="div_plat" *ngIf="(item.points)>=1500"><img src="assets/img/icon-2.png"/><div>Platinum</div></div>
+        <div class="div_gold" *ngIf="(item.points)>=1000 && (item.points)<1500"><img src="assets/img/icon-12.png"/><div>Gold</div></div>
+        <div class="div_silver" *ngIf="(item.points)>=600 && (item.points)<1000"><img src="assets/img/icon-16.png"/><div>Silver</div></div>
+        <div class="div_silver" *ngIf="(item.points)>=400 && (item.points)<600"><img src="assets/img/icon-4.png"/><div></div></div>
+        <div class="div_silver" *ngIf="(item.points)<400"></div>
+
+        <div class="state on_{{item['ison']}}"></div>
+
+        <div class="div_img" (click)="goprofile(item.profile_id)">
+            <img src="{{item.image}}" />
+        </div>
+        <div class="ranking">Rank {{i+1}}</div>
+
+        <div class="div_item_right">
+            <div class="name">{{item.username}}</div>
+            <div class="overall_mark">{{item['mark']}}</div>
+            <div class="div_star">
+                <ion-icon *ngIf="item['mark']>=1" name="star"></ion-icon>
+                <ion-icon *ngIf="item['mark']>=2" name="star"></ion-icon>
+                <ion-icon *ngIf="item['mark']>=3" name="star"></ion-icon>
+                <ion-icon *ngIf="item['mark']>=4" name="star"></ion-icon>
+                <ion-icon *ngIf="item['mark']>=5" name="star"></ion-icon>
+                <ion-icon *ngIf="item['mark']%1!=0" name="star-half"></ion-icon>
+                <ion-icon *ngIf="item['mark']==0" name="star-outline"></ion-icon>
+                <ion-icon *ngIf="item['mark']<=1" name="star-outline"></ion-icon>
+                <ion-icon *ngIf="item['mark']<=2" name="star-outline"></ion-icon>
+                <ion-icon *ngIf="item['mark']<=3" name="star-outline"></ion-icon>
+                <ion-icon *ngIf="item['mark']<=4" name="star-outline"></ion-icon>
+            </div>
+            <div style="clear: both" class="reviewcount">{{item['num']}} Reviews</div>
+            <div class='div_tooltip'>
+                <div class='tooltip' id='tooltip_{{i}}' *ngIf="tool_tip[i]">{{strtooltip}}</div>
+            <div class="div_icons1">
+                <div class="div_icon sel" (click)='clickicon(i, 1, true)'>
+                    <img src="assets/img/icon-verify-1.png" />
+                </div>
+                <div class="div_icon" (click)='clickicon(i, 2, false)'>
+                    <img src="assets/img/icon-email.png" />
+                </div>
+                <div class="div_icon" (click)='clickicon(i, 3, true)'>
+                    <img src="assets/img/icon-phone-1.png" />
+                </div>
+                <div class="div_icon sel" (click)='clickicon(i, 4, true)'>
+                    <img src="assets/img/icon-payment-1.png" />
+                </div>
+            </div>
+            <div class="div_icons">
+                <div [ngClass]="(item.membership1 == 'basic') ? 'div_icon sel' : 'div_icon'" (click)="clickicon(i, 5, (item.membership1 == 'basic'))">
+                    <img src="assets/img/icon-6-1.png" *ngIf="item.membership1 == 'basic'"/>
+                    <img src="assets/img/icon-6.png" *ngIf="item.membership1 != 'basic'" />
+                </div>
+                <div [ngClass]="(item.membership2 == 'pro') ? 'div_icon sel' : 'div_icon'" (click)="clickicon(i, 6, (item.membership2 == 'pro'))">
+                    <img src="assets/img/icon-9-1.png" *ngIf="item.membership2 == 'pro'"/>
+                    <img src="assets/img/icon-9.png" *ngIf="item.membership2 != 'pro'" />
+                </div>
+                <div [ngClass]="(item.membership3 == 'shop') ? 'div_icon sel' : 'div_icon'" (click)="clickicon(i, 7, (item.membership2 == 'shop'))">
+                    <img src="assets/img/icon-5-1.png" *ngIf="item.membership3 == 'shop'"/>
+                    <img src="assets/img/icon-5.png" *ngIf="item.membership3 != 'shop'" />
+                </div>
+                <div [ngClass]="(item.membership4 == 'company') ? 'div_icon sel' : 'div_icon'" (click)="clickicon(i, 8, (item.membership2 == 'company'))">
+                    <img src="assets/img/icon-15-1.png" *ngIf="item.membership4 == 'company'"/>
+                    <img src="assets/img/icon-15.png" *ngIf="item.membership4 != 'company'"/>
+                </div>
+            </div>
+            </div>
+            <div class="div_verify">Verified</div>
+        </div>
+        <div style="clear:both"></div>
+        
+        <div *ngIf="item.about != ''">
+            <div class="about_title">About</div>
+            <div class="about" id="about{{i}}" text-wrap [innerHTML]="item.about"></div>
+            <div class="about_more" id="about_more{{i}}" (click)="aboutmore(i)">More</div>
+        </div>
+    </ion-item>
+
+</ion-content>

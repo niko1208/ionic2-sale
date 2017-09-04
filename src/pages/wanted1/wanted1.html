@@ -1,0 +1,28 @@
+<!--
+  Generated template for the Wanted page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content>
+
+  <ion-list>
+    <ion-item id="parent_item" *ngFor="let item of keys; let i = index" >
+     <img class="img_item" src="{{item.img_url}}">
+     <label class="lb1" style="color: black;text-align: center;size: 20px;" text-wrap (click)="clickItem(i);">{{item.cate_name}}</label>
+
+     <div class='list1 list1_{{i}}' *ngFor="let item1 of item.tree_array; let j = index" (click)="clickItem1(j, item1);">
+       <img class="img_item" src="{{item1.image_file}}">
+       <label style="color: black;text-align: center;size: 20px;" text-wrap>{{item1.name}}</label>
+
+       <div class='list2 list2_{{j}}' *ngFor="let item2 of item1.tree; let k = index" (click)="clickItem2(k, item2);">
+        <img class="img_item" src="{{item2.image_file}}">
+        <label style="color: black;text-align: center;size: 20px;" text-wrap>{{item2.name}}</label>
+      </div>
+
+     </div>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

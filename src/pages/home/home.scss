@@ -1,0 +1,87 @@
+
+page-home {
+.home_img
+{
+  width: 100%;
+  height: 100%;
+  margin-top: 0px;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius: 0px;
+}
+
+.home_content
+{
+  float: left;
+  margin: 0;
+  background-color: #fff !important;
+  background-size: cover;
+}
+
+.home_card
+{
+  width: 50%;
+  height: 140px;
+  margin: 0;
+  padding: 1px;
+  border-radius: 0px;
+  float: left;
+  position: relative;
+  // background-image: url('../../assets/img/back1.png');
+  // background-size: cover;
+}
+.home_card .label-md{
+  margin: 0px 8px 0 0;
+}
+.home_card .label-md *{
+  color: #fff;
+}
+.late_header{
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  padding-left: 10px;
+  padding-top: 5px;
+  width: 100%;
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); 
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); 
+  background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+}
+.late_header h4{
+  color: #fff;
+  font-size: 20px;
+}
+.card-content{
+  padding: 0;
+}
+
+.home_header
+{
+  border-radius: 10px;
+  background-color: burlywood;
+  // background-image: url('../../assets/img/back1.png');
+  // background-size: cover;
+}
+.btcate{
+  width: 100px; 
+  height: 140px; 
+  margin-left: 10px;
+  border-radius: 10px;
+  border:1px solid #eee;
+  box-shadow: #eee 1px 1px 1px; 
+  background: #fff; 
+  display:inline-block;
+  vertical-align: top;
+}
+.button-md{
+  height: 3.2rem;
+  font-size: 1.2rem;
+  width: 100%;
+}
+button.button-md{
+  background: #22b14c !important;
+}
+
+}
+

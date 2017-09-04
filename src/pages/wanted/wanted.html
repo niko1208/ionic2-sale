@@ -1,0 +1,28 @@
+<!--
+  Generated template for the Wanted page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content>
+
+  <ion-list>
+    <ion-item id="parent_item" *ngFor="let item of keys; let i = index">
+     <img style="width: 100px; height: 100px;" src="{{item.img_url}}">
+     <label style="color: black;text-align: center;size: 20px;"  text-wrap>{{item.cate_name}}</label>
+
+      <ion-item-group >
+        <ion-scroll scrollX="true"style="height: 160px;" class="scroll_content">
+              <button  *ngFor="let item1 of keys_sub[i]; let button_index = index" class="btcate" (click)="clickItem(i,button_index);" id="Location{{i}}{{button_index}}">
+
+                <img style="width: 80px; height: 80px; float: left" src="{{item1.image_file}}">
+                <label style="color: black;float: left" text-wrap>{{item1.name}}</label>
+
+              </button>
+        </ion-scroll>
+      </ion-item-group>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

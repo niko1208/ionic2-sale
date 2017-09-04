@@ -1,0 +1,54 @@
+
+<ion-header>
+
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+   <ion-navbar color="">
+    <div class="pp">
+        <!--<img src="{{image}}"/>-->
+        <div>{{username}}<br/></div>
+        <!--<div class="state on_{{ison}}"></div>-->
+    </div>
+   </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="detail_content">
+    <div style="padding-bottom: 10px">
+        <div class="div_tab">
+            <div class="div_30p" (click)="tabclick('following')" id="tab_following">Following({{following}})</div>
+            <div class="div_30p" (click)="tabclick('follower')" id="tab_follower">Follower({{follower}})</div>
+        </div>
+    </div>
+
+    <div class="div_cont" id="div_following">
+        <ion-item  *ngFor="let item of fitem1; let i = index">
+            <div class="div_img">
+                <img src="{{item.image}}" />
+            </div>
+            <div class="div_item_right">
+                <div class="name">{{item.username}}</div>
+                <div class="follow  on_{{item.isfollow}}" (click)="onfollow(item.profile_id, item.isfollow);">+ Follow</div>
+            </div>
+        </ion-item>
+    </div>
+
+    <div class="div_cont" id="div_follower">
+        <ion-item  *ngFor="let item of fitem; let i = index">
+            <div class="div_img">
+                <img src="{{item.image}}" />
+            </div>
+            <div class="div_item_right">
+                <div class="name">{{item.username}}</div>
+                <div class="follow  on_{{item.isfollow}}" (click)="onfollow(item.profile_id);">+ Follow</div>
+            </div>
+        </ion-item>
+    </div>
+</ion-content>

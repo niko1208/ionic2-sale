@@ -1,0 +1,64 @@
+page-search{
+
+.overall_mark{
+    background: #f18e00;
+    padding: 2px 5px;
+    border-radius: 2px;
+    color: #fff;
+    float: left;
+    margin-right: 5px;
+    font-size: 14px;
+}
+.div_star ion-icon{
+    color: #f18e00;
+}
+
+.div_img{
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    overflow: hidden;
+    float: left;
+}
+.div_img img{
+    width: 100%;
+    height: 100%;
+}
+.div_item_right{
+    width: calc(100% - 100px);
+    padding-left: 20px;
+    float: left;
+}
+.name{
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.reviewcount{
+    color: #555;
+    font-size: 12px;
+}
+.state{
+    position: absolute;
+    border: 2px solid #fff;
+    background: #aaa;
+    width: 16px;
+    height: 16px;
+    border-radius: 10px;
+    top: 54px;
+    left: 64px;
+    padding: 0;
+}
+.state.on_1{
+    background: #37a000;
+}
+.bt{
+    position: absolute;
+    top: 15px;
+    left: 77px;
+    font-size: 2em;
+}
+.searchbar-search-icon{
+    display: none;
+}
+
+}

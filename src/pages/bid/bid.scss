@@ -1,0 +1,56 @@
+page-bid{
+
+
+.div_img{
+  width: 140px;
+  height:100px;
+  overflow: hidden;
+  border-bottom: 2px solid #1dafec;
+}
+.div_img img{
+  width: 100%;
+  height: auto;
+}
+
+.div_content{
+  padding: 5px 5px;
+}
+.fleft{
+  float: left;
+}
+.fright{
+  float: right;
+}
+.pdate{
+  color: #777;
+  font-size: 11px;
+  display: none;
+}
+.pprice{
+  color: #1dafec;
+  font-size: 11px;
+}
+.ptitle{
+  color: #1dafec;
+  font-size: 16px;
+  padding-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.clearfix{
+  clear: both;
+}
+.div_right{
+    width: calc(100% - 160px);
+    padding-top: 20px;
+}
+.div_right font{
+    color: #f00;
+}
+ion-card.card-md{
+    float: left;
+    width: 140px;
+}
+
+}

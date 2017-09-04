@@ -1,0 +1,35 @@
+
+<ion-content class="offer_content">
+
+  <ion-card class="offer_card" *ngFor="let item of putdata; let i=index;">
+<!--
+  <ion-item class="offer_header">
+    <ion-avatar item-left>
+         <img src="{{item.img_url}}"/>
+    </ion-avatar>
+    <h6>{{item.post_date}}</h6>
+  </ion-item>
+-->
+  <img  class="card_img" src="{{item.img_url}}" (click)="gotoview(i)" />
+  <!-- gotoview(item.img_url, item.id, item.viewcount)
+  <ion-card-content>
+    <p style="color:black;">{{item.post_des}}</p>
+  </ion-card-content>
+  
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>4 Comments</div>
+      </button>
+    </ion-col>
+  </ion-row>
+-->
+</ion-card>
+</ion-content>

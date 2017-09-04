@@ -1,0 +1,42 @@
+.appname{
+    font-size: 60px;
+    line-height: 150px;
+    text-shadow: rgba(0, 0, 0, 0.18) 4px 3px;
+    color:#e2bb26;
+    font-weight: bold;
+}
+page-region{
+
+ion-content{
+    background: #055284 !important;
+}
+.div_country{
+    padding: 5%;
+}
+.div_country img{
+    width: 31%;
+    height: 70px;
+    margin: 1px;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 3px;
+}
+.div_country .imgsel{
+    border: 2px solid #e2bb26;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 3px 5px rgba(0, 0, 0, 0.21);
+    padding: 0px;
+}
+.clearfix{
+    clear: both;
+}
+#div_bt .button-md-light{
+    background: transparent !important;
+    border: 0px !important;
+    color: #fff;
+}
+#div_bt .button-md{
+    border: 2px solid #e2bb26;
+}
+
+
+}

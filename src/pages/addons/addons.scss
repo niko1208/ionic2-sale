@@ -1,0 +1,51 @@
+page-addons{
+
+
+div.sec{
+    margin: 10px 0px;
+    margin-left: 5px;
+    box-shadow: rgba(51, 51, 51, 0.48) 1px 2px 5px;
+    border-radius: 5px;
+    padding: 2px 0px;
+    width: 99%;
+}
+div.sec ion-item:last-child .item-inner{
+    border: 0px;
+}
+div.sec ion-item ion-icon{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    color: #1dafec;
+}
+div.sec ion-item ion-icon{
+    width: 24px;
+}
+div.sec ion-item .item-inner{
+    margin-left: 5px !important;
+}
+div.sec ion-item ion-checkbox.checkbox-md{
+    margin-right: 15px !important;
+}
+.item-md .item-button.md-button{
+  height: 35px;
+  font-size: 16px;
+}
+.item-md .item-button.md-button.green{
+  background: #22b14c;
+}
+.item-md .item-button.md-button.orange{
+  background: #ff7f27;
+}
+.item-md .item-button.md-button.red{
+  background: #e44f0f;
+}
+h2.sec_title{
+    background: #22b14c;
+    color: #fff;
+    width: 100%;
+    padding: 5px 10px;
+    margin-left: 3px;
+    font-size: 18px;
+}
+
+}

@@ -1,0 +1,249 @@
+page-wantedpage{
+
+ion-card.ion-pview{
+  background: #fff;
+  margin: 5px 0px;
+  width: 100%;
+}
+.div_wrapper{
+  position: relative;
+}
+.wanted_title{
+    font-size: 16px;
+    padding: 10px;
+}
+.icon_sec{
+  position: absolute;
+  width: 50%;
+  background: #fff;
+  border-radius: 100px;
+  padding: 5px 20px;
+  bottom: 10px;
+  left: 25%;
+  font-size: 20px;
+  color: #1dafec;
+  text-align: center;
+  z-index: 999;
+  box-shadow: #ccc 1px 1px 5px;
+}
+.icon_sec span{
+  cursor: pointer;
+  display: inline-block;
+}
+.icon_sec img{
+  width: 25px;
+  height: 27px;
+  display: inline-block;
+  cursor: pointer;
+  padding-top: 5px;
+  margin: 0 7px;
+}
+
+.icon_sec_wanted{
+  /*position: absolute;*/
+  width: 100%;
+  padding: 8px 20px;
+  bottom: 0px;
+  left: 0;
+  /*background: rgba(0,0,0,0.4);*/
+  z-index: 999;
+}
+.icon_sec_wanted div,
+.bt_follow{
+  display: inline-block;
+  /*background: rgba(255, 171, 70, 0.86);*/
+  border: 1px solid rgb(255, 171, 70);
+  color: rgb(255, 171, 70);
+  padding: 3px 8px;
+  border-radius: 50px;
+  font-size: 14px;
+  margin: 0px 3px;
+}
+
+.icon_sec_wanted div.bt_follow{
+  border-color: #f00;
+  color: #f00;
+  float: right;
+}
+div.pp div.bt_follow.on_1{
+  color: #fff !important;
+  background: #f00;
+}
+
+.icon_sec_wanted div.divsel{
+
+}
+.icon_sec_wanted .divsel1{
+    background: rgb(255, 171, 70);
+    color: #fff;
+}
+
+.div_img{
+  max-height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+.div_img_wrapper{
+  height: 230px;
+}
+.div_img_wrapper img{
+  height: 100%;
+  width: 250px;
+  white-space: normal ;
+  display: inline-block;
+  position:relative;
+  vertical-align: top;
+}
+.center{
+  text-align: center;
+}
+.colorb{
+  color: #1dafec;
+}
+.div_sec{
+  padding: 10px;
+  border-top: 0px solid #ccc;
+  border-bottom: 0px solid #ccc;
+}
+.div_desc{
+  padding: 5px 10px;
+  padding-bottom: 15px;
+}
+#bt_prev,
+#bt_next{
+  position: absolute;
+  top: 45%;
+  left: 10px;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.3);
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 2px;
+  color:#333;
+  cursor: pointer;
+}
+#bt_next{
+  right: 10px;
+  left: auto;
+}
+
+.popup,
+.dialog{
+  position: fixed;
+  width: 300px;
+  height: 200px;
+  background: #fff;
+  border-radius: 5px;
+  left: 50%;
+  top:50%;
+  margin-left: -150px;
+  margin-top: -100px;
+  overflow: hidden;
+}
+
+.popup{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  margin: 0;
+}
+.dialog_header{
+  background: #01aa41;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+.dbutton{
+  width: 260px;
+  margin: 20px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.dbt-red{
+  background: #d02e2f;
+}
+.dbt-blue{
+  background: #01aa41;
+}
+.div_img_wrapper{
+  text-align: center;
+}
+.imgcenter{
+  margin-left: auto;
+  margin-right: auto;
+}
+.divwanted{
+  width: 100%;
+}
+
+.div_cate {
+  color: #1dafec;
+  font-size: 5vw;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+div.pp{
+    padding: 1px 5px;
+    height: 60px;
+    position: relative;
+}
+div.pp img{
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-left: 0px;
+    margin-top: 4px;
+    margin-right: 10px;
+}
+div.pp div{
+    float: left;
+    width: 150px;
+    padding-top: 15px;
+    color: #333;
+}
+div.pp div.state{
+    position: absolute;
+    border: 2px solid #fff;
+    background: #ccc;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    top: 34px;
+    left: 34px;
+    padding: 0;
+}
+div.pp div.state.on_1{
+    background: #37a000;
+}
+div.pp div.bt_follow{
+  position: absolute;
+  border-radius: 50px;
+  border: 1px solid #f00;
+  padding: 4px 10px;
+  color: #f00;
+  font-size: 14px;
+  width: auto;
+  right: 5px;
+  top: 10px
+}
+#div_sec1{
+  padding-bottom: 0px;
+}
+#div_sec2{
+  padding-top:0px;
+  border-top: 1px solid #eee;
+}
+}

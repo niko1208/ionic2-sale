@@ -1,0 +1,30 @@
+<ion-header>
+  
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+  <ion-navbar color="">
+    <ion-title>Chat</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="detail_content">
+
+    <ion-item *ngFor="let item of room" (click)="ongo(item.id, item.username);">
+        <div class="state on_{{item.ison}}"></div>
+        <div class="div_img">
+            <img src="{{item.image}}" />
+        </div>
+        <div class="div_right">
+            <div class="name">{{item.username}}</div>
+            <div class="date">{{fdate(item.date)}}</div>
+            <div class="msg">{{item.msg}}</div>
+        </div>
+    </ion-item>
+
+</ion-content>

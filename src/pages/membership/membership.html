@@ -1,0 +1,99 @@
+
+<ion-header>
+
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+   <ion-navbar color="">
+
+        <ion-title>Upgrade your account</ion-title>
+   </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="detail_content" padding>
+    <div class="mh1">Build customers trust and sell faster by verifying your business</div>
+    <div class="mh2">Chose the package that suits you</div>
+
+    <div class="sec"> 
+        <div class="buy" (click)="buy(4)">Buy</div>
+        <ion-item>
+            <ion-label class="lb_img"><img src="assets/img/icon-6-1.png"/></ion-label>
+            <ion-label>Basic account</ion-label>
+            <ion-label item-right class="price">4 KD</ion-label>
+        </ion-item>
+        <ion-item>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>300 Points</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>3 more Posts</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>1 pinned Posts</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>Cup badge normal</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>Can Receive Points</div>
+        </ion-item>
+    </div>
+
+    <div class="sec">
+        <div class="buy" (click)="buy(7)">Buy</div>
+        <ion-item>
+            <ion-label class="lb_img"><img src="assets/img/icon-9-1.png"/></ion-label>
+            <ion-label>Professional account</ion-label>
+            <ion-label item-right class="price">7 KD</ion-label>
+        </ion-item>
+        <ion-item>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>500 Points</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>10 more Posts</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>2 pinned Posts</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>Cup badge plus</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>Can Receive Points</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>1 Premium Post</div>
+        </ion-item>
+    </div>
+
+    <div class="sec">
+        <div class="buy" (click)="buy(15)">Buy</div>
+        <ion-item>
+            <ion-label class="lb_img"><img src="assets/img/icon-5-1.png"/></ion-label>
+            <ion-label>Shop account</ion-label>
+            <ion-label item-right class="price">15 KD</ion-label>
+        </ion-item>
+        <ion-item>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>1000 Points</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>50 more Posts</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>3 pinned Posts</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>2 Premium Post</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>1 VIP Post</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>1 post in offers and first page</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>Crown badge</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>Rank Silver Wolf</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>24/7 support</div>
+        </ion-item>
+    </div>
+
+    <div class="sec">
+        <div class="buy" (click)="buy(35)">Buy</div>
+        <ion-item>
+            <ion-label class="lb_img"><img src="assets/img/icon-15-1.png"/></ion-label>
+            <ion-label>Company account</ion-label>
+            <ion-label item-right class="price">35 KD</ion-label>
+        </ion-item>
+        <ion-item>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>1500 Points</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>100 more Posts</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>3 pinned Posts</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>3 Premium Post</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>2 VIP Post</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>2 Post in offers page</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>2 Post in first page</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>Crown badge plus</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>Rank Silver Wolf</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>24/7 support</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>Verified by documents and certifications</div>
+            <div class="pp_item"><ion-icon name="checkmark"></ion-icon>Can Receive Points</div>
+        </ion-item>
+    </div>
+
+</ion-content>

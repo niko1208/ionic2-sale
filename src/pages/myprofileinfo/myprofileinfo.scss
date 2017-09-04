@@ -1,0 +1,47 @@
+page-myprofileinfo{
+
+.div_sec{
+    background: #37a000;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+textarea{
+    height: 120px;
+}
+div.sec ion-item ion-icon{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    color: #1dafec;
+}
+
+.back_img{
+    height: 150px;
+    width: 100%;
+    background-size: cover;
+}
+.back_img div{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.05);
+}
+.back_img ion-icon{
+    float: right;
+    padding: 5px 10px;
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50px;
+    margin: 5px;
+}
+.profile_image{
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    border-radius: 3px;
+    right: 5px;
+    top: 5px;
+}
+
+}

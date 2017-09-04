@@ -1,0 +1,57 @@
+page-notifiation {
+.div_item_right{
+    float: right;
+}
+.div_item_right{
+    width: calc(100% - 50px);
+}
+.div_img{
+    width: 50px;
+    height: 50px;
+    border-radius: 60px;
+    overflow: hidden;
+    float: left;
+    margin-top: 7px;
+}
+.div_img img{
+    width: 100%;
+    height: 100%;
+}
+ion-item{
+    position: relative;
+}
+.name{
+    padding-left: 10px;
+    font-weight: bold;
+}
+.cont{
+    font-size: 14px;
+    padding-top: 10px;
+    /*
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;*/
+    color: #777;
+    padding-left: 10px;
+    white-space: normal;
+}
+.date{
+    position: absolute;
+    font-size: 14px;
+    padding-top: 16px;
+    color: #777;
+    padding-right: 5px;
+    top: 0px;
+    right: 10px;
+}
+.unread{
+    background: #efefef;
+}
+.bt_clear{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    color: white;
+}
+
+}

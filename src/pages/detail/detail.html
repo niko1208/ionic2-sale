@@ -1,0 +1,59 @@
+<!--
+  Generated template for the Detail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+  <!--<ion-navbar>
+    <ion-title>detail</ion-title>
+        <ion-buttons end>
+
+        </ion-buttons>
+  </ion-navbar>-->
+
+   <ion-toolbar color="">
+        <ion-buttons color="secondary" clear>
+            <button ion-button color="secondary" clear (click)="goBack()" style="color:#fff">
+                <ion-icon name="arrow-round-back" icon-only>&nbsp; {{cate_name}} - {{cate_ar_name}}</ion-icon>
+            </button>
+        </ion-buttons>
+        <!--<ion-title>Details page</ion-title>-->
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content class="detail_content">
+<!--
+   <ion-item-group *ngFor ="let data of data_array;let i= index" class="detail_group" >
+            <button  *ngFor=" let items of data.items" class="detail_button">
+              <img  style= "border-radius: 100%" src= {{items.imgurl}} class="detail_img">
+              <ion-label class="detail_label" text-wrap>{{items.title}}</ion-label>
+            </button>
+
+             <ion-item *ngIf="data.flag === 'true'">
+                <img src="img/adver1.jpg"  class="advertising" style="width: 95%; margin: 5px;height: 100px; border-radius: 0px; background-color: transparent ">
+             </ion-item>
+   </ion-item-group>-->
+
+      <ion-item-group *ngFor ="let data of keys_detail; let i = index" class="detail_group" (click)="OnClickItem(data.id, i);" >
+            <button class="detail_button item-icon-left" >
+              <img  style= "border-radius: 100%" src= {{data.img_url}} class="detail_img">
+              <ion-label class="detail_label" text-wrap>{{data.cate_name}}</ion-label>
+            </button>
+      </ion-item-group>
+
+
+
+</ion-content>

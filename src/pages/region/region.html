@@ -1,0 +1,29 @@
+<ion-content style="width:100%;height:100%; margin-top:5%;" >  
+  <div style="text-align: center">
+    <div class='appname'>Sale4all</div>
+  </div>
+  
+  <div class='div_country' style="color:#eee">
+    <div style="float: left">Choose Country</div>
+    <div style="float: right">اختر البلد</div>
+  </div>
+  <div class="div_country">
+    <img [class.imgsel]="selRegion=='kuwait'" class='img_country' src="assets/img/kuwait.png" (click)="onregion('kuwait');"/>
+    <img [class.imgsel]="selRegion=='ksa'" class='img_country' src="assets/img/ksa.png" (click)="onregion('ksa');" />
+    <img [class.imgsel]="selRegion=='jor'" class='img_country' src="assets/img/jor.png" (click)="onregion('jor');" />
+  </div>
+  <div class='div_country' style="color:#eee"> 
+    <div style="float: left">Choose Language</div>
+    <div style="float: right">اختر اللغه</div>
+  </div>
+  <div class="div_country" id="div_bt"> 
+    <button style="width:45%;float:left" ion-button (click)="onlang('en');" color="{{ecolor}}">ENGLISH</button>
+    <button style="width:45%;float:right" ion-button  (click)="onlang('ar');" color="{{acolor}}">العربيه</button>
+    <div class="clearfix"></div>
+  </div> 
+  <br/>
+  <div class="div_country">
+    <button style="width:100%;" ion-button (click)="gotologin();" color="">CONTINUE / استمرار</button>
+  </div>
+
+</ion-content>

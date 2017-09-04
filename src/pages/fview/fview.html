@@ -1,0 +1,24 @@
+
+<ion-content class="sub_content" style="background-color:#eee;">
+    <div>
+        <button ion-button (click)="navback()">Close</button>
+    </div>
+    <div class="div_img">
+        <img src="{{imgurl}}" />
+    </div>
+    <div class="view_sec" *ngIf="offer=='1'">
+        <div style="float:left; padding:30px 20px">views : {{views}}</div>
+        <div class="call_sec">
+            <span class="pcall" (click)="callIT(phonenumber)">call</span>
+            <span class="pcall" (click)="sendSMS()">sms</span>
+            <span class="pcall" (click)="clicklike()">like</span>
+        </div>
+    </div>
+    <div class="popup" *ngIf="bpopup">
+        <div class="dialog">
+        <div class="dialog_header">{{dialog_title}}</div>
+        <div class="dbutton dbt-blue" id="bt_call" (click)="dcall()">{{phonenumber}}</div>
+        <div class="dbutton dbt-red" id="bt_cancel" (click)="gocancel()">Cancel</div>
+        </div>
+    </div>
+</ion-content>

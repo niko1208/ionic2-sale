@@ -1,0 +1,40 @@
+page-wanted1 {
+
+
+.scroll_content {
+  white-space: nowrap;
+}
+
+
+.colorClass{
+  background-color: lightyellow;
+}
+
+.img_item{
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+.list1, .list2{
+  padding-top:5px;
+  padding-left: 30px;
+  position: relative;
+  display: none;
+}
+.list1 label{
+  position: absolute;
+  padding-left: 8px;
+  padding-top: 6px;
+}
+.list1 .list2 label{
+  position: absolute;
+  padding-top: 6px;
+  padding-left: 8px;
+}
+.lb1{
+  position: absolute;
+  padding-top: 6px;
+  padding-left: 8px;
+}
+
+}

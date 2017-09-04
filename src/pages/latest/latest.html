@@ -1,0 +1,73 @@
+<!--
+  Generated template for the Latest page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  <ion-navbar color="">
+
+    <!--<ion-title>latest</ion-title>-->
+    
+    <ion-row>
+        <ion-col col-3>
+          <button ion-button color="secondary" (click)="goPostPage();">Post Ad
+            <!--<ion-icon  name ="add-circle">Post ad</ion-icon>-->
+          </button>
+        </ion-col>
+
+        <ion-col col-3>
+          <button ion-button color="secondary" (click)="goBidPage();">Bids</button>
+        </ion-col>
+
+        <ion-col col-3>
+          <button ion-button color="secondary" (click)="goTopSellerPage();">Top Sellers</button>
+        </ion-col>
+
+        <ion-col col-3>
+          <button color="secondary" ion-button style="margin-left: 2px;" (click)="goWnatedThing();">Wanted</button>
+        </ion-col>
+    </ion-row>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="late_content">
+
+<ion-card class="late_card" *ngFor="let item of keys; let i = index" (click)="click_card(i);">
+  <!--<ion-item class="late_header">
+    <h2> {{item.post_title}}</h2>
+  </ion-item>-->
+  <div *ngIf="item.post_type=='feature'" class="ribbon"><span>Featured</span></div>
+  <div *ngIf="item.post_type=='pre'" class="pre">Premium</div>
+  <div *ngIf="item.post_type=='pin'" class="pin">Pinned</div>
+  <div *ngIf="item.wanted=='1'" class="wanted">Wanted</div>
+
+  <div class="div_img" [style.backgroundImage]="'url('+item.post_img_url[0]+')'">
+    <img class="late_img" *ngFor="let itemurl of item.post_img_url;" src="{{itemurl}}" style="display:none"/>
+  </div>
+  <div class="div_content">
+    <div>
+      <span class='fleft pdate'>{{item.post_date}}</span>
+      <span class='fright pprice' *ngIf="item.wanted=='0'">{{item.post_price}} KWD</span>
+      <div class="clearfix"></div>
+    </div>
+    <div class="ptitle">{{item.post_title}}</div>
+  </div>
+
+  <ion-card-content>
+    <!--<p style="color:black;">{{item.post_des}}</p>-->
+  </ion-card-content>
+</ion-card>
+
+
+</ion-content>

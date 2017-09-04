@@ -1,0 +1,70 @@
+<!--
+  Generated template for the DetailSub page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+  <ion-navbar color="">
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="detail_sub_content">
+<ion-card class="detail_sub_card"  *ngFor="let item of model_sub_category; let i=index;" (click)="click_carddetail(i);" >
+  <div *ngIf="item.post_type=='feature'" class="ribbon"><span>Featured</span></div>
+  <div *ngIf="item.post_type=='pre'" class="pre">Premium</div>
+  <div *ngIf="item.post_type=='pin'" class="pin">Pinned</div>
+  
+  <div class="div_img">
+    <img  class="late_img" *ngFor="let itemurl of item.post_img_url;" src="{{itemurl}}"/>
+  </div>
+  <div class="div_content">
+    <div>
+      <span class='fleft pdate'>{{item.post_date}}</span>
+      <span class='fright pprice'>{{item.post_price}} KWD</span>
+      <div class="clearfix"></div>
+    </div>
+    <div class="ptitle">{{item.post_title}}</div>
+  </div>
+<!--
+  <ion-item style="background-color:bisque;border-radius:5%">
+
+    <h4 style="font-color:blue;">{{item.post_title}}</h4>
+    <p>{{item.post_date}}</p>
+  </ion-item>
+
+  <img class="detail_sub_img" src="{{item.post_img_url}}">
+
+  <ion-card-content>
+    <p>{{item.post_content}}</p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="logo-usd"></ion-icon>
+        <div>{{item.post_price}}</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>{{item.post_sticky}}</div>
+      </button>
+    </ion-col>
+  </ion-row>
+-->
+</ion-card>
+</ion-content>

@@ -1,0 +1,98 @@
+
+<ion-header style="float: left;">
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  <ion-navbar color="" style="text-align: center;float: left">
+    <!--<ion-searchbar></ion-searchbar>-->
+    <ion-row>
+        <ion-col col-3>
+          <button ion-button color="secondary" (click)="goPostPage();">Post Ad
+            <!--<ion-icon  name ="add-circle">Post ad</ion-icon>-->
+          </button>
+        </ion-col>
+
+        <ion-col col-3>
+          <button ion-button color="secondary" (click)="goBidPage();">Bids</button>
+        </ion-col>
+
+        <ion-col col-3>
+          <button ion-button color="secondary" (click)="goTopSellerPage();">Top Sellers</button>
+        </ion-col>
+
+        <ion-col col-3>
+          <button color="secondary" ion-button style="margin-left: 2px;" (click)="goWnatedThing();">Wanted</button>
+        </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home_content" style="background-color:gray; padding: 2px;" >
+
+   <ion-list>
+<ion-item style="height: 70px; display: none">
+  <ion-fab left top style="width: 45px;height: 45px;margin-right: 10px;">
+    <button ion-fab color="light"><ion-icon name="arrow-dropright"></ion-icon></button>
+      <ion-fab-list side="right">
+          <button ion-fab><ion-icon name="logo-usd"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-yen"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+      </ion-fab-list>
+    </ion-fab>
+     </ion-item>
+
+     <!--<ion-item class="main" *ngFor ="let key  of keys" (click)="gotoNextPage(key.id)">
+          <img src="{{key.img_url}}">
+          <label style="color: green">{{key.cate_name}}</label>
+           <label style="color: blue">{{key.cate_ar_name}}</label>
+     </ion-item>-->
+   </ion-list>
+
+
+<ion-card class="home_card" *ngFor="let item of keys; let i = index" (click)="gotoNextPage(item.id, item.cate_name, item.cate_ar_name);">
+  
+  <ion-card-content>
+    <!--<img  class="home_img" src="{{item.img_url}}"/>-->
+    <img class="home_img" src="http://sale4allz.com/admin/user_media/1496917274821.jpg" />
+  </ion-card-content>
+
+  <div class="late_header">
+    <h4> {{item.cate_name}}</h4>
+    <p>{{item.cate_ar_name}}</p>
+  </div>
+
+</ion-card>
+
+
+
+</ion-content>
+
+<!--
+<ion-content>
+
+  <ion-list>
+    <ion-item id="parent_item" *ngFor="let item of keys; let i = index">
+     <img style="width: 100px; height: 100px;" src="{{item.img_url}}">
+     <label style="color: black;text-align: center;size: 20px;"  text-wrap>{{item.cate_name}}</label>
+
+      <ion-item-group >
+        <ion-scroll scrollX="true"style="height: 160px;" class="scroll_content">
+              <button  *ngFor="let item1 of keys_sub[i]; let button_index = index" class="btcate" (click)="clickItem(i,button_index);" id="Location{{i}}{{button_index}}">
+
+                <img style="width: 80px; height: 80px; " src="{{item1.image_file}}">
+                <label style="color: black;" text-wrap>{{item1.name}}</label>
+
+              </button>
+        </ion-scroll>
+      </ion-item-group>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
+-->

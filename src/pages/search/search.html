@@ -1,0 +1,47 @@
+
+<ion-header>
+
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+   <ion-navbar color="">
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar>
+    <ion-icon name="search" class="bt" (click)="search()"></ion-icon>
+   </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="detail_content">
+
+    <ion-item  *ngFor="let item of keys; let i = index" (click)="goprofile(item.profile_id)">
+        <div class="div_img">
+            <img src="{{item.image}}" />
+        </div>
+        <div class="state on_{{item['ison']}}"></div>
+        <div class="div_item_right">
+            <div class="name">{{item.username}}</div>
+            <div class="overall_mark">{{item['mark']}}</div>
+            <div class="div_star">
+                <ion-icon *ngIf="item['mark']>=1" name="star"></ion-icon>
+                <ion-icon *ngIf="item['mark']>=2" name="star"></ion-icon>
+                <ion-icon *ngIf="item['mark']>=3" name="star"></ion-icon>
+                <ion-icon *ngIf="item['mark']>=4" name="star"></ion-icon>
+                <ion-icon *ngIf="item['mark']>=5" name="star"></ion-icon>
+                <ion-icon *ngIf="item['mark']%1!=0" name="star-half"></ion-icon>
+                <ion-icon *ngIf="item['mark']==0" name="star-outline"></ion-icon>
+                <ion-icon *ngIf="item['mark']<=1" name="star-outline"></ion-icon>
+                <ion-icon *ngIf="item['mark']<=2" name="star-outline"></ion-icon>
+                <ion-icon *ngIf="item['mark']<=3" name="star-outline"></ion-icon>
+                <ion-icon *ngIf="item['mark']<=4" name="star-outline"></ion-icon>
+            </div>
+            <div style="clear: both" class="reviewcount">{{item['num']}} Reviews</div>
+        </div>
+    </ion-item>
+
+</ion-content>

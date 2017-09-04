@@ -1,0 +1,395 @@
+page-latest-sub {
+
+ion-card.ion-pview{
+  background: #eee;
+  margin: 0 !important;
+  width: 100%;
+  padding: 0px;
+}
+.div_wrapper{
+  position: relative;
+  background: #fff;
+}
+.icon_sec{
+  position: absolute;
+  width: 50%;
+  background: #fff;
+  border-radius: 100px;
+  padding: 5px 20px;
+  bottom: 10px;
+  left: 25%;
+  font-size: 20px;
+  color: #1dafec;
+  text-align: center;
+  z-index: 999;
+  box-shadow: #ccc 1px 1px 5px;
+}
+.icon_sec span{
+  cursor: pointer;
+  display: inline-block;
+}
+.icon_sec img{
+  width: 25px;
+  height: 27px;
+  display: inline-block;
+  cursor: pointer;
+  padding-top: 5px;
+  margin: 0 7px;
+}
+
+.icon_sec_wanted{
+  width: 100%;
+  padding: 8px 20px;
+  bottom: 0px;
+  left: 0;
+  z-index: 999;
+}
+.icon_sec_wanted div{
+  display: inline-block;
+  border: 1px solid rgb(255, 171, 70);
+  color: rgb(255, 171, 70);
+  padding: 3px 8px;
+  border-radius: 50px;
+  font-size: 14px;
+  margin: 0px 3px;
+}
+.icon_sec_wanted div.bt_follow{
+  border-color: #f00;
+  color: #f00;
+  float: right;
+}
+.icon_sec_wanted div.divsel{
+    
+}
+.icon_sec_wanted .divsel1{
+    background: rgb(255, 171, 70);
+    color: #fff;
+}
+
+.div_img{
+  height:220px;
+  overflow: hidden;
+  position: relative;
+}
+.div_img_wrapper{
+  height: 220px;
+}
+.div_img_wrapper img{
+  height: 100%;
+  width: 270px;
+  white-space: normal ;
+  display: inline-block;
+  position:relative;
+  vertical-align: top;
+}
+.center{
+  text-align: center;
+}
+.colorb{
+  color: #1dafec;
+}
+.div_sec{
+  padding: 10px;
+  background: #fff;
+  margin: 10px 0px;
+  box-shadow: #ccc 0px 2px 5px;
+  border-radius: 2px;
+}
+
+#bt_prev,
+#bt_next{
+  position: absolute;
+  top: 45%;
+  left: 10px;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.3);
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 2px;
+  color:#333;
+  cursor: pointer;
+}
+#bt_next{
+  right: 10px;
+  left: auto;
+}
+
+.popup,
+.dialog{
+  position: fixed;
+  width: 300px;
+  height: 200px;
+  background: #fff;
+  border-radius: 5px;
+  left: 50%;
+  top:50%;
+  margin-left: -150px;
+  margin-top: -100px;
+  overflow: hidden;
+}
+
+.popup{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  margin: 0;
+}
+.dialog_header{
+  background: #01aa41;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+.dbutton{
+  width: 260px;
+  margin: 20px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.dbt-red{
+  background: #d02e2f;
+}
+.dbt-blue{
+  background: #01aa41;
+}
+.div_img_wrapper{
+  text-align: center;
+}
+.imgcenter{
+  margin-left: auto;
+  margin-right: auto;
+}
+.divwanted{
+  width: 100%;
+}
+
+.div_cate {
+  color: #1dafec;
+  font-size: 5vw;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+div.pp{
+    padding: 1px 5px;
+    height: 60px;
+    position: absolute;
+    top: 5px;
+    left: 15%;
+    width: 85%;
+}
+div.pp img{
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 0px;
+    margin-top: 4px;
+    margin-right: 10px;
+}
+div.pp div{
+    float: left;
+    width: 150px;
+    padding-top: 15px;
+    color: #333;
+}
+div.pp div.state{
+    position: absolute;
+    border: 2px solid #fff;
+    background: #ccc;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    top: 36px;
+    left: 36px;
+    padding: 0;
+}
+div.pp div.state.on_1{
+    background: #37a000;
+}
+div.pp div.bt_follow{
+  position: absolute;
+  border-radius: 50px;
+  border: 1px solid #f00;
+  padding: 3px 5px;
+  color: #f00;
+  font-size: 14px;
+  width: auto;
+  right: 5px;
+  top: 10px
+}
+div.pp div.bt_follow.on_1{
+  color: #fff !important;
+  background: #f00;
+}
+.div_star ion-icon{
+    color: #f18e00;
+    font-size: 11px;
+    margin-left: -2px;
+}
+.overall_mark{
+    background: #f18e00;
+    padding: 2px 5px;
+    border-radius: 2px;
+    color: #fff;
+    float: left;
+    margin-right: 5px;
+}
+.overall_star{
+    position: absolute;
+    right: 70px;
+    top: 15px;
+    width: 110px;
+}
+.overall_star .div_star{
+    float: left;
+    margin-top: 2px;
+}
+.div_review.div_star ion-icon{
+    font-size: 22px;
+}
+.rdate{
+    float: right;
+    color: #aaa;
+    font-size: 14px;
+}
+.ruser{
+    font-size: 14px;
+    color: #aaa;
+}
+.rtitle{
+    color: #333;
+    font-size: 16px;
+    padding: 5px 0px;
+}
+.rcont{
+    color: #aaa;
+    font-size: 14px;
+}
+.more{
+    color: #387ef5;
+    text-align: right;
+    padding-top: 8px;
+    font-size: 14px;
+}
+button.md-button.button-md{
+  height: 30px;
+  border-radius: 20px;
+}
+button.md-button.green{
+  background: #22b14c;
+}
+button.md-button.orange{
+  background: #ff7f27;
+  width: 40%;
+}
+button.md-button.red{
+  background: #e44f0f;
+  width: 40%;
+  float: right;
+}
+
+ div.seller{
+   position: relative;
+ 
+  .div_img{
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+      overflow: hidden;
+      float: left;
+    }
+  .div_img img{
+        width: 100%;
+        height: 100%;
+    }
+  .div_item_right{
+        width: calc(100% - 100px);
+        padding-left: 20px;
+        float: left;
+    }
+  .name{
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+  .reviewcount{
+        color: #555;
+        font-size: 14px;
+        padding-top: 2px;
+    }
+  .div_plat,
+  .div_gold,
+  .div_silver{
+        position: absolute;
+        right: 40px;
+        top: 18px;
+        text-align: center;
+        font-size: 12px;
+        color: #37a000;
+    }
+  .div_plat img,
+  .div_gold img,
+  .div_silver img{
+        width: 50px;
+        margin-bottom: -5px;
+    }
+  .div_star ion-icon{
+      font-size: 20px;
+  }
+  .ranking{
+      font-size: 11px;
+      color: #fff;
+      background: rgba(55,160, 0, 0.7);
+      padding: 1px 5px;
+      display: inline-block;
+      width: 60px;
+      text-align: center;
+      position: absolute;
+      top: 12px;
+      right: 35px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px
+  }
+  .goprofile{
+    position: absolute;
+    right: 5px;
+    top: 30px;
+    font-size: 26px;
+    color: #333;
+    padding: 3px 5px;
+  }
+}
+.div_sec div small{
+  color: #888;
+}
+.div_sec.noshadow{
+  background: transparent;
+  box-shadow: none;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.div_verify{
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    padding: 2px 5px;
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    position: absolute;
+    top: 102px;
+    left: 10px;
+}
+
+}

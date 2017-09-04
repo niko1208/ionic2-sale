@@ -1,0 +1,33 @@
+<!--
+  Generated template for the Splash page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content style="width:100%;height:100%;" >
+
+<ion-card class="splash">
+
+
+<!--
+  <ion-item class="">
+    <ion-label>select country</ion-label>
+    <ion-select>
+      <ion-option ng-selected="selected">English</ion-option>
+    </ion-select>
+  </ion-item>
+-->
+  <img src="{{splash_data.img_url}}" (click)="gotoFview();">
+
+  <ion-card-content>
+    <!--<p>{{sub_content}}</p>-->
+  </ion-card-content>
+  
+  <ion-row>
+     <button style="width:100%;" ion-button  (click)="onClickEnter();" style="background:#22b14c">ENTER</button>
+  </ion-row>
+
+</ion-card>
+
+</ion-content>

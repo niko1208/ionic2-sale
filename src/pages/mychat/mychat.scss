@@ -1,0 +1,45 @@
+page-mychat{
+
+.div_img{
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    overflow: hidden;
+}
+.div_right{
+    float: right;
+    width: calc(100% - 70px);
+    position: relative;
+}
+.date{
+    position: absolute;
+    color: #3392c3;
+    right: 2px;
+    top: 2px;
+    font-size: 12px;
+}
+.msg{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 14px;
+}
+.state{
+    position: absolute;
+    border: 2px solid #fff;
+    background: #ccc;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    top: 60px;
+    left: 60px;
+    padding: 0;
+}
+.state.on_1{
+    background: #37a000;
+}
+
+}

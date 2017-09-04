@@ -1,0 +1,82 @@
+<!--
+  Generated template for the Post page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+  <ion-navbar color ="primary">
+    <ion-title>post</ion-title>
+    <div class="pp">
+        <img src="{{image}}"/>
+    </div>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="add_post_content">
+
+  <ion-list class="add_post_list">
+
+    <div class="category"  (click) ="gotoWantedPage();">Choose Category</div>
+    <ion-item class="post_button_upload">
+      <ion-scroll scrollX="true" id="upic">
+        <div class="bt_choose_category" (click)="gotoTakePic();">You can add 10 Image(s)</div>
+        <div *ngFor="let picitem of picitems; let ii = index" class='bt_pic cateblue'>
+          <div class='bt_remove' (click) ='removepic(ii);'>X</div>
+          <img src='{{picitem.imgurl}}'/>
+        </div>
+      </ion-scroll>
+      <!--
+      <button  ion-button class="uploadButton"  (click) ="gotoWantedPage();"> <label class="category">Choose Category</label> </button>
+      -->
+    </ion-item>
+
+    <ion-item>
+        <!--<img src="img/motor3.jpg"></img>-->
+        <!--
+        <button style="width:100%;height:200px;border-radius:10%;justify-content: center;" (click)="presentActionSheet();">
+          <img  src= "{{pathForImage(lastImage)}}" class="post_detail_img" [hidden]="lastImage === null">
+          <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
+        </button>
+        <!--<button ion-button icon-left (click)="presentActionSheet()"> <ion-icon name="camera"></ion-icon>Select Image</button>-->
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label fixed style="color:black;">Title</ion-label>
+      <ion-input type="text" value="" id="Title" [(ngModel)]="post_title" required></ion-input>
+    </ion-item>
+
+   <ion-item>
+    <ion-label fixed style="color:black;">Price</ion-label>
+    <ion-input type="text" value="" id="Price" [(ngModel)]="post_price" required></ion-input>
+  </ion-item>
+
+  <ion-item style="height: 200px;">
+    <ion-label fixed style="color:black;">Description</ion-label>
+    <ion-input type="text" value="" id="Description" [(ngModel)]="post_desc" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <button ion-button block class='md-button green' (click)="post_type='free';clickPostButton()">post free ad</button>
+  </ion-item>
+
+  <ion-item>
+    <button ion-button block class='md-button orange' (click)="clickContinue()">upgrade to featured</button>
+  </ion-item>
+
+</ion-list>
+
+
+</ion-content>

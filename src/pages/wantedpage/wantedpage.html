@@ -1,0 +1,76 @@
+<ion-header>
+
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+  <ion-navbar>
+    <ion-title>
+      <div style="float: left; padding-top: 10px">Wanted Things</div>
+      <button color="secondary" ion-button style="margin-right:10px; float:right" (click)="goPostWnatedThing();">
+        <ion-icon  name="bulb">ADD</ion-icon>
+      </button>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="sub_content" style="background-color:#eee;border-radius:10%;">
+  <div class="popup" *ngIf="bpopup">
+    <div class="dialog">
+      <div class="dialog_header">{{dialog_title}}</div>
+      <div class="dbutton dbt-blue" id="bt_call" (click)="dcall()">{{phonenumber}}</div>
+      <div class="dbutton dbt-red" id="bt_cancel" (click)="gocancel()">Cancel</div>
+    </div>
+  </div>
+
+<ion-card class="ion-pview" *ngFor="let item of keys; let idx=index;" id="item_{{item.post_id}}">
+
+  <div class="div_sec" id="div_sec1">
+    <div class="pp">
+        <img src="{{item.post_profile_image}}" (click)="goprofile(item.post_profile_id)" />
+        <div>{{item.post_profile_username}}<br/><small></small></div>
+        <div class="state on_{{item.post_profile_ison}}"></div>
+        <div (click)="onfollow(item.post_profile_id, idx, item.post_profile_isfollow);" class="bt_follow on_{{item.post_profile_isfollow}}" id="bt_follow_{{idx}}">
+          <span *ngIf="item.post_profile_isfollow=='1'">Followed</span>
+          <span *ngIf="item.post_profile_isfollow!='1'">+ Follow</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="div_wrapper">
+    
+    <div class="div_img" id="div_detail">
+        <img src="{{item.post_img_url}}" (click)="gotoview(idx)" />
+    </div>
+    <div class="icon_sec_wanted">
+      <div (click)="callIT('+1-111-1111-1111')">Call</div>
+      <div (click)="sendSMS()">Sms</div>
+      <div (click)="onchat(item.post_profile_id)">Chat</div>
+      <div (click)="onlike(item.post_id, item.wanted, item.islike, idx)" class="divsel{{likeary[idx]}}" >+Favorite</div>
+    </div>
+  </div>
+  <div class="div_sec">
+    <div class="wanted_title">{{item.post_title}}</div>
+  </div>
+  <div class="div_sec" id="div_sec2">
+    <ion-row>
+      <ion-col>
+        <div class='center'>Date/Time</div><br/>
+        <div class='center colorb'>{{item.post_date}}</div>
+      </ion-col>
+      <ion-col>
+        <div class='center'>Views</div><br/>
+        <div class='center colorb'>{{item.post_viewcount}}</div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="div_desc">{{item.post_content}}</div>
+  </ion-card>
+
+</ion-content>

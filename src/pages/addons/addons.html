@@ -1,0 +1,84 @@
+<ion-header>
+
+  <div class="fstatusbar">
+      <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
+      <img src="{{flag}}" />
+      <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
+      <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
+  </div>
+  
+  <ion-navbar color ="primary">
+    <ion-title>Addons</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <h2 class="sec_title">Featured ad to sell faster</h2>
+    <div class="sec">
+        <ion-item>
+            <ion-checkbox [(ngModel)]='check_pin' (ionChange)="pinChecked(check_pin);"></ion-checkbox>
+            <ion-icon name ="pin" item-left></ion-icon>
+            <ion-label>Pinned ads</ion-label>
+            <ion-label text-right>3 KD</ion-label>
+        </ion-item>
+
+        <ion-item>
+            <ion-checkbox [(ngModel)]='check_pre' (ionChange)="preChecked(check_pre);"></ion-checkbox>
+            <ion-icon name ="albums" item-left></ion-icon>
+            <ion-label>Premium ads</ion-label>
+            <ion-label text-right>5 KD</ion-label>
+        </ion-item>
+
+        <ion-item>
+            <ion-checkbox [(ngModel)]='check_offer' (ionChange)="offerChecked(check_offer);"></ion-checkbox>
+            <ion-icon name ="body" item-left></ion-icon>
+            <ion-label>offers and first page ads</ion-label>
+            <ion-label text-right>10 KD</ion-label>
+        </ion-item>
+    </div>
+
+    <h2 class="sec_title">Available Balance</h2>
+    <div class="sec">
+        <ion-item>
+            <ion-label>Balance</ion-label>
+            <ion-label text-right>{{balance}} KD</ion-label>
+        </ion-item>
+        <ion-item *ngIf="false && preads != 0">
+            <ion-label>Premium Ads</ion-label>
+            <ion-label text-right>{{preads}}</ion-label>
+        </ion-item>
+        <ion-item *ngIf="false && pinads != 0">
+            <ion-label>Pin Ads</ion-label>
+            <ion-label text-right>{{pinads}}</ion-label>
+        </ion-item>
+        <ion-item *ngIf="false && vipads != 0">
+            <ion-label>Vip Ads</ion-label>
+            <ion-label text-right>{{vipads}}</ion-label>
+        </ion-item>
+        <ion-item *ngIf="false && offads != 0">
+            <ion-label>Offer Ads</ion-label>
+            <ion-label text-right>{{offads}}</ion-label>
+        </ion-item>
+    </div>
+
+    <h2 class="sec_title">Payment</h2>
+    <div class="sec">
+        <ion-item>
+            <ion-label>Total</ion-label>
+            <ion-label text-right>{{total}} KD</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Amount to Pay</ion-label>
+            <ion-label text-right>{{amount}} KD</ion-label>
+        </ion-item>
+    </div>
+
+    <ion-item>
+        <button ion-button block class='md-button orange' (click)="clickpay()">Pay Now</button>
+        <button ion-button block class='md-button red' (click)="cancel()">Cancel</button>
+    </ion-item>
+
+</ion-content>

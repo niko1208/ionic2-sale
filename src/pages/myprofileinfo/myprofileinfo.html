@@ -1,0 +1,49 @@
+
+<ion-header>
+
+   <ion-navbar color="">
+
+        <ion-title>My Profile Info</ion-title>
+        <img class="profile_image" src="{{pimage}}" />
+   </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="detail_content">
+    <div class="back_img" id="back_img" style="background:url('');background-size: cover;background-position: center;">
+        <div>
+            <ion-icon name="aperture" (click)="presentActionSheet();"></ion-icon>
+        </div>
+    </div>
+    <div class="sec">
+        <ion-item>
+            <ion-icon name ="phone-portrait" item-left></ion-icon>
+            <ion-label>Phone Number</ion-label>
+            <ion-input [(ngModel)]="pnumber" item-right></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name ="mail" item-left></ion-icon>
+            <ion-label>Email</ion-label>
+            <ion-input [(ngModel)]="email" item-right></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name ="contact" item-left></ion-icon>
+            <ion-label>Nick Name</ion-label>
+            <ion-input [(ngModel)]="username" item-right></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon name ="md-text" item-left></ion-icon>
+            <ion-label>About</ion-label>
+        </ion-item>
+        <ion-item>                                      
+            <ion-textarea [(ngModel)]="about"></ion-textarea>
+        </ion-item>
+    </div>
+    <div style="padding: 5%">
+        <button style="width:100%;" ion-button (click)="onsave();" color="">Save</button>
+    </div>
+
+</ion-content>

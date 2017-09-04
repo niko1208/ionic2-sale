@@ -1,0 +1,37 @@
+page-about {
+
+.card_img
+{
+  width: 98%;
+  height: 98%;
+  margin: 1%;
+}
+
+.offer_content
+{
+  float: left;
+  margin: 0;
+  background-color: gray;
+  background-size: cover;
+}
+
+.offer_card
+{
+  width: 49%;
+  height: 230px;
+  margin: 0.5%;
+  float: left;
+  background: #fff;
+  // background-image: url('../../assets/img/back1.png');
+  // background-size: cover;
+}
+
+.offer_header
+{
+  border-radius: 10px;
+  background-color: burlywood;
+  // background-image: url('../../assets/img/back1.png');
+  // background-size: cover;
+}
+
+}

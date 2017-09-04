@@ -1,0 +1,105 @@
+
+<ion-header>
+
+   <ion-navbar color="">
+
+        <ion-title>Write a review</ion-title>
+   </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="detail_content">
+<div style="padding: 15px; font-size: 16px;">
+    <div class="div_star_sec">
+        <div class='fleft'>Accuracy</div>
+        <div class="div_star fright">
+            <ion-icon *ngIf="myRating1>=1" name="star" (click)="clickr(1,1)"></ion-icon>
+            <ion-icon *ngIf="myRating1>=2" name="star" (click)="clickr(1,2)"></ion-icon>
+            <ion-icon *ngIf="myRating1>=3" name="star" (click)="clickr(1,3)"></ion-icon>
+            <ion-icon *ngIf="myRating1>=4" name="star" (click)="clickr(1,4)"></ion-icon>
+            <ion-icon *ngIf="myRating1>=5" name="star" (click)="clickr(1,5)"></ion-icon>
+            <ion-icon *ngIf="myRating1==0" name="star-outline" (click)="clickr(1,1)"></ion-icon>
+            <ion-icon *ngIf="myRating1<=1" name="star-outline" (click)="clickr(1,2)"></ion-icon>
+            <ion-icon *ngIf="myRating1<=2" name="star-outline" (click)="clickr(1,3)"></ion-icon>
+            <ion-icon *ngIf="myRating1<=3" name="star-outline" (click)="clickr(1,4)"></ion-icon>
+            <ion-icon *ngIf="myRating1<=4" name="star-outline" (click)="clickr(1,5)"></ion-icon>
+        </div>
+        <div class="fright mark">{{myRating1}}</div>
+    </div>
+    <div class="div_star_sec">
+        <div class='fleft'>Communication</div>
+        <div class="div_star fright">
+            <ion-icon *ngIf="myRating2>=1" name="star" (click)="clickr(2,1)"></ion-icon>
+            <ion-icon *ngIf="myRating2>=2" name="star" (click)="clickr(2,2)"></ion-icon>
+            <ion-icon *ngIf="myRating2>=3" name="star" (click)="clickr(2,3)"></ion-icon>
+            <ion-icon *ngIf="myRating2>=4" name="star" (click)="clickr(2,4)"></ion-icon>
+            <ion-icon *ngIf="myRating2>=5" name="star" (click)="clickr(2,5)"></ion-icon>
+            <ion-icon *ngIf="myRating2==0" name="star-outline" (click)="clickr(2,1)"></ion-icon>
+            <ion-icon *ngIf="myRating2<=1" name="star-outline" (click)="clickr(2,2)"></ion-icon>
+            <ion-icon *ngIf="myRating2<=2" name="star-outline" (click)="clickr(2,3)"></ion-icon>
+            <ion-icon *ngIf="myRating2<=3" name="star-outline" (click)="clickr(2,4)"></ion-icon>
+            <ion-icon *ngIf="myRating2<=4" name="star-outline" (click)="clickr(2,5)"></ion-icon>
+        </div>
+        <div class="fright mark">{{myRating2}}</div>
+    </div>
+    <div class="div_star_sec">
+        <div class='fleft'>Cleanliness</div>
+        <div class="div_star fright">
+            <ion-icon *ngIf="myRating3>=1" name="star" (click)="clickr(3,1)"></ion-icon>
+            <ion-icon *ngIf="myRating3>=2" name="star" (click)="clickr(3,2)"></ion-icon>
+            <ion-icon *ngIf="myRating3>=3" name="star" (click)="clickr(3,3)"></ion-icon>
+            <ion-icon *ngIf="myRating3>=4" name="star" (click)="clickr(3,4)"></ion-icon>
+            <ion-icon *ngIf="myRating3>=5" name="star" (click)="clickr(3,5)"></ion-icon>
+            <ion-icon *ngIf="myRating3==0" name="star-outline" (click)="clickr(3,1)"></ion-icon>
+            <ion-icon *ngIf="myRating3<=1" name="star-outline" (click)="clickr(3,2)"></ion-icon>
+            <ion-icon *ngIf="myRating3<=2" name="star-outline" (click)="clickr(3,3)"></ion-icon>
+            <ion-icon *ngIf="myRating3<=3" name="star-outline" (click)="clickr(3,4)"></ion-icon>
+            <ion-icon *ngIf="myRating3<=4" name="star-outline" (click)="clickr(3,5)"></ion-icon>
+        </div>
+        <div class="fright mark">{{myRating3}}</div>
+    </div>
+    <div class="div_star_sec">
+        <div class='fleft'>Quality</div>
+        <div class="div_star fright">
+            <ion-icon *ngIf="myRating4>=1" name="star" (click)="clickr(4,1)"></ion-icon>
+            <ion-icon *ngIf="myRating4>=2" name="star" (click)="clickr(4,2)"></ion-icon>
+            <ion-icon *ngIf="myRating4>=3" name="star" (click)="clickr(4,3)"></ion-icon>
+            <ion-icon *ngIf="myRating4>=4" name="star" (click)="clickr(4,4)"></ion-icon>
+            <ion-icon *ngIf="myRating4>=5" name="star" (click)="clickr(4,5)"></ion-icon>
+            <ion-icon *ngIf="myRating4==0" name="star-outline" (click)="clickr(4,1)"></ion-icon>
+            <ion-icon *ngIf="myRating4<=1" name="star-outline" (click)="clickr(4,2)"></ion-icon>
+            <ion-icon *ngIf="myRating4<=2" name="star-outline" (click)="clickr(4,3)"></ion-icon>
+            <ion-icon *ngIf="myRating4<=3" name="star-outline" (click)="clickr(4,4)"></ion-icon>
+            <ion-icon *ngIf="myRating4<=4" name="star-outline" (click)="clickr(4,5)"></ion-icon>
+        </div>
+        <div class="fright mark">{{myRating4}}</div>
+    </div>
+    <div class="div_star_sec">
+        <div class='fleft'>Honesty</div>
+        <div class="div_star fright">
+            <ion-icon *ngIf="myRating5>=1" name="star" (click)="clickr(5,1)"></ion-icon>
+            <ion-icon *ngIf="myRating5>=2" name="star" (click)="clickr(5,2)"></ion-icon>
+            <ion-icon *ngIf="myRating5>=3" name="star" (click)="clickr(5,3)"></ion-icon>
+            <ion-icon *ngIf="myRating5>=4" name="star" (click)="clickr(5,4)"></ion-icon>
+            <ion-icon *ngIf="myRating5>=5" name="star" (click)="clickr(5,5)"></ion-icon>
+            <ion-icon *ngIf="myRating5==0" name="star-outline" (click)="clickr(5,1)"></ion-icon>
+            <ion-icon *ngIf="myRating5<=1" name="star-outline" (click)="clickr(5,2)"></ion-icon>
+            <ion-icon *ngIf="myRating5<=2" name="star-outline" (click)="clickr(5,3)"></ion-icon>
+            <ion-icon *ngIf="myRating5<=3" name="star-outline" (click)="clickr(5,4)"></ion-icon>
+            <ion-icon *ngIf="myRating5<=4" name="star-outline" (click)="clickr(5,5)"></ion-icon>
+        </div>
+        <div class="fright mark">{{myRating5}}</div>
+    </div>
+    <div class="dev_sec totalmark">{{mark}}</div>
+    <div class="dev_sec">
+        <ion-input [(ngModel)]="title" placeholder="Write a title..."></ion-input>
+    </div>
+    <div class="dev_sec">
+        <ion-textarea [(ngModel)]="review" placeholder="Write a review..."></ion-textarea>
+    </div>
+    <div class="dev_sec">
+        <button ion-button (click)="writereview()">Post Review</button>
+    </div>
+</div>
+</ion-content>

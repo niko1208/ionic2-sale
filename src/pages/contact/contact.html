@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar color="">
+    <ion-title style="text-align: center">Message</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <div>
+      <ion-segment  [(ngModel)]="call">
+          <ion-segment-button  class="segment-button segment-activated" value="ms" (click)="selectMessageButton()">
+            Message
+          </ion-segment-button>
+
+          <ion-segment-button value="ca" (click)= "selectCallButton();">
+            Calling
+          </ion-segment-button>
+
+        </ion-segment>
+    </div>
+
+
+    <div [ngSwitch]="call">
+        <ion-list *ngSwitchCase = "'ms'" style="margin-top: 20px;">
+            <ion-item style="margin-top: 20px;">
+              <!--<ion-icon name="ionic" item-left></ion-icon>
+              @ionicframework-->
+              <ion-label floating>Phone Number</ion-label>
+              <ion-input type="text" [(ngModel)]="smsNumber"></ion-input>
+            </ion-item>
+
+            <ion-item style="margin-top: 20px; height: 200px;" >
+              <ion-label floating>
+                  Message
+              </ion-label>
+              <ion-textarea rows="6" [(ngModel)]="smsText"></ion-textarea>
+            </ion-item>
+
+
+                <button ion-button (click)="sendSMS()" style="margin: 20px;width:90%;">
+                  Send Message
+                </button>
+
+          </ion-list>
+
+          <ion-list *ngSwitchCase = "'ca'" style="margin-top: 20px;">
+            <ion-item style="margin-top: 20px;">
+              <!--<ion-icon name="ionic" item-left></ion-icon>
+              @ionicframework-->
+              <ion-label floating>Phone Number(ex:+86)</ion-label>
+              <ion-input type="text" [(ngModel)]="callNumber"></ion-input>
+            </ion-item>
+
+              <button ion-button (click)="sendCall()" style="margin: 20px;width: 90%;">
+                Send Call
+             </button>
+          </ion-list>
+    </div>
+
+
+</ion-content>
