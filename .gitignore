@@ -1,0 +1,6 @@
+node_modules/
+platforms/
+www/
+.vscode/
+npm-debug.log*
+log.txt
