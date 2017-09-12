@@ -80,7 +80,14 @@ page-home {
   width: 100%;
 }
 button.button-md{
-  background: #22b14c !important;
+  background: #ffab46 !important;
+}
+[col-3] {
+      padding: 1px 5px;
+}
+.toolbar-md{
+  min-height: 0px;
+  padding: 0px 1px;
 }
 
 }
