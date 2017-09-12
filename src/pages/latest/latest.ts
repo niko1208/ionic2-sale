@@ -38,6 +38,9 @@ export class LatestPage implements ServerDataModelDelegate {
   serverData : any ;
   keys : Array<MyDataModel> = [];
   temp : any;
+  pids = [];
+
+  public clickFollow = false;
   flag : any;
     public badge = '0';
   /////////////////////////////
@@ -62,8 +65,8 @@ export class LatestPage implements ServerDataModelDelegate {
 
  ionViewWillEnter()
  {
-     this.datamodel.GetPostProducts();
-     this.datamodel.homedelegate = this;
+    this.datamodel.GetPostProducts(this.clickFollow);
+    this.datamodel.homedelegate = this;
     if(Global.Static_profile_id == "") {
       $('.fstatusbar img').css('display', 'none');
     }
@@ -91,45 +94,48 @@ export class LatestPage implements ServerDataModelDelegate {
   goTopSellerPage() {
     this.navCtrl.push(TopsellerPage);
   }
+
+  showdata(sec) {
+    $('.col_tab').removeClass("sel");
+    $('#tab_'+sec).addClass("sel");
+    let isfollow = false;
+    if(sec == 'following') {
+      isfollow = true;
+      this.clickFollow = true;
+    } else {
+      this.clickFollow = false;
+    }
+    this.datamodel.GetPostProducts(isfollow);
+  }
   
    dataSourceUpdated(data)
   {
-    console.log(data);
+      console.log(data);
       this.keys = [];
-     // console.log("delegatedata ==>",data)
+      this.pids = [];
+      let pid = "";
+     
       this.postsDataArray = data;
-      // this.postsDataArray = new Array<PostDataModel>();
+     
       for (let index in this.postsDataArray)
-    {
-
-      this.temp = this.postsDataArray[index];
-
-       this.keys.push(this.temp);
-    }
-    // console.log("temp====>",this.keys)
-    /*
-    $('.late_img').each(function(){
-      $(this).load(function(){
-        let h = $(this).height(); console.log(h);
-        if(h < 150) {
-          $(this).css('height', '100%');
-          $(this).css('width', 'auto');
+      {
+        this.temp = this.postsDataArray[index];
+        if(this.temp.pid != pid) {
+          this.pids.push(this.temp);
+          pid = this.temp.pid;
         }
-      })
-    })*/
+        this.keys.push(this.temp);
+      }
   }
-
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LatestPage');
   }
 
-  //  goWantedPage()
-  // {
-  //   this.navCtrl.push(WantedPage);
+  goSearch() {
+    this.navCtrl.push(SearchPage);
+  }
 
-  // }
   goWnatedThing()
   {
     this.navCtrl.push(WantedthingPage,{

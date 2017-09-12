@@ -32,42 +32,102 @@
         </ion-col>
 
         <ion-col col-3>
-          <button color="secondary" ion-button style="margin-left: 2px;" (click)="goWnatedThing();">Wanted</button>
+          <button color="secondary" ion-button style="margin-left: 2px;" (click)="goWnatedThing();">Shops</button>
         </ion-col>
     </ion-row>
 
   </ion-navbar>
+   <ion-toolbar>
+     <ion-row>
+        <ion-col col-6 text-center class='col_tab sel' (click)="showdata('all')" id="tab_all">All</ion-col>
+        <ion-col col-6 text-center class='col_tab' (click)="showdata('following')" id="tab_following">Following</ion-col>
+     </ion-row>
+    </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content class="late_content">
 
-<ion-card class="late_card" *ngFor="let item of keys; let i = index" (click)="click_card(i);">
-  <!--<ion-item class="late_header">
-    <h2> {{item.post_title}}</h2>
-  </ion-item>-->
-  <div *ngIf="item.post_type=='feature'" class="ribbon"><span>Featured</span></div>
-  <div *ngIf="item.post_type=='pre'" class="pre">Premium</div>
-  <div *ngIf="item.post_type=='pin'" class="pin">Pinned</div>
-  <div *ngIf="item.wanted=='1'" class="wanted">Wanted</div>
+<div *ngIf="!clickFollow">
+  <ion-card *ngFor="let item of keys; let i = index" class="late_card" (click)="click_card(i);">
+    <!--<ion-item class="late_header">
+      <h2> {{item.post_title}}</h2>
+    </ion-item>-->
+    <div *ngIf="item.post_type=='feature'" class="ribbon"><span>Featured</span></div>
+    <div *ngIf="item.post_type=='pre'" class="pre">Premium</div>
+    <div *ngIf="item.post_type=='pin'" class="pin">Pinned</div>
+    <div *ngIf="item.wanted=='1'" class="wanted">Wanted</div>
 
-  <div class="div_img" [style.backgroundImage]="'url('+item.post_img_url[0]+')'">
-    <img class="late_img" *ngFor="let itemurl of item.post_img_url;" src="{{itemurl}}" style="display:none"/>
-  </div>
-  <div class="div_content">
-    <div>
-      <span class='fleft pdate'>{{item.post_date}}</span>
-      <span class='fright pprice' *ngIf="item.wanted=='0'">{{item.post_price}} KWD</span>
-      <div class="clearfix"></div>
+    <div class="div_img" [style.backgroundImage]="'url('+item.post_img_url[0]+')'">
+      <img class="late_img" *ngFor="let itemurl of item.post_img_url;" src="{{itemurl}}" style="display:none"/>
     </div>
-    <div class="ptitle">{{item.post_title}}</div>
+    <div class="div_content">
+      <div>
+        <span class='fleft pdate'>{{item.post_date}}</span>
+        <span class='fright pprice' *ngIf="item.wanted=='0'">{{item.post_price}} KWD</span>
+        <div class="clearfix"></div>
+      </div>
+      <div class="ptitle">{{item.post_title}}</div>
+    </div>
+
+    <ion-card-content>
+      <!--<p style="color:black;">{{item.post_des}}</p>-->
+    </ion-card-content>
+  </ion-card>
+</div>
+
+
+<div *ngIf="clickFollow" >
+  <div *ngIf="pids.length == 0" (click)="goSearch()">
+    <div class="nofollow">FIND PEOPLE TO FOLLOW<br/>
+      <small>Start following People to see latest stuff in this page</small>
+    </div>
   </div>
+  <div *ngFor="let pid of pids;">
+    <div class="profile">
+      <img class="div_img1" src="{{pid.pimage}}"/>
+      <div class="div_item_right">
+        <div class="overall_mark">{{pid['mark']}}</div>
+        <div class="div_star">
+            <ion-icon *ngIf="pid['mark']>=1" name="star"></ion-icon>
+            <ion-icon *ngIf="pid['mark']>=2" name="star"></ion-icon>
+            <ion-icon *ngIf="pid['mark']>=3" name="star"></ion-icon>
+            <ion-icon *ngIf="pid['mark']>=4" name="star"></ion-icon>
+            <ion-icon *ngIf="pid['mark']>=5" name="star"></ion-icon>
+            <ion-icon *ngIf="pid['mark']%1!=0" name="star-half"></ion-icon>
+            <ion-icon *ngIf="pid['mark']==0" name="star-outline"></ion-icon>
+            <ion-icon *ngIf="pid['mark']<=1" name="star-outline"></ion-icon>
+            <ion-icon *ngIf="pid['mark']<=2" name="star-outline"></ion-icon>
+            <ion-icon *ngIf="pid['mark']<=3" name="star-outline"></ion-icon>
+            <ion-icon *ngIf="pid['mark']<=4" name="star-outline"></ion-icon>
+        </div>
+        <div class="reviewcount">{{pid['review']}} Reviews</div>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+    <div *ngFor="let item of keys; let i = index">
+      <ion-card *ngIf="pid.pid == item.pid" class="late_card" (click)="click_card(i);">
+        <div *ngIf="item.post_type=='feature'" class="ribbon"><span>Featured</span></div>
+        <div *ngIf="item.post_type=='pre'" class="pre">Premium</div>
+        <div *ngIf="item.post_type=='pin'" class="pin">Pinned</div>
+        <div *ngIf="item.wanted=='1'" class="wanted">Wanted</div>
 
-  <ion-card-content>
-    <!--<p style="color:black;">{{item.post_des}}</p>-->
-  </ion-card-content>
-</ion-card>
-
+        <div class="div_img" [style.backgroundImage]="'url('+item.post_img_url[0]+')'">
+          <img class="late_img" *ngFor="let itemurl of item.post_img_url;" src="{{itemurl}}" style="display:none"/>
+        </div>
+        <div class="div_content">
+          <div>
+            <span class='fleft pdate'>{{item.post_date}}</span>
+            <span class='fright pprice' *ngIf="item.wanted=='0'">{{item.post_price}} KWD</span>
+            <div class="clearfix"></div>
+          </div>
+          <div class="ptitle">{{item.post_title}}</div>
+        </div>
+      </ion-card>
+    </div>
+    <div class="div_sec"></div>
+  </div>
+</div>
 
 </ion-content>

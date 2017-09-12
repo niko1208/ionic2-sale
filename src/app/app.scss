@@ -140,3 +140,10 @@ ion-navbar.toolbar ion-title .toolbar-title{
     margin-top: -1px;
     margin-right: 10px;
 }
+.tabs-md-primary .tabbar{
+    background: #212121;
+}
+.tabs-md-primary .tab-button, 
+.tabs-md-primary .tab-button-icon{
+    color: rgba(255, 255, 255, 0.5);
+}

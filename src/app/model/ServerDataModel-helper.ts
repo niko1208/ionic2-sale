@@ -202,7 +202,7 @@ GetWantedPost() {
 }
 ///////////////////////////////////////////////////////////////////////////////
 
-   GetPostProducts()
+   GetPostProducts(isfollow = false)
    {
 
        var temp_array = new Array<PostDataModel>();
@@ -213,6 +213,7 @@ GetWantedPost() {
         Form_data.append('profile_id', Global.Static_profile_id);
         Form_data.append('lang', Global.Static_lang);
         Form_data.append('country', Global.Static_region);
+        Form_data.append('isfollow', isfollow);
 //////////////////////////////////////////////////////////////////////////
         this._http.post(temp_url,Form_data).map(res =>res.json())
         .subscribe(res => {
