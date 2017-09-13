@@ -264,7 +264,7 @@ export class WantedthingPage  implements ServerDataModelDelegate{
       });
       load.present();
 
-      if(islike == '1') islike = '0';
+      if(islike != '0') islike = '0';
       else islike = '1';
       
       var temp_url = 'http://sale4allz.com/ws/like.php';
@@ -278,7 +278,11 @@ export class WantedthingPage  implements ServerDataModelDelegate{
       .subscribe(res => {
           load.dismissAll();
           this.likeary[idx] = islike;
-          this.presentToast("Added to your favorite list.");
+          if(islike == '1') {
+            this.presentToast("Added to your favorite list.");
+          } else {
+            this.presentToast("Removed to your favorite list.");
+          }
       }, error => {
           load.dismissAll();
           alert("Error");

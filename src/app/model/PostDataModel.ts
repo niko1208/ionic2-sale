@@ -27,6 +27,7 @@ export class PostDataModel
   post_profile_isfollow: string;
   followtext: string;
   img_url: string;
+  num: string;
 
   constructor(data)
   {
@@ -48,6 +49,7 @@ export class PostDataModel
      this.review       =  data["review"];
      this.pimage       =  data["profile_image"];
      this.pid       =  data["pid"];
+     this.num       =  data["num"];
      this.post_profile_image       =  data["image"];
      this.post_profile_username       =  data["username"];
      this.post_profile_ison       =  data["ison"];

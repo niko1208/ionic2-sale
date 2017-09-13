@@ -15,7 +15,7 @@ import { MyprofilePage } from './../myprofile/myprofile';
 import { TopsellerPage } from './../topseller/topseller';
 import { SearchPage } from './../search/search';
 import { BidPage } from './../bid/bid';
-import { Events } from 'ionic-angular';
+import { Events, LoadingController } from 'ionic-angular';
 import {MorePage} from '../more/more';
 import 'rxjs/add/operator/map';
 import * as $ from 'jquery';
@@ -39,6 +39,8 @@ export class HomePage implements ServerDataModelDelegate {
   my_array : any;
   keys_sub = [];
   temp_sub :any;
+  searchTerm: string="";
+  list = [];
 
   detailpage = DetailPage;
 ////////////////////////server data//////////////
@@ -52,7 +54,7 @@ export class HomePage implements ServerDataModelDelegate {
     public flag: any;
     public badge = '0';
 
-  constructor( public plateform:Platform, public navCtrl: NavController, public viweCtrl : ViewController,public server :Service,public http: Http,public datamodel:ServerDataModel, private ev: Events)
+  constructor( public plateform:Platform, public navCtrl: NavController, public viweCtrl : ViewController,public server :Service,public http: Http,public datamodel:ServerDataModel, private ev: Events, public _http:Http, private loading:LoadingController)
    {
      this.navCtrl = navCtrl;
      this.plateform = plateform;
@@ -75,6 +77,14 @@ export class HomePage implements ServerDataModelDelegate {
   gotoprofile() {
     this.navCtrl.push(MorePage);
   }
+
+  setFilteredItems() {
+
+  }
+
+  search() {
+    this.navCtrl.push(SearchPage,{searchTerm: this.searchTerm});
+  }
   
 ionViewWillEnter()
 {
@@ -87,6 +97,29 @@ ionViewWillEnter()
      this.datamodel.GetTreeCategoryInformation();
      this.datamodel.homedelegate = this;
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  var temp_url = 'http://sale4allz.com/ws/get_topseller.php';
+    var Form_data = new FormData();
+    Form_data.append('mypid', Global.Static_profile_id);
+
+    this._http.post(temp_url, Form_data).map(res =>res.json())
+    .subscribe(res => {
+      this.list = [];
+      let cc = res["items"].length;
+      if(cc > 10) cc = 10;
+      for(let i=0; i<cc; i++) {
+        let item = res['items'][i];
+        item['membership'] = "";
+        if(item.membership1 != "") item.membership = "Basic";
+        if(item.membership2 != "") item.membership = "Professional";
+        if(item.membership3 != "") item.membership = "Shop";
+        if(item.membership4 != "") item.membership = "Company";
+        res['items'][i] = item;
+        res['items'][i]['about'] = res['items'][i]['about'].replace(/\n/g, "<br/>");
+        this.list.push(item);
+      } 
+    }, error => {
+        alert("Error");
+    });
 }
 
   goBidPage(){
@@ -98,6 +131,35 @@ ionViewWillEnter()
   
   gotosearch(){
     this.navCtrl.push(SearchPage,{});
+  }
+
+  onfollow(pid, i, isfollow) {
+    if(Global.Static_profile_id == ""){
+      alert("You must login.");
+      return;
+    }
+    let load = this.loading.create({
+        content: 'Loading...',
+    });
+    load.present();
+
+    var temp_url = 'http://sale4allz.com/ws/update_follow.php';
+    var Form_data = new FormData();
+    
+    Form_data.append('profile_id', Global.Static_profile_id);
+    Form_data.append('rid', pid);
+
+    this._http.post(temp_url, Form_data).map(res =>res.json())
+    .subscribe(res => {
+        load.dismissAll();
+        this.datamodel.notify_follow(pid, isfollow);
+        if(isfollow == '1') isfollow = '0';
+        else isfollow = '1';
+        this.list[i].isfollow = isfollow;
+    }, error => {
+        load.dismissAll();
+        alert("Error");
+    });
   }
 
   dataSourceUpdated(data)

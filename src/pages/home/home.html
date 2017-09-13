@@ -29,11 +29,47 @@
         </ion-col>
     </ion-row>
   </ion-navbar>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" (keyup.enter)="search()"></ion-searchbar>
+    <ion-icon name="search" class="bt" (click)="search()"></ion-icon>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="home_content" style="background-color:gray; padding: 2px;" >
 
-   <ion-list>
+  <div class="s_cont">
+    <div class="div_title">Recommended TOPSELLERS</div> 
+    <button id='bt_viewall' ion-button small color='blue' (click)="goTopSellerPage()">View ALL</button>
+    <div class="s_cont_wrapper">
+      <div class="s_cont_slide" *ngFor="let item of list; let i = index;">
+        <div class="ranking">Rank {{i+1}}</div>
+        <div><img src="{{item.image}}" /></div>
+        <div>{{item.username}}</div>
+        <div>
+          <div class="overall_mark">{{item['mark']}}</div>
+          <div class="div_star">
+              <ion-icon *ngIf="item['mark']>=1" name="star"></ion-icon>
+              <ion-icon *ngIf="item['mark']>=2" name="star"></ion-icon>
+              <ion-icon *ngIf="item['mark']>=3" name="star"></ion-icon>
+              <ion-icon *ngIf="item['mark']>=4" name="star"></ion-icon>
+              <ion-icon *ngIf="item['mark']>=5" name="star"></ion-icon>
+              <ion-icon *ngIf="item['mark']%1!=0" name="star-half"></ion-icon>
+              <ion-icon *ngIf="item['mark']==0" name="star-outline"></ion-icon>
+              <ion-icon *ngIf="item['mark']<=1" name="star-outline"></ion-icon>
+              <ion-icon *ngIf="item['mark']<=2" name="star-outline"></ion-icon>
+              <ion-icon *ngIf="item['mark']<=3" name="star-outline"></ion-icon>
+              <ion-icon *ngIf="item['mark']<=4" name="star-outline"></ion-icon>
+          </div>
+          <div style="clear: both" class="reviewcount">{{item['num']}} Reviews</div>
+          <div (click)="onfollow(item.profile_id, i, item.isfollow);" class="bt_follow on_{{item.isfollow}}" id="bt_follow_{{i}}">
+            <span *ngIf="item.isfollow=='1'">Followed</span>
+            <span *ngIf="item.isfollow!='1'">+ Follow</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <ion-item style="height: 70px; display: none">
   <ion-fab left top style="width: 45px;height: 45px;margin-right: 10px;">
     <button ion-fab color="light"><ion-icon name="arrow-dropright"></ion-icon></button>
@@ -52,9 +88,9 @@
           <label style="color: green">{{key.cate_name}}</label>
            <label style="color: blue">{{key.cate_ar_name}}</label>
      </ion-item>-->
-   </ion-list>
 
-
+<div class="div_sec"></div>
+<div class="div_title">Categories</div>
 <ion-card class="home_card" *ngFor="let item of keys; let i = index" (click)="gotoNextPage(item.id, item.cate_name, item.cate_ar_name);">
   
   <ion-card-content>

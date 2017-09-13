@@ -147,3 +147,17 @@ ion-navbar.toolbar ion-title .toolbar-title{
 .tabs-md-primary .tab-button-icon{
     color: rgba(255, 255, 255, 0.5);
 }
+
+ion-toolbar ion-row ion-col:first-child{
+  border-right: 1px solid #ccc;
+}
+ion-toolbar ion-row ion-col{
+  font-size: 18px;
+  border-top: 1px solid #ccc;
+}
+ion-toolbar ion-row ion-col.sel{
+  font-weight: bold;
+  background: #387ef5;
+  border-top: 1px solid #387ef5;
+  color: #fff;
+}

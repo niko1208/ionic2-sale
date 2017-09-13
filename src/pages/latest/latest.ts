@@ -17,7 +17,7 @@ import { BidPage } from './../bid/bid';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Events } from 'ionic-angular';
-import {MorePage} from '../more/more';
+import { MorePage } from '../more/more';
 import * as $ from 'jquery';
 
 /*

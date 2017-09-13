@@ -168,20 +168,6 @@ button.button-md{
   padding: 0px 1px;
 }
 
-ion-toolbar ion-row ion-col:first-child{
-  border-right: 1px solid #ccc;
-}
-ion-toolbar ion-row ion-col{
-  font-weight: bold;
-  font-size: 18px;
-  border-top: 1px solid #ccc;
-}
-ion-toolbar ion-row ion-col.sel{
-  background: #387ef5;
-  border-top: 1px solid #387ef5;
-  color: #fff;
-}
-
 .overall_mark{
     background: #f18e00;
     padding: 2px 5px;
