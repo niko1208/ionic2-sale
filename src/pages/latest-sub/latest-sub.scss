@@ -53,7 +53,7 @@ ion-card.ion-pview{
   font-size: 14px;
   margin: 0px 3px;
 }
-.icon_sec_wanted div.bt_follow{
+.seller div.bt_follow{
   border-color: #f00;
   color: #f00;
   float: right;
@@ -218,7 +218,7 @@ div.pp div.state{
 div.pp div.state.on_1{
     background: #37a000;
 }
-div.pp div.bt_follow{
+div.bt_follow{
   position: absolute;
   border-radius: 50px;
   border: 1px solid #f00;
@@ -226,10 +226,10 @@ div.pp div.bt_follow{
   color: #f00;
   font-size: 14px;
   width: auto;
-  right: 5px;
-  top: 10px
+  right: 10px;
+  bottom: 20px
 }
-div.pp div.bt_follow.on_1{
+div.bt_follow.on_1{
   color: #fff !important;
   background: #f00;
 }
@@ -288,7 +288,7 @@ button.md-button.button-md{
   border-radius: 20px;
 }
 button.md-button.green{
-  background: #22b14c;
+  background: #ff8a65;
 }
 button.md-button.orange{
   background: #ff7f27;

@@ -17,31 +17,9 @@
       </button>
     </ion-title>
     <ion-title *ngIf="sub_wanted=='0'">
-      
+      Details
     </ion-title>
-    <div class="pp">
-        <img src="{{image}}" (click)="goprofile(sub_profile_id)"/>
-        <div>{{username}}<br/><small>{{state}}</small></div>
-        <div class="state on_{{ison}}"></div>
-        <div (click)="onfollow(sub_profile_id)" class="bt_follow on_{{isfollow}}">+ Follow</div>
-    </div>
-      <div class="overall_star">
-          <div class="overall_mark">{{myRating}}</div>
-          <div class="div_star">
-              <ion-icon *ngIf="myRating>=1" name="star"></ion-icon>
-              <ion-icon *ngIf="myRating>=2" name="star"></ion-icon>
-              <ion-icon *ngIf="myRating>=3" name="star"></ion-icon>
-              <ion-icon *ngIf="myRating>=4" name="star"></ion-icon>
-              <ion-icon *ngIf="myRating>=5" name="star"></ion-icon>
-              <ion-icon *ngIf="myRating%1!=0" name="star-half"></ion-icon>
-              <ion-icon *ngIf="myRating==0" name="star-outline"></ion-icon>
-              <ion-icon *ngIf="myRating<=1" name="star-outline"></ion-icon>
-              <ion-icon *ngIf="myRating<=2" name="star-outline"></ion-icon>
-              <ion-icon *ngIf="myRating<=3" name="star-outline"></ion-icon>
-              <ion-icon *ngIf="myRating<=4" name="star-outline"></ion-icon>
-          </div>
-          <div style="clear: both;color:#555;font-size: 12px">{{ratingCount}} Reviews</div>
-      </div>
+    
   </ion-navbar>
 
 </ion-header>
@@ -111,6 +89,7 @@
   </div>
 
   <div class="div_sec seller">
+    <div (click)="onfollow(sub_profile_id)" class="bt_follow on_{{isfollow}}">+ Follow</div>
     <div class="ranking">Rank</div>
     <div class="goprofile" (click)="goprofile(sub_profile_id)"><ion-icon name="ios-arrow-forward"></ion-icon></div>
     <div style="padding-bottom: 5px;"><small>About Seller</small></div>

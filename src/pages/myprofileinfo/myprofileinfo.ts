@@ -54,6 +54,7 @@ export class MyprofileinfoPage {
   }
 
   loadbackground() {
+    if(this.image == "") this.image = "assets/img/blank-1.png";
     $('#back_img').css('background', 'url('+this.image+')');
     $('#back_img').css('background-size', 'cover');
     $('#back_img').css('background-position', 'center');

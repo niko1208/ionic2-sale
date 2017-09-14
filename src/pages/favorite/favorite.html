@@ -26,10 +26,13 @@
 
 <ion-card class="late_card" *ngFor="let item of keys; let i = index" (click)="click_card(i);">
 
-  <div *ngIf="item.wanted=='1'" class="wanted">wanted</div>
+  <div *ngIf="item.post_type=='feature'" class="ribbon"><span>Featured</span></div>
+  <div *ngIf="item.post_type=='pre'" class="pre">Premium</div>
+  <div *ngIf="item.post_type=='pin'" class="pin">Pinned</div>
+  <div *ngIf="item.wanted=='1'" class="wanted">Wanted</div>
 
-  <div class="div_img">
-    <img  class="late_img" *ngFor="let itemurl of item.post_img_url;" src="{{itemurl}}"/>
+  <div class="div_img" [style.backgroundImage]="'url('+item.post_img_url[0]+')'">
+    <img class="late_img" *ngFor="let itemurl of item.post_img_url;" src="{{itemurl}}" style="display:none"/>
   </div>
   <div class="div_content">
     <div>

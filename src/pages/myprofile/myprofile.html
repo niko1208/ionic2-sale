@@ -110,6 +110,38 @@
     </div>
 
     <div class="sec">
+        <div class="div_sec">Your Profile Level</div>
+        <div class="div_progress">
+            <img src="assets/img/icon-4.png"/>
+            <div class='progress_wrapper'>
+                <div class='progress pro1' [style.width]="p1">{{pp1}}</div>
+            </div>
+            <label item-right>{{p1}}</label>
+        </div>
+        <div class="div_progress">
+            <img src="assets/img/icon-16.png"/>
+            <div class='progress_wrapper'>
+                <div class='progress pro2' [style.width]="p2">{{pp2}}</div>
+            </div>
+            <label item-right>{{p2}}</label>
+        </div>
+        <div class="div_progress">
+            <img src="assets/img/icon-12.png"/>
+            <div class='progress_wrapper'>
+                <div class='progress pro3' [style.width]="p3">{{pp3}}</div>
+            </div>
+            <label item-right>{{p3}}</label>
+        </div>
+        <div class="div_progress">
+            <img src="assets/img/icon-2.png"/>
+            <div class='progress_wrapper'>
+                <div class='progress pro4' [style.width]="p4">{{pp4}}</div>
+            </div>
+            <label item-right>{{p4}}</label>
+        </div>
+    </div>
+
+    <div class="sec">
         <div class="div_sec">Post Adv Management</div>
         <ion-item (click)="onmyads();">
             <ion-icon name ="megaphone" item-left></ion-icon>
@@ -188,38 +220,6 @@
             <ion-label>Recharge your Balance</ion-label>
             <ion-icon name ="arrow-dropright" item-right></ion-icon>
         </ion-item>
-    </div>
-
-    <div class="sec">
-        <div class="div_sec">Your Profile Level</div>
-        <div class="div_progress">
-            <img src="assets/img/icon-4.png"/>
-            <div class='progress_wrapper'>
-                <div class='progress pro1' [style.width]="p1">{{pp1}}</div>
-            </div>
-            <label item-right>{{p1}}</label>
-        </div>
-        <div class="div_progress">
-            <img src="assets/img/icon-16.png"/>
-            <div class='progress_wrapper'>
-                <div class='progress pro2' [style.width]="p2">{{pp2}}</div>
-            </div>
-            <label item-right>{{p2}}</label>
-        </div>
-        <div class="div_progress">
-            <img src="assets/img/icon-12.png"/>
-            <div class='progress_wrapper'>
-                <div class='progress pro3' [style.width]="p3">{{pp3}}</div>
-            </div>
-            <label item-right>{{p3}}</label>
-        </div>
-        <div class="div_progress">
-            <img src="assets/img/icon-2.png"/>
-            <div class='progress_wrapper'>
-                <div class='progress pro4' [style.width]="p4">{{pp4}}</div>
-            </div>
-            <label item-right>{{p4}}</label>
-        </div>
     </div>
 
 </ion-content>

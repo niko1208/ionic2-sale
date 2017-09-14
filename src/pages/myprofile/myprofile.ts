@@ -181,7 +181,7 @@ export class MyprofilePage {
     .subscribe(res => {
         this.loading.dismissAll();
         if(res['success'] == "true") {
-          this.profiledata = res['items'][0];
+          this.profiledata = res['items'][0]; console.log(this.profiledata);
             this.pnumber = res['items'][0]['phone'];
             this.image = res['items'][0]['image'];
             this.email = res['items'][0]['email'];

@@ -80,7 +80,7 @@ export class HomePage implements ServerDataModelDelegate {
   }
   goRProfile(i) {
     this.navCtrl.push(ProfilePage,{
-      profile_id: this.list[i].post_profile_id
+      profile_id: this.list[i].profile_id
     });
   }
 

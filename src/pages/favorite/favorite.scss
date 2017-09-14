@@ -19,7 +19,7 @@ page-favorite {
 .late_card
 {
   width: 49%;
-  height: 200px;
+  height: 220px;
   margin: 0;
   margin-right: 1%;
   margin-bottom: 10px;
@@ -27,8 +27,38 @@ page-favorite {
   background-color:#fff;
   float: left;
   position: relative;
+  overflow: visible;
   // background-image: url('../../assets/img/back1.png');
   // background-size: cover;
+}
+.wanted,
+.pin,
+.pre{
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  font-size: 10px;
+  line-height: 14px;
+  background: #2ec95c;
+  padding: 4px 5px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  box-shadow: #555 1px 2px 5px; 
+  width: 65px;
+}
+.wanted{
+  text-align: right;
+  box-shadow: #555 -1px 2px 5px; 
+}
+.pin, .pre{
+  left: 0px;
+}
+.pin{
+  background: #e44f0f;
+}
+.pre{
+  background: #387ef5;
 }
 .wanted{
   position: absolute;
@@ -45,9 +75,9 @@ page-favorite {
   padding: 10px 5px;
 }
 .div_img{
-  height:140px;
+  height: 170px;
   overflow: hidden;
-  border-bottom: 2px solid #1dafec;
+  background-size: cover;
 }
 .div_img img{
   width: 100%;
@@ -64,11 +94,11 @@ page-favorite {
   font-size: 11px;
 }
 .pprice{
-  color: #1dafec;
+  color: #ff7f27;
   font-size: 11px;
 }
 .ptitle{
-  color: #1dafec;
+  color: #ff7f27;
   font-size: 16px;
   padding-top: 5px;
   white-space: nowrap;
