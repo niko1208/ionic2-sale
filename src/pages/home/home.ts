@@ -8,6 +8,7 @@ import { Service } from './../../providers/service';
 import { Component } from '@angular/core';
 import { DetailPage } from '../detail/detail';
 import { PostPage } from './../post/post';
+import { ProfilePage } from './../profile/profile';
 import { LoginPage } from './../login/login';
 import { WantedthingPage } from './../wantedpage/wantedpage';
 import { MynotificationPage } from './../notification/notification';
@@ -76,6 +77,11 @@ export class HomePage implements ServerDataModelDelegate {
   }
   gotoprofile() {
     this.navCtrl.push(MorePage);
+  }
+  goRProfile(i) {
+    this.navCtrl.push(ProfilePage,{
+      profile_id: this.list[i].post_profile_id
+    });
   }
 
   setFilteredItems() {

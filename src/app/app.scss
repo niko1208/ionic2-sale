@@ -31,7 +31,6 @@
     top: 0px;
     width: 100%;
     height: 25px;
-    background: rgba(0,0,0,0.7);
 }
 .fstatusbar ion-icon{
     float: right;
@@ -124,8 +123,37 @@
     display: block;
 }
 
+ion-header{
+    background:rgb(76, 76, 76);
+}
+ion-navbar.toolbar,
+ion-toolbar{
+    position: relative;
+    padding: 0px;
+}
+ion-navbar .toolbar-background-md{
+    background:rgb(76, 76, 76);
+}
+ion-toolbar .toolbar-content{
+    background:rgb(76, 76, 76);
+    color: #fff;
+}
+ion-toolbar .row{
+    border-bottom: 2px solid #387ef5;
+}
 ion-navbar.toolbar ion-title .toolbar-title{
-    color: #3474e1;
+    color: #fff;
+}
+ion-icon.bt{
+    color: #eee;
+}
+.searchbar-md .searchbar-input{
+    border-radius: 40px;
+    background: #333;
+    color: #eee;
+}
+.back-button.show-back-button{
+    color: #fff;
 }
 
 .about_title{
@@ -148,16 +176,14 @@ ion-navbar.toolbar ion-title .toolbar-title{
     color: rgba(255, 255, 255, 0.5);
 }
 
-ion-toolbar ion-row ion-col:first-child{
-  border-right: 1px solid #ccc;
-}
 ion-toolbar ion-row ion-col{
   font-size: 18px;
-  border-top: 1px solid #ccc;
 }
 ion-toolbar ion-row ion-col.sel{
   font-weight: bold;
   background: #387ef5;
-  border-top: 1px solid #387ef5;
   color: #fff;
+}
+ion-content.content-md{
+    background: #ededed;
 }

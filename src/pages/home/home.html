@@ -35,13 +35,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="home_content" style="background-color:gray; padding: 2px;" >
+<ion-content class="home_content" style=" padding: 2px;" >
 
   <div class="s_cont">
     <div class="div_title">Recommended TOPSELLERS</div> 
     <button id='bt_viewall' ion-button small color='blue' (click)="goTopSellerPage()">View ALL</button>
     <div class="s_cont_wrapper">
-      <div class="s_cont_slide" *ngFor="let item of list; let i = index;">
+      <div class="s_cont_slide" *ngFor="let item of list; let i = index;" (click)="goRProfile(i)">
         <div class="ranking">Rank {{i+1}}</div>
         <div><img src="{{item.image}}" /></div>
         <div>{{item.username}}</div>

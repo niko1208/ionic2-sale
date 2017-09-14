@@ -88,6 +88,7 @@
     <div class="profile">
       <img class="div_img1" src="{{pid.pimage}}"/>
       <div class="div_item_right">
+        <div class="user_name" style="clear:both">{{pid['post_profile_username']}}</div>
         <div class="overall_mark">{{pid['mark']}}</div>
         <div class="div_star">
             <ion-icon *ngIf="pid['mark']>=1" name="star"></ion-icon>
