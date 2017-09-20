@@ -139,7 +139,7 @@ ion-toolbar .toolbar-content{
     color: #fff;
 }
 ion-toolbar .row{
-    border-bottom: 2px solid #387ef5;
+    /*border-bottom: 2px solid #387ef5;*/
 }
 ion-navbar.toolbar ion-title .toolbar-title{
     color: #fff;
@@ -178,12 +178,37 @@ ion-icon.bt{
 
 ion-toolbar ion-row ion-col{
   font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
 }
 ion-toolbar ion-row ion-col.sel{
   font-weight: bold;
-  background: #387ef5;
+  border-bottom: 4px solid #ff8a65;
   color: #fff;
 }
 ion-content.content-md{
     background: #ededed;
+}
+.fast_post{
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    background: #fe5e4c;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    color: #fff;
+    padding: 10px;
+    z-index: 99;
+    text-align: center;
+    padding-top: 3px;
+}
+.fast_post ion-icon{
+    font-size: 36px;
+}
+.fast_post small{
+    margin-top: -7px;
+    display: block;
+    font-size: 10px;
 }

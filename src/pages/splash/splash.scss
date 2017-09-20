@@ -1,18 +1,34 @@
 page-splash {
 
 .splash{
-    height: 90%;
+    height: 100%;
     position: relative;
-    margin-top: 5%;
+    margin: 0;
+    width: 100%;
 }
 .splash img{
     height: 90%;
 }
 .splash button{
     position: absolute;
-    bottom: 1px;
-    left: 0px;
-    width: 99%;
+    bottom: 0px;
+    left: -2px;
+    width:100%;
+}
+.splash div.back{
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: calc(100% - 90px);
+}
+div.banner{
+    background: #ff8a65;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    height: 50px;
+    padding-top: 10px;
 }
 
 }

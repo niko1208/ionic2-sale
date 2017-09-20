@@ -41,8 +41,8 @@
       <button  ion-button class="uploadButton"  (click) ="gotoWantedPage();"> <label class="category">Choose Category</label> </button>
       -->
     </ion-item>
-
-    <ion-item>
+    
+    
         <!--<img src="img/motor3.jpg"></img>-->
         <!--
         <button style="width:100%;height:200px;border-radius:10%;justify-content: center;" (click)="presentActionSheet();">
@@ -50,7 +50,7 @@
           <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
         </button>
         <!--<button ion-button icon-left (click)="presentActionSheet()"> <ion-icon name="camera"></ion-icon>Select Image</button>-->
-    </ion-item>
+    
 
 
     <ion-item>
@@ -65,8 +65,30 @@
 
   <ion-item style="height: 200px;">
     <ion-label fixed style="color:black;">Description</ion-label>
-    <ion-input type="text" value="" id="Description" [(ngModel)]="post_desc" required></ion-input>
+    <ion-textarea value="" id="Description" [(ngModel)]="post_desc" required></ion-textarea>
   </ion-item>
+
+  <ion-item>
+     <ion-checkbox [(ngModel)]="add_detail"></ion-checkbox>
+     <ion-label> ADD DETAILS (optional)</ion-label>
+  </ion-item>
+
+  <ion-row *ngIf="add_detail" style="background: #fff;position: relative">
+    <ion-item>
+      <ion-label>CONDITION : </ion-label>
+      <ion-toggle [(ngModel)]="condition"></ion-toggle>
+    </ion-item>
+     <ion-label style="padding-left: 16px;font-size: 16px;">DELIVERY</ion-label>
+     <ion-item>
+      <ion-checkbox [(ngModel)]="isfree" (ionChange)="changeFree()"></ion-checkbox><ion-label>Free</ion-label>
+     </ion-item>
+     <ion-item>
+      <ion-checkbox [(ngModel)]="isnofree" (ionChange)="changeNoFree()"></ion-checkbox><ion-label>Not Free</ion-label>
+     </ion-item>
+     <div style="position: absolute; bottom: 10px; right: 10px;">
+       Cost&nbsp;<input type='text' style="width:50px;padding:3px 5px;font-size: 16px;"/>&nbsp;KD
+     </div>
+  </ion-row>
 
   <ion-item>
     <button ion-button block class='md-button green' (click)="post_type='free';clickPostButton()">post free ad</button>

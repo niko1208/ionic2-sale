@@ -44,6 +44,11 @@ export class PostPage{
     public flag: any;
     public badge = '0';
 
+  isfree = false;
+  isnofree = true;
+  condition = false;
+  add_detail = false;
+
   constructor(public model:ServerDataModel,
               public navCtrl: NavController,
               public navParams: NavParams,
@@ -85,6 +90,18 @@ export class PostPage{
     this.navCtrl.push(SearchPage,{});
   }
   
+  changeFree() {
+    if(this.isfree)
+      this.isnofree = false;
+    else
+      this.isnofree = true;
+  }
+  changeNoFree() {
+    if(this.isnofree)
+      this.isfree = false;
+    else
+      this.isfree = true;
+  }
  ionViewWillEnter()
  {
    let pay = localStorage.getItem('pay');

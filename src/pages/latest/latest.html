@@ -48,7 +48,7 @@
 
 
 <ion-content class="late_content">
-
+<div class='fast_post' (click)="goPostPage()"><ion-icon name="ios-camera"></ion-icon><small>POST</small></div>
 <div *ngIf="!clickFollow">
   <ion-card *ngFor="let item of keys; let i = index" class="late_card" (click)="click_card(i);">
     <!--<ion-item class="late_header">
