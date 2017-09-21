@@ -171,6 +171,9 @@ export class LatestPage implements ServerDataModelDelegate {
       var send_category_id    = send_array["post_category_id"];
       var send_islike    = send_array["islike"];
       var send_isfollow    = send_array["post_profile_isfollow"];
+      var condition    = send_array["condition"];
+      var delivery    = send_array["delivery"];
+      var delivery_cost    = send_array["delivery_cost"];
 
       if(send_wanted == '1') {
         this.navCtrl.push(WantedthingPage,{
@@ -200,7 +203,10 @@ export class LatestPage implements ServerDataModelDelegate {
          category_id:send_category_id,
          islike:send_islike,
          profile_id: send_profile_id,
-         isfollow: send_isfollow
+         isfollow: send_isfollow,
+         condition: condition,
+         delivery: delivery,
+         delivery_cost: delivery_cost
        });
       }
   }

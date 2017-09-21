@@ -48,6 +48,7 @@ export class PostPage{
   isnofree = true;
   condition = false;
   add_detail = false;
+  dcost = '';
 
   constructor(public model:ServerDataModel,
               public navCtrl: NavController,
@@ -327,13 +328,18 @@ public pathForImage(img) {
 public uploadcall(url, idx, postid) { 
   var targetPath = this.picitems[idx].imgurl;
       var filename = this.picitems[idx].filename;
-
+      let delivery = 'free';
+      let delivery_cost = '';
+      if(this.isnofree) {
+        delivery = 'nofree';
+        delivery_cost = this.dcost;
+      }
       var options = {
         fileKey: "media_file",
         fileName: filename,
         chunkedMode: false,
         mimeType: "multipart/form-data",
-        params : {'postid': postid, 'fileName': filename,'title':this.post_title,'price':this.post_price,'content':this.post_desc,'category_id':Global.Static_category_id, 'country':Global.Static_region, 'profile_id':Global.Static_profile_id, 'post_type':this.post_type}
+        params : {'postid': postid, 'fileName': filename,'title':this.post_title,'price':this.post_price,'content':this.post_desc,'category_id':Global.Static_category_id, 'country':Global.Static_region, 'profile_id':Global.Static_profile_id, 'post_type':this.post_type, 'add_detail':this.add_detail, 'condition':this.condition, 'delivery':delivery, 'delivery_cost':delivery_cost}
       };
 
       const fileTransfer = new Transfer();

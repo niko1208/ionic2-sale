@@ -9,7 +9,7 @@
       <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
   </div>
   
-  <ion-navbar>
+  <ion-navbar *ngIf="false">
     <ion-title *ngIf="sub_wanted=='1'">
       <div style="float: left; padding-top: 10px">Wanted Things</div>
       <button color="secondary" ion-button style="margin-right:10px; float:right" (click)="goPostWnatedThing();">
@@ -41,9 +41,23 @@
       </ion-col>
     </ion-row>
     <div class="div_img" id="div_detail">
+      <div id="popup" *ngIf="ispopup">
+        <div (click)="clickItem(1)">Report</div>
+        <div (click)="clickItem(2)">Block</div>
+        <div (click)="clickItem(3)">Help</div>
+      </div>
+      <ion-icon class="arrow-back" name="arrow-back" (click)="navCtrl.pop()"></ion-icon>
+      <ion-icon class="arrow-more" name="more" (click)="popup()"></ion-icon>
+      <!--
       <ion-scroll scrollX="true"  class="div_img_wrapper">
         <img  *ngFor="let imgurl of sub_url; let i=index;" id="img{{i}}" src="{{imgurl}}" (click)="gotoview(i)" />
       </ion-scroll>
+      -->
+      <ion-slides pager id='slides' #slides>
+        <ion-slide *ngFor="let imgurl of sub_url; let i=index;">
+          <img id="img{{i}}" src="{{imgurl}}" (click)="gotoview(i)" />
+        </ion-slide>
+      </ion-slides>
     </div>
     <div class="icon_sec_wanted" *ngIf="sub_wanted=='0'">
       <div (click)="callIT(phonenumber)" class="divsel1">Call</div>
@@ -58,16 +72,23 @@
       <ion-col *ngIf="sub_wanted=='0'">
         <div class='center'>Price</div><br/>
         <div class='center colorb'>{{sub_price}} KWD</div>
+        <div *ngIf="delivery == 'true'" text-center style="color:#01aa41">Free Delivery</div>
       </ion-col>
       <ion-col *ngIf="sub_wanted=='1'">
         <div class='center'>Date/Time</div><br/>
         <div class='center colorb'>{{sub_date}}</div>
+      </ion-col>
+      <ion-col *ngIf="condition != ''">
+        <div class='center'>Condition</div><br/>
+        <div class='center colorb' *ngIf="condition == 'true'">NEW</div>
+        <div class='center colorb' *ngIf="condition != 'true'">USED</div>
       </ion-col>
       <ion-col>
         <div class='center'>Views</div><br/>
         <div class='center colorb'>{{sub_views}}</div>
       </ion-col>
     </ion-row>
+    
   </div>
 
   <div class="div_sec noborder noshadow">

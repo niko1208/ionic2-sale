@@ -86,7 +86,7 @@
       <ion-checkbox [(ngModel)]="isnofree" (ionChange)="changeNoFree()"></ion-checkbox><ion-label>Not Free</ion-label>
      </ion-item>
      <div style="position: absolute; bottom: 10px; right: 10px;">
-       Cost&nbsp;<input type='text' style="width:50px;padding:3px 5px;font-size: 16px;"/>&nbsp;KD
+       Cost&nbsp;<input type='text' [(ngModel)]='dcost' style="width:50px;padding:3px 5px;font-size: 16px;"/>&nbsp;KD
      </div>
   </ion-row>
 

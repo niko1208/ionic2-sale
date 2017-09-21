@@ -82,8 +82,13 @@ export class LatestSubPage  implements ServerDataModelDelegate{
   public ml = [];
   public pData = {};
 
+  delivery = "";
+  condition = "";
+  delivery_cost = "";
+  ispopup = false;
+
   public flag: any;
-    public badge = '0';
+  public badge = '0';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private loading:LoadingController, public datamodel:ServerDataModel, public _http:Http, private alertCtrl: AlertController, private ev: Events) {
     this.navCtrl = navCtrl;
@@ -117,6 +122,10 @@ export class LatestSubPage  implements ServerDataModelDelegate{
     this.myprofile_id = Global.Static_profile_id;
 
     var isfollow = navParams.get("isfollow");
+
+    this.delivery = navParams.get("delivery");
+    this.condition = navParams.get("condition");
+    this.delivery_cost = navParams.get("delivery_cost");
     
     this.catename = "";
     
@@ -595,5 +604,12 @@ export class LatestSubPage  implements ServerDataModelDelegate{
     }
     var id = this.sub_id;
     this.datamodel.DeleteMyAds(id);
+  }
+
+  popup() {
+    this.ispopup = !(this.ispopup);
+  }
+  clickItem(i) {
+    this.ispopup = false;
   }
 }

@@ -28,6 +28,9 @@ export class PostDataModel
   followtext: string;
   img_url: string;
   num: string;
+  condition: string;
+  delivery: string;
+  delivery_cost: string;
 
   constructor(data)
   {
@@ -56,6 +59,10 @@ export class PostDataModel
      this.post_profile_isfollow       =  data["isfollow"];
      this.img_url       =  data["img_url"];
      this.followtext = "+ Follow";
+     this.delivery = data['delivery'];
+     this.condition = data['condition'];
+     this.delivery_cost = data['delivery_cost'];
+
   }
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,4 +1,37 @@
 page-latest-sub {
+.arrow-back,
+.arrow-more{
+  position: absolute;
+  padding: 5px 10px;
+  font-size: 24px;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50px;
+  margin: 5px;
+  left: 0px;
+  top: 0px;
+  z-index: 9;
+}
+.arrow-more{
+  left: auto;
+  right: 0px;
+  background: transparent;
+}
+#popup{
+  position: absolute;
+  padding: 10px;
+  font-size: 16px;
+  background: #fff;
+  color: #333;
+  box-shadow: #aaa 1px 1px 3px;
+  right: 0px;
+  top: 40px;
+  z-index: 99;
+}
+#popup div{
+  padding: 5px 10px;
+  border-bottom: 1px solid #ccc;
+}
 
 ion-card.ion-pview{
   background: #eee;
@@ -70,6 +103,7 @@ ion-card.ion-pview{
   height:220px;
   overflow: hidden;
   position: relative;
+  background: #ddd;
 }
 .div_img_wrapper{
   height: 220px;
