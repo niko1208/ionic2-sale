@@ -79,6 +79,8 @@ export class ProfilePage {
     public strtooltip = "";
     public tool_tip = false;
 
+    public viewstyle = 0;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public datamodel:ServerDataModel, public toastCtrl: ToastController, public platform: Platform, private ev: Events) {
 
@@ -139,6 +141,10 @@ export class ProfilePage {
     $('#tab_'+sec).addClass("sel");
     $('#div_'+sec).css('display', 'block');
 
+  }
+
+  view(i) {
+    this.viewstyle = i;
   }
 
   onfollowing() {

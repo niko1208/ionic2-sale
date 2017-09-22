@@ -45,7 +45,7 @@ export class PostPage{
     public badge = '0';
 
   isfree = false;
-  isnofree = true;
+  isnofree = false;
   condition = false;
   add_detail = false;
   dcost = '';
@@ -90,7 +90,13 @@ export class PostPage{
   gotosearch(){
     this.navCtrl.push(SearchPage,{});
   }
-  
+  changeDetail() {
+    if(this.add_detail) {}
+    else {
+      this.isfree = false;
+      this.isnofree = false;
+    }
+  }
   changeFree() {
     if(this.isfree)
       this.isnofree = false;

@@ -570,7 +570,10 @@ export class LatestSubPage  implements ServerDataModelDelegate{
       this._http.post(temp_url, Form_data).map(res =>res.json())
       .subscribe(res => {
           load.dismissAll();
-          this.presentToast("Added to your favorite list.");
+          if(this.blike == '1')
+            this.presentToast("Added to your favorite list.");
+          else 
+            this.presentToast("Removed to your favorite list.");
       }, error => {
           load.dismissAll();
           alert("Error");
@@ -580,7 +583,7 @@ export class LatestSubPage  implements ServerDataModelDelegate{
   private presentToast(text) {
     let toast = this.toastCtrl.create({
       message: text,
-      duration: 3000,
+      duration: 2000,
       position: 'top'
     });
     toast.present();

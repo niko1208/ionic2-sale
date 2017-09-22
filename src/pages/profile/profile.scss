@@ -7,7 +7,7 @@ page-profile{
     border-radius: 5px;
     border: 1px solid rgba(255,255,255,0.9);
     overflow: hidden;
-    top: 90px;
+    top: 100px;
     left: 20px;
 }
 .div_photo img{
@@ -121,14 +121,14 @@ div.state{
     width: 18px;
     height: 18px;
     border-radius: 10px;
-    top: 160px;
+    top: 170px;
     left: 90px;
     padding: 0;
     z-index: 1;
 }
 div.state_text{
     position: absolute;
-    top: 163px;
+    top: 173px;
     left: 110px;
     padding: 0;
     z-index: 1;
@@ -167,7 +167,6 @@ div.state_text{
     height: 100%;
 }
 .div_tab{
-    border-bottom: 2px solid #387ef5;
     margin-top: 5px;
 }
 .div_30p{
@@ -180,8 +179,9 @@ div.state_text{
     color: #333;
 }
 .div_30p.sel{
-    background: #387ef5;
-    color: #fff;
+    border-bottom:3px solid #387ef5;
+    font-weight: bold;
+    color: #000;
 }
 .div_item_right{
     width: calc(100% - 40px);
@@ -234,6 +234,22 @@ div.state_text{
     height: 150px;
     margin-left: 20px;
 
+}
+.viewstyle ion-icon{
+    margin-left: 10px;
+    font-size: 20px;
+    color: #555;
+}
+.viewstyle ion-icon.sel{
+    color: #387ef5;
+}
+ion-card.card-md{
+    width: 45%;
+    height: 170px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 2.5%;
 }
 .mark{
     font-size: 40px;
@@ -1375,7 +1391,7 @@ div.state_text{
     top: 100px;
 }
 .back_img{
-    height: 150px;
+    height: 170px;
     width: 100%;
     background-size: cover;
 }

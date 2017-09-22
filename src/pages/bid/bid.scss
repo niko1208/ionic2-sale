@@ -46,11 +46,20 @@ page-bid{
     padding-top: 20px;
 }
 .div_right font{
-    color: #f00;
+    color: #ff8a65;
 }
 ion-card.card-md{
     float: left;
     width: 140px;
+}
+
+ion-content.late_content,
+ion-item.item-md{
+  background: #4c4c4c;
+}
+.late_content *{
+  color: #fff;
+  font-weight: bold;
 }
 
 }

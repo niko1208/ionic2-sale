@@ -99,8 +99,11 @@ ion-card.ion-pview{
     color: #fff;
 }
 
+ion-slide.swiper-slide{
+  display: block;
+}
 .div_img{
-  height:220px;
+  height: 240px;
   overflow: hidden;
   position: relative;
   background: #ddd;

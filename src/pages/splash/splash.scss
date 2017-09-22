@@ -5,13 +5,14 @@ page-splash {
     position: relative;
     margin: 0;
     width: 100%;
+    background: #212121;
 }
 .splash img{
     height: 90%;
 }
 .splash button{
     position: absolute;
-    bottom: 0px;
+    bottom: -4px;
     left: -2px;
     width:100%;
 }
@@ -19,7 +20,10 @@ page-splash {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: calc(100% - 90px);
+    height: calc(100% - 88px);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #212121;
 }
 div.banner{
     background: #ff8a65;

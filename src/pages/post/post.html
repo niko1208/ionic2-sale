@@ -54,40 +54,48 @@
 
 
     <ion-item>
-      <ion-label fixed style="color:black;">Title</ion-label>
+      <ion-label fixed>Title</ion-label>
       <ion-input type="text" value="" id="Title" [(ngModel)]="post_title" required></ion-input>
     </ion-item>
 
    <ion-item>
-    <ion-label fixed style="color:black;">Price</ion-label>
+    <ion-label fixed>Price</ion-label>
     <ion-input type="text" value="" id="Price" [(ngModel)]="post_price" required></ion-input>
   </ion-item>
 
   <ion-item style="height: 200px;">
-    <ion-label fixed style="color:black;">Description</ion-label>
+    <ion-label fixed>Description</ion-label>
     <ion-textarea value="" id="Description" [(ngModel)]="post_desc" required></ion-textarea>
   </ion-item>
 
   <ion-item>
-     <ion-checkbox [(ngModel)]="add_detail"></ion-checkbox>
+     <ion-checkbox [(ngModel)]="add_detail" (ionChange)="changeDetail()"></ion-checkbox>
      <ion-label> ADD DETAILS (optional)</ion-label>
   </ion-item>
 
-  <ion-row *ngIf="add_detail" style="background: #fff;position: relative">
+  <ion-row style="position: relative" [ngClass]="{'rover':!add_detail}">
+    <div class='rover' *ngIf="!add_detail" ></div>
     <ion-item>
       <ion-label>CONDITION : </ion-label>
-      <ion-toggle [(ngModel)]="condition"></ion-toggle>
+      <ion-label text-right>
+        <div class='utab'>
+          <div [ngClass]="{'sel':condition==false}" (click)="condition=false;">Used</div>
+          <div [ngClass]="{'sel':condition==true}" (click)="condition=true;">New</div>
+        </div>
+      </ion-label>
     </ion-item>
+    <ion-item>
      <ion-label style="padding-left: 16px;font-size: 16px;">DELIVERY</ion-label>
-     <ion-item>
-      <ion-checkbox [(ngModel)]="isfree" (ionChange)="changeFree()"></ion-checkbox><ion-label>Free</ion-label>
-     </ion-item>
-     <ion-item>
-      <ion-checkbox [(ngModel)]="isnofree" (ionChange)="changeNoFree()"></ion-checkbox><ion-label>Not Free</ion-label>
-     </ion-item>
-     <div style="position: absolute; bottom: 10px; right: 10px;">
-       Cost&nbsp;<input type='text' [(ngModel)]='dcost' style="width:50px;padding:3px 5px;font-size: 16px;"/>&nbsp;KD
-     </div>
+    </ion-item>
+    <ion-item>
+    <ion-checkbox [(ngModel)]="isfree" (ionChange)="changeFree()"></ion-checkbox><ion-label>Free</ion-label>
+    </ion-item>
+    <ion-item>
+    <ion-checkbox [(ngModel)]="isnofree" (ionChange)="changeNoFree()"></ion-checkbox><ion-label>Not Free</ion-label>
+    </ion-item>
+    <div style="position: absolute; bottom: 10px; right: 10px;">
+      Cost&nbsp;<input class='dcost' type='text' [(ngModel)]='dcost' style="width:50px;padding:3px 5px;font-size: 16px;"/>&nbsp;KD
+    </div>
   </ion-row>
 
   <ion-item>

@@ -177,4 +177,12 @@ ion-item.highlight{
     font-size: 12px;
 }
 
+ion-content.detail_content,
+ion-item.item-md{
+  background: #4c4c4c;
+}
+.detail_content *{
+  color: #fff;
+}
+
 }

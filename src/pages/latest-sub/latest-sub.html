@@ -72,13 +72,13 @@
       <ion-col *ngIf="sub_wanted=='0'">
         <div class='center'>Price</div><br/>
         <div class='center colorb'>{{sub_price}} KWD</div>
-        <div *ngIf="delivery == 'true'" text-center style="color:#01aa41">Free Delivery</div>
+        <div *ngIf="delivery == 'free'" text-center style="color:#01aa41">Free Delivery</div>
       </ion-col>
       <ion-col *ngIf="sub_wanted=='1'">
         <div class='center'>Date/Time</div><br/>
         <div class='center colorb'>{{sub_date}}</div>
       </ion-col>
-      <ion-col *ngIf="condition != ''">
+      <ion-col *ngIf="condition == 'true'">
         <div class='center'>Condition</div><br/>
         <div class='center colorb' *ngIf="condition == 'true'">NEW</div>
         <div class='center colorb' *ngIf="condition != 'true'">USED</div>

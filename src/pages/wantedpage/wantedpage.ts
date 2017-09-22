@@ -145,19 +145,12 @@ export class WantedthingPage  implements ServerDataModelDelegate{
         }
       }
 
+      console.log(this.keys);
+
       for (let index in this.keys)
       {
         this.temp = this.keys[index];
         this.likeary.push(this.temp['islike']);
-      }
-      
-      if(id != "0") {
-          
-          //console.log($('#item_'+String(id)));
-          /*
-          $('.sub_content').animate({
-              scrollTop: $('#item_'+id).offset().top
-          }, 500);*/
       }
       
   }
@@ -253,7 +246,7 @@ export class WantedthingPage  implements ServerDataModelDelegate{
     });
   }
 
-  onlike(post_id, wanted, islike, idx) {
+  onlike(post_id, wanted, islike, idx, item) {
 
     if(Global.Static_profile_id == ""){
       alert("You must login.");
@@ -278,6 +271,7 @@ export class WantedthingPage  implements ServerDataModelDelegate{
       .subscribe(res => {
           load.dismissAll();
           this.likeary[idx] = islike;
+          item.islike = islike;
           if(islike == '1') {
             this.presentToast("Added to your favorite list.");
           } else {

@@ -123,15 +123,28 @@
     </div>
 
     <div class="div_cont" id="div_ads">
-        <ion-item  *ngFor="let item of keys; let i = index" (click)="click_card(i);">
-            <div class="div_img">
-                <img  class="late_img" *ngFor="let itemurl of item.post_img_url;" src="{{itemurl}}"/>
-            </div>
-            <div class="div_item_right">
-                <div class="name">{{item.post_title}}</div>
-                <div class="date">{{item.post_date}}</div>
-            </div>
-        </ion-item>
+        <div class='viewstyle'>
+            <ion-icon name='list' [ngClass]="{'sel':viewstyle==0}" (click)='view(0)'></ion-icon>
+            <ion-icon name='apps' [ngClass]="{'sel':viewstyle==1}" (click)='view(1)'></ion-icon>
+        </div>
+        <div *ngIf="viewstyle == 0">
+            <ion-item  *ngFor="let item of keys; let i = index" (click)="click_card(i);">
+                <div class="div_img">
+                    <img class="late_img" *ngFor="let itemurl of item.post_img_url;" src="{{itemurl}}"/>
+                </div>
+                <div class="div_item_right">
+                    <div class="name">{{item.post_title}}</div>
+                    <div class="date">{{item.post_date}}</div>
+                </div>
+            </ion-item>
+        </div>
+        <div *ngIf="viewstyle == 1">
+            <ion-card  *ngFor="let item of keys; let i = index" (click)="click_card(i);">
+                <div class="div_img1">
+                    <img class="late_img" *ngFor="let itemurl of item.post_img_url;" src="{{itemurl}}"/>
+                </div>
+            </ion-card>
+        </div>
     </div>
     <div class="div_cont" id="div_rating">
         <div class="div_top_mark">

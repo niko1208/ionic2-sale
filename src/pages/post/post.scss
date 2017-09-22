@@ -119,14 +119,44 @@ button.md-button.button-md{
 .item-md .item-button.md-button.orange{
   background: #ff7f27;
 }
-.rover{
+.utab{
+  float: right;
+}
+.utab div{
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  float: right;
+}
+.utab div:first-child{
+  border-left: 0px;
+}
+.utab div.sel{
+  background: #1dafec;
+  border: 1px solid #1dafec;
+  color: #fff;
+}
+ion-content.add_post_content,
+ion-item.item-md{
+  background: #4c4c4c;
+}
+.add_post_content *{
+  color: #fff;
+  font-weight: bold;
+}
+.add_post_content input.dcost{
+  color: #333;
+}
+
+div.rover{
   width: 100%;
   height: 100%;
-  background: rgba(255,255,255,0.3);
   position: absolute;
   z-index: 99;
   left: 0px;
   top: 0px;
+}
+ion-row.rover *{
+  color: #888;
 }
 
 }
