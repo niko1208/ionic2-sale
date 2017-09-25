@@ -72,7 +72,8 @@
       <ion-col *ngIf="sub_wanted=='0'">
         <div class='center'>Price</div><br/>
         <div class='center colorb'>{{sub_price}} KWD</div>
-        <div *ngIf="delivery == 'free'" text-center style="color:#01aa41">Free Delivery</div>
+        <div *ngIf="delivery == 'free'" text-center style="color:#01aa41">FREE Delivery</div>
+        <div *ngIf="delivery != 'free'" text-center style="color:#01aa41; font-size:12px">Delivery {{delivery_cost}}KD</div>
       </ion-col>
       <ion-col *ngIf="sub_wanted=='1'">
         <div class='center'>Date/Time</div><br/>
@@ -86,6 +87,10 @@
       <ion-col>
         <div class='center'>Views</div><br/>
         <div class='center colorb'>{{sub_views}}</div>
+      </ion-col>
+      <ion-col>
+        <div class='center'><ion-icon name='ios-heart-outline' style="font-size: 18px"></ion-icon></div><br/>
+        <div class='center colorb'>{{sub_likes}}</div>
       </ion-col>
     </ion-row>
     

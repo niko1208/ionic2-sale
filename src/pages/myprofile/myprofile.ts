@@ -74,6 +74,8 @@ export class MyprofilePage {
     public pp3 = "";
     public pp4 = "";
 
+    info_text = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public toastCtrl: ToastController, public platform: Platform, private ev: Events) {
 
@@ -118,6 +120,14 @@ export class MyprofilePage {
     }
     this.loadProfile();
     this.loadreview();
+
+    this.info_text = [];
+    this.info_text.push({title: 'AVAILABLE BALANCE', text:'this is your  current account balance and the number of points you have, you can use this money inside the app for buying packages or feature an ad or even more, you can increase it and grow your business inside the app to be effective seller and noticed by all users. so start now before it become hard.'});
+    this.info_text.push({title: 'the profile level ', text:'the first badge:\ncup badge:<br/>This prize you gain  it when you reach 400 points, you get points from featuring an ad  or buying membership package , to higher your rank in top sellers page<br/>CUP PLUS badge:<br/>This prize you gain it when you reach 600 points,<br/>CROWN badge:<br/>This prize you gain it when you reach 1000 points.<br/>CROWN PLUS badge:<br/>This prize you gain it when you reach 1500 points<br/>.'});
+    this.info_text.push({title: 'the post ad managment ', text:'My advertisements:<br/>to view all your current posted ads and modify/edit them<br/>free ads left:<br/>your avaliable free posts remaining<br/>favorite,<br/>to view favorited items page<br/>My chat <br/>to check ur chat between users<br/>Bids<br/>To reset all bids for your items<br/>.'});
+    this.info_text.push({title: 'the bar of featured ad', text:'.'});
+
+    this.ev.publish('setinfo', this.info_text);
   }
 
   ionViewDidLoad() {

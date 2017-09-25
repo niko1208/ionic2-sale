@@ -10,6 +10,7 @@
       <img src="{{flag}}" />
       <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
       <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+       <ion-icon name="help" (click)="showInfo()"></ion-icon>
       <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
   </div>
   <ion-navbar color="">
@@ -18,8 +19,9 @@
     
     <ion-row>
         <ion-col col-3>
-          <button ion-button color="secondary" (click)="goPostPage();">Post Ad
-            <!--<ion-icon  name ="add-circle">Post ad</ion-icon>-->
+          <button ion-button color="secondary" (click)="goPostPage();">
+            <ion-icon  name ="ios-camera"></ion-icon>
+            <label>Post ad</label>
           </button>
         </ion-col>
 

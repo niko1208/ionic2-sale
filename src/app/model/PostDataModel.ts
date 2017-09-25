@@ -20,6 +20,7 @@ export class PostDataModel
   post_viewcount:string;
   wanted: string;
   islike: string;
+  likes: string;
   mark: string;
   review: string;
   pimage: string;
@@ -48,6 +49,7 @@ export class PostDataModel
      this.post_type       =  data["post_type"];
      this.wanted       =  data["wanted"];
      this.islike       =  data["islike"];
+     this.likes       =  data["likes"];
      this.mark       =  data["mark"];
      this.review       =  data["review"];
      this.pimage       =  data["profile_image"];

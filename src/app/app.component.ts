@@ -20,14 +20,29 @@ export class MyApp {
 
   
   // rootPage = TabsPage;
+  public info_text = [];
+  public info_idx = 0;
+  public showInfo = false;
   
   public rootPage : any;
   
    providers: [Service]
    
-  constructor(public platform: Platform, events:Events, public push: Push,
+  constructor(public platform: Platform, public push: Push,
               public alertCtrl: AlertController, public _http:Http, public ev: Events) {
+
+    
+      this.ev.subscribe("showinfo", (bshow) => {
+        this.showInfo = !(this.showInfo);
+      });
+
+      this.ev.subscribe("setinfo", (infoary) => {
+        this.info_text = infoary;
+      });
+
     platform.ready().then(() => {
+
+
       this.initPushNotification();
 
       var loggedin = localStorage.getItem('loggedin');
@@ -149,5 +164,20 @@ export class MyApp {
 
     pushObject.on('error').subscribe(error => console.error('Error with Push plugin' + error));
   }
-  
+
+  info_close() {
+    this.showInfo = false;
+  }  
+
+  info_next() {
+    if(this.info_idx < this.info_text.length-1) {
+      this.info_idx = this.info_idx + 1;
+    }
+  }
+
+  info_prev() {
+    if(this.info_idx > 0) {
+      this.info_idx = this.info_idx - 1;
+    }
+  }
 }

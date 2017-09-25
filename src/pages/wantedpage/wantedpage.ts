@@ -273,8 +273,10 @@ export class WantedthingPage  implements ServerDataModelDelegate{
           this.likeary[idx] = islike;
           item.islike = islike;
           if(islike == '1') {
+            item.likes = eval(item.likes) + 1;
             this.presentToast("Added to your favorite list.");
           } else {
+            item.likes = eval(item.likes) - 1;
             this.presentToast("Removed to your favorite list.");
           }
       }, error => {
@@ -313,7 +315,7 @@ export class WantedthingPage  implements ServerDataModelDelegate{
   private presentToast(text) {
     let toast = this.toastCtrl.create({
       message: text,
-      duration: 3000,
+      duration: 2000,
       position: 'top'
     });
     toast.present();

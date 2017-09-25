@@ -39,6 +39,7 @@ export class LatestPage implements ServerDataModelDelegate {
   keys : Array<MyDataModel> = [];
   temp : any;
   pids = [];
+  info_text = [];
 
   public clickFollow = false;
   flag : any;
@@ -59,6 +60,8 @@ export class LatestPage implements ServerDataModelDelegate {
       console.log("event : ", badge);
     })
     
+
+
     //  this.datamodel.GetPostProducts();
     //  this.datamodel.homedelegate = this;
   }
@@ -70,6 +73,28 @@ export class LatestPage implements ServerDataModelDelegate {
     if(Global.Static_profile_id == "") {
       $('.fstatusbar img').css('display', 'none');
     }
+
+    this.info_text = [];
+    this.info_text.push({title: 'POST AD', text:'To post an advertisement and list your item in secs'});
+    this.info_text.push({title: 'BIDS', text:'Bids page where you can find all items that in bidding now from different sellers'});
+    this.info_text.push({title: 'TOPSELLER', text:'here to view best and top sellers in the app, according to their achievements and ratings,badges'});
+    this.info_text.push({title: 'SHOPS', text:'To browser officially certificated shops advertisements.'});
+    
+    this.info_text.push({title: 'ALL', text:'To view all ads from all categories.'});
+    this.info_text.push({title: 'FOLLOWING', text:'to view ads only from the sellers that you follow.'});
+
+    this.info_text.push({title: 'LASTEST', text:'To view newest items/products in all the categories, or for your following sellers.'});
+    this.info_text.push({title: 'HOME', text:'to browser categories and explore products and sellers.'});
+    this.info_text.push({title: 'OFFERS', text:'featured offers and promotions from companies or sellers.'});
+    this.info_text.push({title: 'CHAT', text:'Your communication page with customers or sellers. to chat and make deals.'});
+    this.info_text.push({title: 'PROFILE', text:'to show profile status and manage or upgrade your ads, it is the place where you can start your business.'});
+
+    this.info_text.push({title: 'SEARCH', text:'to find specific seller/shop or item.'});
+    this.info_text.push({title: 'BELL', text:'your notification place to view account activites and updates.'});
+    this.info_text.push({title: 'FLAQ', text:'Your current country that you sell and buy in.'});
+    this.info_text.push({title: 'MENU', text:'app settings and configrations.'});
+
+    this.ev.publish('setinfo', this.info_text);
  }
 
   gotonotification() {
@@ -174,6 +199,7 @@ export class LatestPage implements ServerDataModelDelegate {
       var condition    = send_array["condition"];
       var delivery    = send_array["delivery"];
       var delivery_cost    = send_array["delivery_cost"];
+      var likes    = send_array["likes"];
 
       if(send_wanted == '1') {
         this.navCtrl.push(WantedthingPage,{
@@ -206,8 +232,13 @@ export class LatestPage implements ServerDataModelDelegate {
          isfollow: send_isfollow,
          condition: condition,
          delivery: delivery,
-         delivery_cost: delivery_cost
+         delivery_cost: delivery_cost,
+         likes: likes
        });
       }
+  }
+
+  showInfo() {
+    this.ev.publish('showinfo', true);
   }
 }

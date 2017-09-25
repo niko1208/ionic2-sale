@@ -50,6 +50,7 @@ export class LatestSubPage  implements ServerDataModelDelegate{
   public sub_wanted : any;
   public sub_category_id : any;
   public sub_profile_id : any;
+  public sub_likes : any;
 
 
   public state = "0";
@@ -119,6 +120,7 @@ export class LatestSubPage  implements ServerDataModelDelegate{
     this.sub_wanted = navParams.get("wanted");
     this.sub_category_id    = navParams.get("category_id");
 
+    this.sub_likes = navParams.get("likes");
     this.myprofile_id = Global.Static_profile_id;
 
     var isfollow = navParams.get("isfollow");
@@ -570,10 +572,13 @@ export class LatestSubPage  implements ServerDataModelDelegate{
       this._http.post(temp_url, Form_data).map(res =>res.json())
       .subscribe(res => {
           load.dismissAll();
-          if(this.blike == '1')
+          if(this.blike == '1') {
+            this.sub_likes = eval(this.sub_likes) + 1;
             this.presentToast("Added to your favorite list.");
-          else 
+          } else {
+            this.sub_likes = eval(this.sub_likes) - 1;
             this.presentToast("Removed to your favorite list.");
+          }
       }, error => {
           load.dismissAll();
           alert("Error");
