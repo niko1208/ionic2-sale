@@ -23,20 +23,31 @@ export class MyApp {
   public info_text = [];
   public info_idx = 0;
   public showInfo = false;
+  public isstep = true;
+  public isbutton = true;
+  public cls = "l";
   
   public rootPage : any;
   
    providers: [Service]
    
   constructor(public platform: Platform, public push: Push,
-              public alertCtrl: AlertController, public _http:Http, public ev: Events) {
+              public alertCtrl: AlertController, public _http:Http, public ev: Events, public service:Service) {
 
     
-      this.ev.subscribe("showinfo", (bshow) => {
+      this.ev.subscribe("showinfo", (bshow, idx, cls, ff) => {
+        this.info_idx = idx;
         this.showInfo = !(this.showInfo);
+        this.cls = cls;
+        if(ff == '1') {
+          this.showInfo = false;
+        }
       });
 
-      this.ev.subscribe("setinfo", (infoary) => {
+      this.ev.subscribe("setinfo", (infoary, isbutton, isstep) => {
+        this.info_idx = 0;
+        this.isstep = isstep;
+        this.isbutton = isbutton;
         this.info_text = infoary;
       });
 

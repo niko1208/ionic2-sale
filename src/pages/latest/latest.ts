@@ -47,7 +47,7 @@ export class LatestPage implements ServerDataModelDelegate {
   /////////////////////////////
   public  postsDataArray : Array<PostDataModel> = new Array<PostDataModel>();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public datamodel:ServerDataModel, private ev: Events) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public datamodel:ServerDataModel, private ev: Events, public service:Service) {
 
     this.flag = Global.flag;
     
@@ -66,8 +66,14 @@ export class LatestPage implements ServerDataModelDelegate {
     //  this.datamodel.homedelegate = this;
   }
 
+  ionViewWillLeave()
+  {
+    this.ev.publish('showinfo', false, 0, 'l', '1');
+  }
+
  ionViewWillEnter()
  {
+   this.service.info_cls = "l";
     this.datamodel.GetPostProducts(this.clickFollow);
     this.datamodel.homedelegate = this;
     if(Global.Static_profile_id == "") {
@@ -94,7 +100,7 @@ export class LatestPage implements ServerDataModelDelegate {
     this.info_text.push({title: 'FLAQ', text:'Your current country that you sell and buy in.'});
     this.info_text.push({title: 'MENU', text:'app settings and configrations.'});
 
-    this.ev.publish('setinfo', this.info_text);
+    this.ev.publish('setinfo', this.info_text, true, true);
  }
 
   gotonotification() {
@@ -239,6 +245,6 @@ export class LatestPage implements ServerDataModelDelegate {
   }
 
   showInfo() {
-    this.ev.publish('showinfo', true);
+    this.ev.publish('showinfo', true, 0, 'l');
   }
 }

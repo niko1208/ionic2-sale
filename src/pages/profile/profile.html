@@ -13,6 +13,13 @@
 
 
 <ion-content class="detail_content">
+    <div class="popup" *ngIf="bpopup">
+        <div class="dialog">
+        <div class="dialog_header">{{dialog_title}}</div>
+        <div class="dbutton dbt-blue" id="bt_call" (click)="dcall()">{{phonenumber}}</div>
+        <div class="dbutton dbt-red" id="bt_cancel" (click)="gocancel()">Cancel</div>
+        </div>
+    </div>
     <div class="back_img" id="pback_img" style="background:url('');background-size: cover;background-position: center;">
         <div>
             <ion-icon name="arrow-back" (click)="navCtrl.pop();"></ion-icon>
@@ -124,8 +131,8 @@
 
     <div class="div_cont" id="div_ads">
         <div class='viewstyle'>
-            <ion-icon name='list' [ngClass]="{'sel':viewstyle==0}" (click)='view(0)'></ion-icon>
             <ion-icon name='apps' [ngClass]="{'sel':viewstyle==1}" (click)='view(1)'></ion-icon>
+            <ion-icon name='list' [ngClass]="{'sel':viewstyle==0}" (click)='view(0)'></ion-icon>
         </div>
         <div *ngIf="viewstyle == 0">
             <ion-item  *ngFor="let item of keys; let i = index" (click)="click_card(i);">

@@ -13,6 +13,7 @@ export class Service {
 
   posts : any = [];
   public badgenum = '0';
+  public info_cls = "l";
 
   constructor(public http: Http) {
     console.log('Hello Service Provider');

@@ -18,22 +18,22 @@
     <!--<ion-title>latest</ion-title>-->
     
     <ion-row>
-        <ion-col col-3>
+        <ion-col col *ngIf='false'>
           <button ion-button color="secondary" (click)="goPostPage();">
             <ion-icon  name ="ios-camera"></ion-icon>
             <label>Post ad</label>
           </button>
         </ion-col>
 
-        <ion-col col-3>
+        <ion-col col>
           <button ion-button color="secondary" (click)="goBidPage();">Bids</button>
         </ion-col>
 
-        <ion-col col-3>
+        <ion-col col>
           <button ion-button color="secondary" (click)="goTopSellerPage();">Top Sellers</button>
         </ion-col>
 
-        <ion-col col-3>
+        <ion-col col>
           <button color="secondary" ion-button style="margin-left: 2px;" (click)="goWnatedThing();">Shops</button>
         </ion-col>
     </ion-row>
@@ -50,7 +50,7 @@
 
 
 <ion-content class="late_content">
-<div class='fast_post' (click)="goPostPage()"><ion-icon name="ios-camera"></ion-icon><small>POST</small></div>
+<div class='fast_post' (click)="goPostPage()"><ion-icon name="ios-camera"></ion-icon><small>SELL</small></div>
 <div *ngIf="!clickFollow">
   <ion-card *ngFor="let item of keys; let i = index" class="late_card" (click)="click_card(i);">
     <!--<ion-item class="late_header">

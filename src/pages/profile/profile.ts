@@ -21,8 +21,11 @@ import { Events } from 'ionic-angular';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
 
+import { SMS } from 'ionic-native';
+
 import * as $ from 'jquery';
 
+declare var window;
 declare var cordova : any;
 
 @Component({
@@ -80,6 +83,11 @@ export class ProfilePage {
     public tool_tip = false;
 
     public viewstyle = 0;
+
+    public bpopup : any;
+    public bsms : any;
+    public dialog_title : any;
+    public phonenumber = "+1-1111-111-1111";
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public datamodel:ServerDataModel, public toastCtrl: ToastController, public platform: Platform, private ev: Events) {
@@ -329,7 +337,7 @@ export class ProfilePage {
     Form_data.append('profile_id', pid);
 
     this._http.post(temp_url, Form_data).map(res =>res.json())
-    .subscribe(res => {
+    .subscribe(res => { console.log(res);
         this.loading.dismissAll();
         if(res['success'] == "true") {
             this.image = res['items'][0]['image'];
@@ -357,6 +365,7 @@ export class ProfilePage {
             if(this.membership3 != "") this.membership = "Shop";
             if(this.membership4 != "") this.membership = "Company";
 
+            this.phonenumber = res['items'][0]['phone'];
             this.loadAds();
             this.loadFollower();
             this.checkfollow();
@@ -447,6 +456,79 @@ export class ProfilePage {
   }
   onreport() {
 
+  }
+  
+  gocancel() {
+    this.bpopup = false;
+  }
+
+  callIT(passedNumber) {
+    this.bpopup = true;
+    this.bsms = false;
+    this.dialog_title = "Call us";
+  }
+  sendSMS() {
+    this.bpopup = true;
+    this.bsms = true;
+    this.dialog_title = "Text us";
+  }
+  dcall() {
+    var passedNumber = this.phonenumber;
+    this.bpopup = false;
+    if(this.bsms) {
+      alert(SMS.hasPermission());
+      let load = this.loadingCtrl.create({
+          content:'Please wait'
+      });
+
+      load.present();
+
+      var  options={
+            replaceLineBreaks: false, // true to replace \n by a new line, false by default
+            android: {
+                //  intent: 'INTENT'  // Opens Default sms app
+                intent:''
+                //intent: '' // Sends sms without opening default sms app
+              }
+      }
+      
+      SMS.send(passedNumber, "Hello World",options)
+        .then((result)=>{
+          let successToast = this.toastCtrl.create({
+            message: "Text message sent successfully! :)",
+            duration: 3000
+          })
+          successToast.present();
+          load.dismiss();
+        },(error)=>{
+          load.dismiss();
+          let errorToast = this.toastCtrl.create({
+            message: "Text message not sent. :(",
+            duration: 3000
+          })
+          errorToast.present();
+      });
+    
+    } else {
+      passedNumber = encodeURIComponent(passedNumber);
+      window.location = "tel:"+passedNumber;
+    }
+  }
+  
+  onchat() {
+    let rid = this.profile_id;
+
+    if(Global.Static_profile_id == ""){
+      alert("You must login.");
+      return;
+    }
+    if(rid == Global.Static_profile_id) {
+      return;
+    }
+    this.navCtrl.push(ChatPage,{
+      rid: rid,
+      image: this.image
+    });
   }
 
 

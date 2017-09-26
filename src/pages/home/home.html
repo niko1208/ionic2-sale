@@ -10,23 +10,23 @@
   <ion-navbar color="" style="text-align: center;float: left">
     <!--<ion-searchbar></ion-searchbar>-->
     <ion-row>
-        <ion-col col-3>
+        <ion-col col *ngIf="false">
           <button ion-button color="secondary" (click)="goPostPage();">
             <ion-icon  name ="ios-camera"></ion-icon>
             <label>Post ad</label>
           </button>
         </ion-col>
 
-        <ion-col col-3>
+        <ion-col col>
           <button ion-button color="secondary" (click)="goBidPage();">Bids</button>
         </ion-col>
 
-        <ion-col col-3>
+        <ion-col col>
           <button ion-button color="secondary" (click)="goTopSellerPage();">Top Sellers</button>
         </ion-col>
 
-        <ion-col col-3>
-          <button color="secondary" ion-button style="margin-left: 2px;" (click)="goWnatedThing();">Wanted</button>
+        <ion-col col>
+          <button color="secondary" ion-button style="margin-left: 2px;" (click)="goWnatedThing();">Shops</button>
         </ion-col>
     </ion-row>
   </ion-navbar>
@@ -37,7 +37,7 @@
 </ion-header>
 
 <ion-content class="home_content" style=" padding: 2px;" >
-  <div class='fast_post' (click)="goPostPage()"><ion-icon name="ios-camera"></ion-icon><small>POST</small></div>
+  <div class='fast_post' (click)="goPostPage()"><ion-icon name="ios-camera"></ion-icon><small>SELL</small></div>
   <div class="s_cont">
     <div class="div_title">Recommended TOP SELLERS</div> 
     <button id='bt_viewall' ion-button small color='blue' (click)="goTopSellerPage()">View ALL</button>

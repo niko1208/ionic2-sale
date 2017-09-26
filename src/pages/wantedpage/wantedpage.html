@@ -68,7 +68,7 @@
     <div class="icon_sec_wanted">
       <div (click)="callIT('+1-111-1111-1111')">Call</div>
       <div (click)="sendSMS()">Sms</div>
-      <div (click)="onchat(item.post_profile_id)">Chat</div>
+      <div (click)="onchat(item.post_profile_id, item.post_img_url)">Chat</div>
       <div (click)="onlike(item.post_id, item.wanted, item.islike, idx, item)" class="divsel{{likeary[idx]}}" >+Favorite</div>
     </div>
   </div>

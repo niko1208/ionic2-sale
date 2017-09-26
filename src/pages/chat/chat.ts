@@ -35,6 +35,7 @@ export class ChatPage {
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events) {
                 
                 this.recid = navParams.get("rid");
+                this.image = navParams.get("image");
 
     this.flag = Global.flag;
     this.badge = Global.badge;

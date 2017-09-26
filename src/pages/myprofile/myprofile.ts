@@ -14,6 +14,7 @@ import { SearchPage } from './../search/search';
 import { MembershipPage } from './../membership/membership';
 import { FavoritePage } from '../favorite/favorite';
 import {MorePage} from '../more/more';
+import { Service } from '../../providers/service';
 import * as $ from 'jquery';
 
 declare var cordova : any;
@@ -77,7 +78,7 @@ export class MyprofilePage {
     info_text = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public toastCtrl: ToastController, public platform: Platform, private ev: Events) {
+              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public toastCtrl: ToastController, public platform: Platform, private ev: Events, public service:Service) {
 
                 
     this.flag = Global.flag;
@@ -100,6 +101,11 @@ export class MyprofilePage {
     this.navCtrl.push(SearchPage,{});
   }
   
+  ionViewWillLeave()
+  {
+    this.ev.publish('showinfo', false, 0, 'l', '1');
+  }
+
   ionViewWillEnter()
   {
     this.percent1 = "";
@@ -120,20 +126,47 @@ export class MyprofilePage {
     }
     this.loadProfile();
     this.loadreview();
+    
+  }
 
+  showInfo(idx) {
+    this.service.info_cls = "s";
     this.info_text = [];
-    this.info_text.push({title: 'AVAILABLE BALANCE', text:'this is your  current account balance and the number of points you have, you can use this money inside the app for buying packages or feature an ad or even more, you can increase it and grow your business inside the app to be effective seller and noticed by all users. so start now before it become hard.'});
-    this.info_text.push({title: 'the profile level ', text:'the first badge:\ncup badge:<br/>This prize you gain  it when you reach 400 points, you get points from featuring an ad  or buying membership package , to higher your rank in top sellers page<br/>CUP PLUS badge:<br/>This prize you gain it when you reach 600 points,<br/>CROWN badge:<br/>This prize you gain it when you reach 1000 points.<br/>CROWN PLUS badge:<br/>This prize you gain it when you reach 1500 points<br/>.'});
-    this.info_text.push({title: 'the post ad managment ', text:'My advertisements:<br/>to view all your current posted ads and modify/edit them<br/>free ads left:<br/>your avaliable free posts remaining<br/>favorite,<br/>to view favorited items page<br/>My chat <br/>to check ur chat between users<br/>Bids<br/>To reset all bids for your items<br/>.'});
-    this.info_text.push({title: 'the bar of featured ad', text:'.'});
-
-    this.ev.publish('setinfo', this.info_text);
+    if(idx == 0) {
+      this.info_text.push({title: 'AVAILABLE BALANCE', text:'this is your  current account balance and the number of points you have, you can use this money inside the app for buying packages or feature an ad or even more, you can increase it and grow your business inside the app to be effective seller and noticed by all users. so start now before it become hard.'});
+    } else if(idx == 1) {
+      this.info_text.push({title: 'The profile level ', text:'<u>CUP badge</u>:<br/>This prize you gain  it when you reach 400 points, you get points from featuring an ad  or buying membership package , to higher your rank in top sellers page.'});
+      this.info_text.push({title: 'The profile level ', text:'<u>CUP PLUS badge</u>:<br/>This prize you gain it when you reach 600 points'});
+      this.info_text.push({title: 'The profile level ', text:'<u>CROWN badge</u>:<br/>This prize you gain it when you reach 1000 points.'});
+      this.info_text.push({title: 'The profile level ', text:'<u>CROWN PLUS badge</u>:<br/>This prize you gain it when you reach 1500 points.'});
+    } else if(idx == 2) {
+      this.info_text.push({title: 'The post ad managment', text:'<u>My advertisements</u>:<br/>to view all your current posted ads and modify/edit them.'});
+      this.info_text.push({title: 'The post ad managment', text:'<u>Free ads left</u>:<br/>your avaliable free posts remaining.'});
+      this.info_text.push({title: 'The post ad managment', text:'<u>Favorite</u><br/>to view favorited items page.'});
+      this.info_text.push({title: 'The post ad managment', text:'<u>My chat</u> <br/>to check ur chat between users.'});
+      this.info_text.push({title: 'The post ad managment', text:'<u>Bids</u><br/>To reset all bids for your items.'});
+    } else if(idx == 3) {
+      this.info_text.push({title: 'The bar of featured ad', text:'<u>PINNED</u>:<br/>to feature your ad as pinned on the top of the page.<br/>to increase viewing and selling chances.'});
+      this.info_text.push({title: 'The bar of featured ad', text:'<u>PREMIUM</u>:<br/>To feature your ad to be top of all ads in same category and increase viewing and selling chances by double 2X.'});
+      this.info_text.push({title: 'The bar of featured ad', text:'<u>VIP</u> :<br/>to feature your ad to be top of all ads including the latest page<br/>to increase selling and viewing by triple 3X<br/>Offers and on start ad:<br/>to feature you ad to make it special, it will appear on start and also will be placed in the offers page, to be noticed by all.'});
+    } else if(idx == 4) {
+      this.info_text.push({title: 'Upgrade and payment ', text:'<u>Account FREE MEMBERSHIP</u>:<br/>your account current membership status.'});
+      this.info_text.push({title: 'Upgrade and payment ', text:'<u>Packages & Subsriptions</u>:<br/>here you can subscripe and choose from our packages to be effective seller and gain reputation as certificated seller.'});
+      this.info_text.push({title: 'Upgrade and payment ', text:'<u>Recharge your balance</u><br/>To increase your account money balance and use it to grow ur business inside the app.'});
+    }
+    if(idx == 0) {
+      this.ev.publish('setinfo', this.info_text, false, false);
+    } else {
+      this.ev.publish('setinfo', this.info_text, true, true);
+    }
+    this.ev.publish('showinfo', true, 0, 's');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad');
     
   }
+
   loadreview() {
     var temp_url = 'http://sale4allz.com/ws/get_user_review.php';
     var Form_data = new FormData();

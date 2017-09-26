@@ -1,16 +1,16 @@
 <ion-nav [root]="rootPage"></ion-nav>
-<div class='info_popup info_popup_{{info_idx}}' id='info_popup' *ngIf="showInfo">
+<div class='info_popup info_popup_{{info_idx}} info_popup_{{cls}}' id='info_popup' *ngIf="showInfo">
     <div class='triangle_top'></div>
     <div class='triangle_bottom'></div>
     <div class='btclose' (click)="info_close()">X</div>
     <div class='info_wrapper'>
-        <div class='step'>Step {{(info_idx+1)}} of {{info_text.length}}</div>
+        <div class='step' *ngIf="isstep">Step {{(info_idx+1)}} of {{info_text.length}}</div>
         <div class='info_cont'>
             <div class='info_cont_title'>{{info_text[info_idx].title}}</div>
-            <div class='info_cont_text'>{{info_text[info_idx].text}}</div>
+            <div class='info_cont_text' [innerHtml]="'<div>' + info_text[info_idx].text + '</div>'"></div>
         </div>
     </div>
-    <div class='info_buttons'>
+    <div class='info_buttons' *ngIf="isbutton">
         <div class='info_button' (click)="info_prev()">Previous</div>
         <div class='info_button' (click)="info_next()">Next</div>
     </div>

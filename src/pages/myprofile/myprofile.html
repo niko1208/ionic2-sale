@@ -93,7 +93,6 @@
     </div>
     <button id='bt_post_ad' ion-button small color="">
         <label (click)="onpost();">Post Advertise</label>
-        <ion-icon name='help' style="margin-left: 20px;"></ion-icon>
     </button>
     <!--
     <div class="div_rank">
@@ -106,6 +105,7 @@
     </div>
     -->
     <div class="balance">
+        <ion-icon name='help' style="margin-left: 20px;" (click)="showInfo(0)"></ion-icon>
         <div text-center>Available Balance</div>
         <div text-center class="bal">{{balance}} KD</div>
         <div class="div_line"></div>
@@ -114,7 +114,7 @@
 
     <div class="sec">
         <div class="div_sec">Your Profile Level
-            <ion-icon name='help' style="float:right; margin-right: 10px;"></ion-icon>
+            <ion-icon name='help' style="float:right; margin-right: 10px;" (click)="showInfo(1)"></ion-icon>
         </div>
         <div class="div_progress">
             <img src="assets/img/icon-4.png"/>
@@ -148,7 +148,7 @@
 
     <div class="sec">
         <div class="div_sec">Post Adv Management
-            <ion-icon name='help' style="float:right; margin-right: 10px;"></ion-icon>
+            <ion-icon name='help' style="float:right; margin-right: 10px;" (click)="showInfo(2)"></ion-icon>
         </div>
         <ion-item (click)="onmyads();">
             <ion-icon name ="megaphone" item-left></ion-icon>
@@ -183,7 +183,7 @@
 
     <div class="sec">
         <div class="div_sec">Available Featured Advertise
-            <ion-icon name='help' style="float:right; margin-right: 10px;"></ion-icon>
+            <ion-icon name='help' style="float:right; margin-right: 10px;" (click)="showInfo(3)"></ion-icon>
         </div>
         <ion-item>
             <ion-icon name ="albums" item-left></ion-icon>
@@ -212,7 +212,7 @@
 
     <div class="sec">
         <div class="div_sec">Account upgrade & Payments
-            <ion-icon name='help' style="float:right; margin-right: 10px;"></ion-icon>
+            <ion-icon name='help' style="float:right; margin-right: 10px;" (click)="showInfo(4)"></ion-icon>
         </div>
         <ion-item (click)="onfreemember();">
             <ion-icon name ="contact" item-left></ion-icon>

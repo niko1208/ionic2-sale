@@ -91,6 +91,13 @@ div.sec ion-item input{
     background: #f7e9e5;
     border-radius: 5px;
     padding: 10px 20px;
+    position: relative;
+}
+.balance ion-icon{
+    position: absolute;
+    color: #333;
+    right: 10px;
+    top: 7px;
 }
 .bal{
     color: #f00;
@@ -200,4 +207,15 @@ div.progress.pro4{
     font-size: 18px;
 }
 
+}
+
+.info_popup_s{
+    left: 10px !important;
+    top: 90px !important;
+}
+.info_popup_s .triangle_top{
+    display: none !important;
+}
+.info_popup_s .triangle_bottom{
+    display: none !important;
 }

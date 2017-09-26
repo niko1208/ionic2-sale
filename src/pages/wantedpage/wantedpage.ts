@@ -233,7 +233,7 @@ export class WantedthingPage  implements ServerDataModelDelegate{
     }
   }
   
-  onchat(rid) {
+  onchat(rid, image) {
     if(Global.Static_profile_id == ""){
       alert("You must login.");
       return;
@@ -242,7 +242,8 @@ export class WantedthingPage  implements ServerDataModelDelegate{
       return;
     }
     this.navCtrl.push(ChatPage,{
-      rid: rid
+      rid: rid,
+      image: image
     });
   }
 

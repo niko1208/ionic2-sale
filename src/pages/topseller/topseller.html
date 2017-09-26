@@ -17,7 +17,7 @@
 
 
 <ion-content class="detail_content">
-
+    
     <ion-item  *ngFor="let item of keys; let i = index" [ngClass]="{'highlight':(item.points>=1000)}">
         <div class="membership" *ngIf="item.membership != '' && item.membership != 'Basic'"><span>{{item.membership}}</span></div>
         
