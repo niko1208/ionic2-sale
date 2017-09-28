@@ -64,6 +64,7 @@ export class WantedthingPage  implements ServerDataModelDelegate{
 
     public flag: any;
     public badge = '0';
+    info_text = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private loading:LoadingController, public datamodel:ServerDataModel, public _http:Http, private ev: Events) {
     this.navCtrl = navCtrl;
@@ -104,6 +105,11 @@ export class WantedthingPage  implements ServerDataModelDelegate{
     this.navCtrl.push(SearchPage,{});
   }
   
+  ionViewWillLeave()
+  {
+    this.ev.publish('showinfo', false, 0, 'l', '1');
+  }
+
   ionViewWillEnter()
   {
     if(Global.Static_profile_id == "") {
@@ -111,9 +117,16 @@ export class WantedthingPage  implements ServerDataModelDelegate{
     }
     this.datamodel.updateviews(this.sub_id, this.sub_wanted);
     
-
     this.datamodel.GetWantedPost();
     this.datamodel.homedelegate = this;
+
+    this.info_text = [];
+    this.info_text.push({title: 'SHOPS', text:'This page where you register a place for your current certificated shop online , to accelerate selling and record your shop achievements to make people know what kind of good stuff you provide, ADD YOUR SHOP BANNER NOW!'});
+    this.ev.publish('setinfo', this.info_text, true, true);
+  }
+
+  showInfo() {
+    this.ev.publish('showinfo', true, 0, 's');
   }
 
   ionViewDidLoad() {

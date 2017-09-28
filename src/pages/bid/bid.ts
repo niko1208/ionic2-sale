@@ -23,6 +23,7 @@ export class BidPage {
     public flag: any;
     public badge = '0';
     public  postsDataArray : Array<PostDataModel> = new Array<PostDataModel>();
+    public info_text = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events) {
@@ -49,6 +50,11 @@ export class BidPage {
     this.navCtrl.push(SearchPage,{});
   }
 
+  ionViewWillLeave()
+  {
+    this.ev.publish('showinfo', false, 0, 'l', '1');
+  }
+
   ionViewWillEnter()
   {
       this.load();
@@ -56,6 +62,14 @@ export class BidPage {
     if(Global.Static_profile_id == "") {
       $('.fstatusbar img').css('display', 'none');
     }
+
+    this.info_text = [];
+    this.info_text.push({title: 'BID', text:"contains all activated live bids, to higher the value of your product and  better offer, Click on the image , then click on 'bid on this offer' to join the bidding"});
+    this.ev.publish('setinfo', this.info_text, true, true);
+  }
+
+  showInfo() {
+    this.ev.publish('showinfo', true, 0, 's');
   }
 
   ionViewDidLoad() {

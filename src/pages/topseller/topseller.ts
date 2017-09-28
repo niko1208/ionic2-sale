@@ -25,7 +25,7 @@ export class TopsellerPage {
     public strtooltip = "";
     public tool_tip = [];
     public ii = 0;
-
+    info_text = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events, public toastCtrl: ToastController) {
@@ -50,12 +50,27 @@ export class TopsellerPage {
     this.navCtrl.push(SearchPage,{});
   }
   
+  ionViewWillLeave()
+  {
+    this.ev.publish('showinfo', false, 0, 'l', '1');
+  }
+
   ionViewWillEnter()
   {
     if(Global.Static_profile_id == "") {
       $('.fstatusbar img').css('display', 'none');
     }
     this.load();
+
+    this.info_text = [];
+    this.info_text.push({title: 'TOPSELLER', text:'The place to grow your business reputation to sell faster and become famous amongst sellers as unique seller, by gaining good ratings/ reviews also building points trust to be TOPSELLER'});
+    this.info_text.push({title: 'The points badge', text:'You will be awarded this badge according to your selling achievement and points, will give you a better rank in TOP SELLERS to gain trust and selling faster'});
+    this.info_text.push({title: 'Rank', text:'This is your profile level  ranking according to your ratings+reviews+points+selling'});
+    this.ev.publish('setinfo', this.info_text, true, true);
+  }
+
+  showInfo() {
+    this.ev.publish('showinfo', true, 0, 's');
   }
 
   goprofile(pid) { 

@@ -54,6 +54,7 @@ export class HomePage implements ServerDataModelDelegate {
 
     public flag: any;
     public badge = '0';
+    info_text = [];
 
   constructor( public plateform:Platform, public navCtrl: NavController, public viweCtrl : ViewController,public server :Service,public http: Http,public datamodel:ServerDataModel, private ev: Events, public _http:Http, private loading:LoadingController)
    {
@@ -92,6 +93,11 @@ export class HomePage implements ServerDataModelDelegate {
     this.navCtrl.push(SearchPage,{searchTerm: this.searchTerm});
   }
   
+  ionViewWillLeave()
+  {
+    this.ev.publish('showinfo', false, 0, 'l', '1');
+  }
+
 ionViewWillEnter()
 {
 
@@ -126,7 +132,20 @@ ionViewWillEnter()
     }, error => {
         alert("Error");
     });
+
+  
+    this.info_text = [];
+    this.info_text.push({title: 'POST AD', text:'To post an advertisement and list your item in secs'});
+    this.info_text.push({title: 'BIDS', text:'Bids page where you can find all items that in bidding now from different sellers'});
+    this.info_text.push({title: 'TOPSELLER', text:'here to view best and top sellers in the app, according to their achievements and ratings,badges'});
+    this.info_text.push({title: 'SHOPS', text:'To browser officially certificated shops advertisements.'});
+    
+    this.ev.publish('setinfo', this.info_text, true, true);
 }
+
+  showInfo() {
+    this.ev.publish('showinfo', true, 0, 'l');
+  }
 
   goBidPage(){
     this.navCtrl.push(BidPage,{});

@@ -5,6 +5,7 @@
       <img src="{{flag}}" />
       <ion-icon name="notifications" (click)="gotonotification()"></ion-icon>
       <ion-icon name="search" (click)="gotosearch()"></ion-icon>
+      <ion-icon name="help" (click)="showInfo()"></ion-icon>
       <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
   </div>
   
@@ -12,7 +13,7 @@
     <ion-title>
       <div style="float: left; padding-top: 10px">Shops</div>
       <button color="secondary" ion-button style="margin-right:10px; float:right" (click)="goPostWnatedThing();">
-        ADD YOUR SHOP NOW
+        ADD YOUR SHOP BANNER NOW
       </button>
     </ion-title>
   </ion-navbar>

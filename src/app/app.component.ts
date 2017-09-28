@@ -183,6 +183,8 @@ export class MyApp {
   info_next() {
     if(this.info_idx < this.info_text.length-1) {
       this.info_idx = this.info_idx + 1;
+    } else {
+      this.info_close();
     }
   }
 
