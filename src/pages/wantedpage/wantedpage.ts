@@ -15,6 +15,7 @@ import { Global } from './../../app/model/global';
 import { Events } from 'ionic-angular';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 
 import { Http } from '@angular/http';
 
@@ -66,7 +67,7 @@ export class WantedthingPage  implements ServerDataModelDelegate{
     public badge = '0';
     info_text = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private loading:LoadingController, public datamodel:ServerDataModel, public _http:Http, private ev: Events) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private loading:LoadingController, public datamodel:ServerDataModel, public _http:Http, private ev: Events, public translate: TranslateService) {
     this.navCtrl = navCtrl;
 
     this.badge = Global.badge;

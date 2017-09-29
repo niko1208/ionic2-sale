@@ -13,6 +13,7 @@ import { NavController, NavParams, ActionSheetController, ToastController, Platf
 import { Events } from 'ionic-angular';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 import * as $ from 'jquery';
 declare var cordova : any; 
 /*
@@ -59,7 +60,7 @@ export class PostPage{
               public toastCtrl: ToastController,
               public platform: Platform,
               public loadingCtrl: LoadingController,
-              public _http:Http, private ev: Events)
+              public _http:Http, private ev: Events, public translate: TranslateService)
   {
 
 

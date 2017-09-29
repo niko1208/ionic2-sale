@@ -10,7 +10,7 @@
   </div>
   
   <ion-navbar color="">
-    <ion-title>Bid</ion-title>
+    <ion-title>{{'STR_BIDS' | translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -38,8 +38,8 @@
     </ion-card>
 
     <div class="div_right">
-        <div>{{item.nums}} Bids</div>
-        <div>Reached <font>{{item.bidprice}}</font> KWD</div>
+        <div>{{item.nums}} {{'STR_BIDS' | translate}}</div>
+        <div>{{'STR_REACHED' | translate}} <font>{{item.bidprice}}</font> KWD</div>
     </div>
 
 </ion-item>

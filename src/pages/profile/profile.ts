@@ -20,6 +20,7 @@ import { FollowPage } from './../follow/follow';
 import { Events } from 'ionic-angular';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 
 import { SMS } from 'ionic-native';
 
@@ -90,7 +91,7 @@ export class ProfilePage {
     public phonenumber = "+1-1111-111-1111";
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public datamodel:ServerDataModel, public toastCtrl: ToastController, public platform: Platform, private ev: Events) {
+              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public datamodel:ServerDataModel, public toastCtrl: ToastController, public platform: Platform, private ev: Events, public translate: TranslateService) {
 
                 this.profile_id = navParams.get("profile_id");
 

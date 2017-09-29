@@ -11,6 +11,8 @@ import { Http } from '@angular/http';
 
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
+import { TranslateModule } from 'ng2-translate/ng2-translate';
+import { TranslateService } from 'ng2-translate';
 
 @Component({
   templateUrl: 'app.html'
@@ -32,7 +34,7 @@ export class MyApp {
    providers: [Service]
    
   constructor(public platform: Platform, public push: Push,
-              public alertCtrl: AlertController, public _http:Http, public ev: Events, public service:Service) {
+              public alertCtrl: AlertController, public _http:Http, public ev: Events, public service:Service, translate: TranslateService) {
 
     
       this.ev.subscribe("showinfo", (bshow, idx, cls, ff) => {
@@ -53,6 +55,9 @@ export class MyApp {
 
     platform.ready().then(() => {
 
+      translate.addLangs(["en", "ar"]);
+      translate.setDefaultLang('en');
+      translate.use('en');
 
       this.initPushNotification();
 

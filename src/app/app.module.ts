@@ -46,6 +46,13 @@ import { Push } from '@ionic-native/push';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { TranslateModule } from 'ng2-translate/ng2-translate';
+import { TranslateLoader, TranslateStaticLoader } from 'ng2-translate/src/translate.service';
+import { Http } from '@angular/http';
+export function createTranslateLoader(http: Http) {
+	return new TranslateStaticLoader(http, '../assets/i18n', '.json');
+}
+
 @NgModule({
   declarations: [
     MyApp,
@@ -86,7 +93,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyprofileinfoPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    TranslateModule.forRoot({
+			provide: TranslateLoader,
+			useFactory: createTranslateLoader,
+			deps: [Http]
+		}),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

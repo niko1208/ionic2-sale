@@ -6,6 +6,7 @@ import { RegionPage } from '../region/region';
 import { SplashPage } from '../splash/splash';
 import { RegisterPage } from '../register/register';
 import { Http } from '@angular/http';
+import { TranslateService } from 'ng2-translate';
 
 @Component({
   selector: 'page-login',
@@ -20,7 +21,7 @@ export class LoginPage {
     public regionView : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController) {
+              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, translate: TranslateService) {
 
                 this.regionView = navParams.get("viewCtrl");
                 this.mnumber = localStorage.getItem('number');

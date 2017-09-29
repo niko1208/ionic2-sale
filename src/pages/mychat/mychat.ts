@@ -8,6 +8,7 @@ import { MyprofilePage } from './../myprofile/myprofile';
 import { Events } from 'ionic-angular';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 import * as $ from 'jquery';
 
 @Component({
@@ -24,7 +25,7 @@ export class MychatPage {
     public badge = '0';
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, private ev: Events) {
+              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, private ev: Events, public translate: TranslateService) {
                 
 
     this.flag = Global.flag;

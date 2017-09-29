@@ -10,7 +10,7 @@
   </div>
    <ion-navbar color="">
 
-        <ion-title>My Profile</ion-title>
+        <ion-title>{{'STR_MYPROFILE' | translate}}</ion-title>
    </ion-navbar>
 
 </ion-header>
@@ -24,7 +24,7 @@
     <div class="membership" *ngIf="(points)>=400 && (points)<600"><img src="assets/img/icon-4.png"/><div></div></div>
     <div class="membership" *ngIf="(points)<400"></div>
     
-    <button class="bt_editinfo" (click)="editinfo()">Edit Info</button>
+    <button class="bt_editinfo" (click)="editinfo()">{{'STR_EDITINFO' | translate}}</button>
     <div class="div_top">
         <div class="fleft div_photo" (click)="presentActionSheet();"> 
             <div>Click<br>to<br>Insert Image</div>
@@ -54,7 +54,7 @@
             <ion-icon *ngIf="myRating<=3" name="star-outline"></ion-icon>
             <ion-icon *ngIf="myRating<=4" name="star-outline"></ion-icon>
         </div>
-        <div style="clear: both">{{ratingCount}} Reviews</div>
+        <div style="clear: both">{{ratingCount}} {{'STR_REVIEWS' | translate}}</div>
         <div class='div_tooltip'>
             <div class='tooltip' *ngIf="tool_tip">{{strtooltip}}</div>
         <div class="div_icons1">
@@ -106,14 +106,14 @@
     -->
     <div class="balance">
         <ion-icon name='help' style="margin-left: 20px;" (click)="showInfo(0)"></ion-icon>
-        <div text-center>Available Balance</div>
+        <div text-center>{{'STR_AVAILABLE_BALANCE' | translate}}</div>
         <div text-center class="bal">{{balance}} KD</div>
         <div class="div_line"></div>
-        <div text-center calss="point">Points : {{points}}</div>
+        <div text-center calss="point">{{'STR_POINTS' | translate}} : {{points}}</div>
     </div>
 
     <div class="sec">
-        <div class="div_sec">Your Profile Level
+        <div class="div_sec">{{'STR_PROFILE_LEVEL' | translate}}
             <ion-icon name='help' style="float:right; margin-right: 10px;" (click)="showInfo(1)"></ion-icon>
         </div>
         <div class="div_progress">
@@ -147,88 +147,88 @@
     </div>
 
     <div class="sec">
-        <div class="div_sec">Post Adv Management
+        <div class="div_sec">{{'STR_POST_ADVERTISE_MANAGMENT' | translate}}
             <ion-icon name='help' style="float:right; margin-right: 10px;" (click)="showInfo(2)"></ion-icon>
         </div>
         <ion-item (click)="onmyads();">
             <ion-icon name ="megaphone" item-left></ion-icon>
-            <ion-label>My Advertise</ion-label>
+            <ion-label>{{'STR_MY_ACTIVE_POSTS' | translate}}</ion-label>
             <ion-icon name ="arrow-dropright" item-right></ion-icon>
         </ion-item>
 
         <ion-item>
             <ion-icon name ="volume-down" item-left></ion-icon>
-            <ion-label>Free ads left</ion-label>
+            <ion-label>{{'STR_FREE_POSTS_LEFT' | translate}}</ion-label>
             <ion-label text-right>{{myfreeads}}</ion-label>
         </ion-item>
 
         <ion-item (click)="onmyfav();">
             <ion-icon name ="happy" item-left></ion-icon>
-            <ion-label>Favorite</ion-label>
+            <ion-label>{{'STR_FAVORITE' | translate}}</ion-label>
             <ion-icon name ="arrow-dropright" item-right></ion-icon>
         </ion-item>
 
         <ion-item (click)="onmychat();">
             <ion-icon name ="chatboxes" item-left></ion-icon>
-            <ion-label>My chats</ion-label>
+            <ion-label>{{'STR_MY_CHAT' | translate}}</ion-label>
             <ion-icon name ="arrow-dropright" item-right></ion-icon>
         </ion-item>
 
         <ion-item (click)="onclearbid();">
             <ion-icon name ="trash" item-left></ion-icon>
-            <ion-label>Clear Bid</ion-label>
+            <ion-label>{{'STR_CLEAR_BIDS' | translate}}</ion-label>
         </ion-item>
 
     </div>
 
     <div class="sec">
-        <div class="div_sec">Available Featured Advertise
+        <div class="div_sec">{{'STR_AVAILABLE_FEATURED_ADVERTISE' | translate}}
             <ion-icon name='help' style="float:right; margin-right: 10px;" (click)="showInfo(3)"></ion-icon>
         </div>
         <ion-item>
             <ion-icon name ="albums" item-left></ion-icon>
-            <ion-label>Premium ads</ion-label>
+            <ion-label>{{'STR_PREMIUM_ADVERTISE' | translate}}</ion-label>
             <ion-label text-right>{{preads}}</ion-label>
         </ion-item>
 
         <ion-item>
             <ion-icon name ="pin" item-left></ion-icon>
-            <ion-label>Pinned ads</ion-label>
+            <ion-label>{{'STR_PINNED' | translate}}</ion-label>
             <ion-label text-right>{{pinads}}</ion-label>
         </ion-item>
 
         <ion-item>
             <ion-icon name ="basket" item-left></ion-icon>
-            <ion-label >Vip ads</ion-label>
+            <ion-label >{{'STR_VIP' | translate}}</ion-label>
             <ion-label text-right>{{vipads}}</ion-label>
         </ion-item>
 
         <ion-item>
             <ion-icon name ="body" item-left></ion-icon>
-            <ion-label>offers and first page ads</ion-label>
+            <ion-label>{{'STR_OFFERS_FIRST_PAGE' | translate}}</ion-label>
             <ion-label text-right>{{offads}}</ion-label>
         </ion-item>
     </div>
 
     <div class="sec">
-        <div class="div_sec">Account upgrade & Payments
+        <div class="div_sec">{{'STR_ACCOUNT_UPGRADE_PAYMENTS' | translate}}
             <ion-icon name='help' style="float:right; margin-right: 10px;" (click)="showInfo(4)"></ion-icon>
         </div>
         <ion-item (click)="onfreemember();">
             <ion-icon name ="contact" item-left></ion-icon>
-            <ion-label>Account&nbsp;<span *ngIf="membership == 'Free'">Free</span> <span *ngIf="membership != 'Free'"><b>{{membership}}</b></span>&nbsp;member</ion-label>
+            <ion-label>{{'STR_ACCOUNT' | translate}}&nbsp;<span *ngIf="membership == 'Free'">Free</span> <span *ngIf="membership != 'Free'"><b>{{membership}}</b></span>&nbsp;{{'STR_MEMBER' | translate}}</ion-label>
             <ion-icon name ="arrow-dropright" item-right></ion-icon>
         </ion-item>
 
         <ion-item (click)="onmembership();">
             <ion-icon name ="archive" item-left></ion-icon>
-            <ion-label>packages &amp; Subscriptions</ion-label>
+            <ion-label>{{'STR_PACKAGES_MEMBERSHIP_SUBSCRIPTION' | translate}}</ion-label>
             <ion-icon name ="arrow-dropright" item-right></ion-icon>
         </ion-item>
 
         <ion-item (click)="onrecharge();">
             <ion-icon name ="logo-usd" item-left></ion-icon>
-            <ion-label>Recharge your Balance</ion-label>
+            <ion-label>{{'STR_RECHARGE_YOUR_BALANCE' | translate}}</ion-label>
             <ion-icon name ="arrow-dropright" item-right></ion-icon>
         </ion-item>
     </div>

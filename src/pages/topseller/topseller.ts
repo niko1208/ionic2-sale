@@ -8,6 +8,7 @@ import { MyprofilePage } from './../myprofile/myprofile';
 import { Events } from 'ionic-angular';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 import * as $ from 'jquery';
 
 @Component({
@@ -28,7 +29,7 @@ export class TopsellerPage {
     info_text = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events, public toastCtrl: ToastController) {
+              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events, public toastCtrl: ToastController, public translate: TranslateService) {
                 
     this.flag = Global.flag;
     

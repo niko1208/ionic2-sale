@@ -9,7 +9,7 @@
       <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
   </div>
   <ion-navbar color="">
-    <ion-title>More</ion-title>
+    <ion-title>{{'STR_MORE' | translate}}</ion-title>
     <!--<ion-searchbar>
     </ion-searchbar>-->
   </ion-navbar>
@@ -21,12 +21,12 @@
     <ion-item round>
        <ion-icon name = "globe" item-left></ion-icon>
         <!--option content-->
-       <ion-label>Region</ion-label>
+       <ion-label>{{'STR_COUNTRY' | translate}}</ion-label>
 
         <ion-select [(ngModel)]="region" (ngModelChange)="selregion(region)">
-            <ion-option value="kuwait">Kuwait</ion-option>
-            <ion-option value="ksa">KSA</ion-option>
-            <ion-option value="jor">Jordan</ion-option>
+            <ion-option value="kuwait">{{'STR_KUWAIT' | translate}}</ion-option>
+            <ion-option value="ksa">{{'STR_KSA' | translate}}</ion-option>
+            <ion-option value="jor">{{'STR_JORDAN' | translate}}</ion-option>
         </ion-select>
     </ion-item>
 
@@ -35,18 +35,18 @@
     <ion-item>
               <ion-icon name = "mic" item-left></ion-icon>
         <!--option content-->
-       <ion-label>Language</ion-label>
+       <ion-label>{{'STR_LANGUAGE' | translate}}</ion-label>
 
         <ion-select [(ngModel)]="lang" (ngModelChange)="sellang(lang)">
-            <ion-option value="en">English</ion-option>
-            <ion-option value="ar">Arabic</ion-option>
+            <ion-option value="en">{{'STR_ENGLISH' | translate}}</ion-option>
+            <ion-option value="ar">{{'STR_KUWAIT' | translate}}</ion-option>
         </ion-select>
     </ion-item>
 
 <!--Post ad content-->
     <ion-item>
         <ion-icon name ="ionitron" item-left></ion-icon>
-        <ion-label (click)="onpostad()">Post ad</ion-label>
+        <ion-label (click)="onpostad()">{{'STR_POSTAD' | translate}}</ion-label>
         <ion-icon name ="arrow-dropright" class="arrow_right" item-right></ion-icon>
     </ion-item>
 
@@ -54,7 +54,7 @@
 <!--My Profile content-->
     <ion-item>
         <ion-icon name ="contact" item-left></ion-icon>
-        <ion-label (click)="onprofile()">My Profile</ion-label>
+        <ion-label (click)="onprofile()">{{'STR_MYPROFILE' | translate}}</ion-label>
         <ion-icon name ="arrow-dropright" class="arrow_right" item-right></ion-icon>
     </ion-item>
 
@@ -62,29 +62,29 @@
 <!--favorite content-->
     <ion-item>
         <ion-icon name ="happy" item-left></ion-icon>
-        <ion-label (click)="onfavorite()">favorite</ion-label>
+        <ion-label (click)="onfavorite()">{{'STR_FAVORITE' | translate}}</ion-label>
         <ion-icon name ="arrow-dropright" class="arrow_right" item-right></ion-icon>
     </ion-item>
 
 <!--contact us content-->
     <ion-item>
         <ion-icon name ="mail" item-left></ion-icon>
-        <ion-label>Contacts Us</ion-label>
+        <ion-label>{{'STR_CONTACTUS' | translate}}</ion-label>
         <ion-icon name ="arrow-dropright" class="arrow_right" item-right></ion-icon>
     </ion-item>
 
 <!--about us content-->
     <ion-item>
          <ion-icon name ="megaphone" item-left></ion-icon>
-        <ion-label>About Us</ion-label>
+        <ion-label>{{'STR_ABOUTUS' | translate}}</ion-label>
         <ion-icon name ="arrow-dropright" class="arrow_right" item-right></ion-icon>
     </ion-item>
 
 <!--Account Login content-->
     <ion-item>
         <ion-icon name ="contact" item-left></ion-icon>
-        <ion-label [class.hide]="profile_id == ''" (click)="onlogout()">Logout</ion-label>
-        <ion-label [class.hide]="profile_id != ''" (click)="onlogin()">Account login</ion-label>
+        <ion-label [class.hide]="profile_id == ''" (click)="onlogout()">{{'STR_LOGOUT' | translate}}</ion-label>
+        <ion-label [class.hide]="profile_id != ''" (click)="onlogin()">{{'STR_LOGOUT' | translate}}</ion-label>
         <ion-icon name ="arrow-dropright" class="arrow_right" item-right></ion-icon>
     </ion-item>
     

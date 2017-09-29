@@ -3,6 +3,7 @@ import { ViewController, NavController, NavParams, LoadingController, Loading } 
 import { Global } from './../../app/model/global';
 import { SplashPage } from '../splash/splash';
 import { Http } from '@angular/http';
+import { TranslateService } from 'ng2-translate';
 
 @Component({
   selector: 'page-register',
@@ -21,7 +22,7 @@ export class RegisterPage {
     public vcode = "";
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController) {
+              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public translate: TranslateService) {
 
                 this.mnumber = navParams.get("number");
                 

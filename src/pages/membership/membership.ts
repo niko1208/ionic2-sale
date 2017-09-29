@@ -6,6 +6,7 @@ import { MynotificationPage } from './../notification/notification';
 import { Events, AlertController } from 'ionic-angular';
 import { ServerDataModel, ServerDataModelDelegate } from './../../app/model/ServerDataModel-helper';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 import * as $ from 'jquery';
 
 declare var cordova : any;
@@ -23,7 +24,7 @@ export class MembershipPage {
     loading: Loading;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public toastCtrl: ToastController, public platform: Platform, private ev: Events, private alertCtrl: AlertController, public datamodel:ServerDataModel) {
+              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public toastCtrl: ToastController, public platform: Platform, private ev: Events, private alertCtrl: AlertController, public datamodel:ServerDataModel, public translate: TranslateService) {
 
                 
     this.flag = Global.flag;

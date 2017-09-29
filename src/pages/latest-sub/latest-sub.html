@@ -30,7 +30,7 @@
     <div class="dialog">
       <div class="dialog_header">{{dialog_title}}</div>
       <div class="dbutton dbt-blue" id="bt_call" (click)="dcall()">{{phonenumber}}</div>
-      <div class="dbutton dbt-red" id="bt_cancel" (click)="gocancel()">Cancel</div>
+      <div class="dbutton dbt-red" id="bt_cancel" (click)="gocancel()">{{'STR_CANCEL'}}</div>
     </div>
   </div>
 <ion-card class="ion-pview">
@@ -42,8 +42,8 @@
     </ion-row>
     <div class="div_img" id="div_detail">
       <div id="popup" *ngIf="ispopup">
-        <div (click)="clickItem(1)">Report</div>
-        <div (click)="clickItem(2)">Block</div>
+        <div (click)="clickItem(1)">{{'STR_REPORT' | translate}}</div>
+        <div (click)="clickItem(2)">{{'STR_BLOCK' | translate}}</div>
         <div (click)="clickItem(3)">Help</div>
       </div>
       <ion-icon class="arrow-back" name="arrow-back" (click)="navCtrl.pop()"></ion-icon>
@@ -60,32 +60,32 @@
       </ion-slides>
     </div>
     <div class="icon_sec_wanted" *ngIf="sub_wanted=='0'">
-      <div (click)="callIT(phonenumber)" class="divsel1">Call</div>
-      <div (click)="sendSMS()" class="divsel1">Sms</div>
-      <div (click)="onchat()" class="divsel1">Chat</div>
-      <div (click)="clicklike()" class="divsel{{blike}}" >+Favorite</div>
+      <div (click)="callIT(phonenumber)" class="divsel1">{{'STR_CALL' | translate}}</div>
+      <div (click)="sendSMS()" class="divsel1">{{'STR_SMS' | translate}}</div>
+      <div (click)="onchat()" class="divsel1">{{'STR_CHAT' | translate}}</div>
+      <div (click)="clicklike()" class="divsel{{blike}}" >+{{'STR_FAVORITE' | translate}}</div>
     </div>
   </div>
   <div class="div_sec" *ngIf="sub_wanted=='0'" style="margin-top: 0px;border-top:1px solid #ccc;"><h2>{{sub_title}}</h2></div>
   <div class="div_sec">
     <ion-row>
       <ion-col *ngIf="sub_wanted=='0'">
-        <div class='center'>Price</div><br/>
+        <div class='center'>{{'STR_PRICE' | translate}}</div><br/>
         <div class='center colorb'>{{sub_price}} KWD</div>
-        <div *ngIf="delivery == 'free'" text-center style="color:#01aa41">FREE Delivery</div>
-        <div *ngIf="delivery != 'free'" text-center style="color:#01aa41; font-size:12px">Delivery {{delivery_cost}}KD</div>
+        <div *ngIf="delivery == 'free'" text-center style="color:#01aa41">{{'STR_FREE_DELIVERY' | translate}}</div>
+        <div *ngIf="delivery != 'free'" text-center style="color:#01aa41; font-size:12px">{{'STR_DELIVERY' | translate}} {{delivery_cost}}KD</div>
       </ion-col>
       <ion-col *ngIf="sub_wanted=='1'">
         <div class='center'>Date/Time</div><br/>
         <div class='center colorb'>{{sub_date}}</div>
       </ion-col>
       <ion-col *ngIf="condition == 'true'">
-        <div class='center'>Condition</div><br/>
-        <div class='center colorb' *ngIf="condition == 'true'">NEW</div>
-        <div class='center colorb' *ngIf="condition != 'true'">USED</div>
+        <div class='center'>{{'STR_CONDITION' | translate}}</div><br/>
+        <div class='center colorb' *ngIf="condition == 'true'">{{'STR_NEW' | translate}}</div>
+        <div class='center colorb' *ngIf="condition != 'true'">{{'STR_USED' | translate}}</div>
       </ion-col>
       <ion-col>
-        <div class='center'>Views</div><br/>
+        <div class='center'>{{'STR_VIEWS' | translate}}</div><br/>
         <div class='center colorb'>{{sub_views}}</div>
       </ion-col>
       <ion-col>
@@ -97,28 +97,28 @@
   </div>
 
   <div class="div_sec noborder noshadow">
-    <button  ion-button full (click)="onprice()" class="md-button green">Make an offer</button>
+    <button  ion-button full (click)="onprice()" class="md-button green">{{'STR_MAKE_ANOFFER' | translate}}</button>
   </div>
 
   <div class="div_sec noborder noshadow">
-    <button  ion-button full *ngIf="pressedOffer==0" (click)="onenterbid()" class="md-button green">Enter Bidding starting Price</button>
+    <button  ion-button full *ngIf="pressedOffer==0" (click)="onenterbid()" class="md-button green">{{'STR_ENTER_BIDDING' | translate}}</button>
     <button  ion-button full *ngIf="pressedOffer!=0" color="light" (click)="ongobid()" class="md-button green">Offer on bidding, Total {{bidprice}} KD</button>
   </div>
 
   <div class="div_sec noborder noshadow" *ngIf="pressedOffer!=0">
-    <button  ion-button full (click)="onbid()" class="md-button green">Bid on this offer</button>
+    <button  ion-button full (click)="onbid()" class="md-button green">{{'STR_BID_ONTHISOFFER' | translate}}</button>
   </div>
 
   <div class="div_sec noborder">
-    <div style="padding-bottom: 5px;"><small>Description</small></div>
+    <div style="padding-bottom: 5px;"><small>{{'STR_DESCRIPTION' | translate}}</small></div>
     <div class="div_desc">{{sub_desc}}</div>
   </div>
 
   <div class="div_sec seller">
     <div (click)="onfollow(sub_profile_id)" class="bt_follow on_{{isfollow}}">+ Follow</div>
-    <div class="ranking">Rank</div>
+    <div class="ranking">{{'STR_RANK' | translate}}</div>
     <div class="goprofile" (click)="goprofile(sub_profile_id)"><ion-icon name="ios-arrow-forward"></ion-icon></div>
-    <div style="padding-bottom: 5px;"><small>About Seller</small></div>
+    <div style="padding-bottom: 5px;"><small>{{'STR_ABOUT_SELLER' | translate}}</small></div>
     <div class="div_plat" *ngIf="(pData.points)>=1500"><img src="assets/img/icon-2.png"/><div>Platinum</div></div>
     <div class="div_gold" *ngIf="(pData.points)>=1000 && (pData.points)<1500"><img src="assets/img/icon-12.png"/><div>Gold</div></div>
     <div class="div_silver" *ngIf="(pData.points)>=600 && (pData.points)<1000"><img src="assets/img/icon-16.png"/><div>Silver</div></div>
@@ -145,7 +145,7 @@
             <ion-icon *ngIf="myRating<=3" name="star-outline"></ion-icon>
             <ion-icon *ngIf="myRating<=4" name="star-outline"></ion-icon>
         </div>
-        <div style="clear: both" class="reviewcount">{{ratingCount}} Reviews</div>
+        <div style="clear: both" class="reviewcount">{{ratingCount}} {{'STR_REVIEWS' | translate}}</div>
         <div class="div_icons1">
             <div class="div_icon sel">
                 <img src="assets/img/icon-verify-1.png" />
@@ -184,7 +184,7 @@
   </div>
 
   <div class="div_sec">
-    <div style="padding-bottom: 5px;"><small>Post Rating & Reviews</small></div>
+    <div style="padding-bottom: 5px;"><small>{{'STR_POST_RATINGS' | translate}}</small></div>
     <div>
       <ion-item  *ngFor="let item of reviewlist; let i = index">
           <div class="div_star div_review">
@@ -209,13 +209,13 @@
           <div class="more" *ngIf="ml[i]==1" (click)="showless(i)">LESS</div>
       </ion-item>
     </div>
-    <button ion-button full class='md-button green' (click)="goreview()">Write a Review and rate this post</button>
+    <button ion-button full class='md-button green' (click)="goreview()">{{'STR_WRITE_REVIEW' | translate}}</button>
   </div>
 
 </ion-card>
 
   <ion-item *ngIf="myprofile_id == sub_profile_id">
-    <button ion-button class='md-button orange' (click)="upgrade()">Upgrade to <br/>featured ad</button>
+    <button ion-button class='md-button orange' (click)="upgrade()">{{'STR_UPGRADE_TO_FEATURE' | translate}}</button>
     <!-- <button ion-button class='md-button green' (click)="edit()">Edit</button> -->
     <button ion-button class='md-button red' (click)="delete()">Delete</button>
   </ion-item>

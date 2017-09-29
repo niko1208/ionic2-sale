@@ -8,19 +8,19 @@
                 <ion-input type="text" value="{{phonecode}}" id="pcode" [(ngModel)]="phonecode" required placeholder="" align="right" disabled="true"></ion-input>
             </div>
             <div style='width:70%;float:left'>
-                <ion-input type="text" value="" id="mnumber" [(ngModel)]="mnumber" required placeholder="Mobile Number" maxlength="8"></ion-input>
+                <ion-input type="text" value="" id="mnumber" [(ngModel)]="mnumber" required placeholder="{{'STR_PHONENUMBER' | translate}}" maxlength="8"></ion-input>
             </div>
             <div class="clearfix"></div>
         </div>
     </div>
 
     <div class="div_country">
-        <button style="width:100%;" ion-button (click)="onlogin();" color="">LOGIN</button>
+        <button style="width:100%;" ion-button (click)="onlogin();" color="">{{'STR_LOGIN' | translate}}</button>
     </div>
         
     <div class="div_country">
-        <button style="width:45%;float:left" ion-button (click)="onskip();" color="">SKIP LOGIN</button>
-        <button style="width:45%;float:right" ion-button  (click)="onback();" color="">BACK</button>
+        <button style="width:45%;float:left" ion-button (click)="onskip();" color="">{{'STR_SKIP_LOGIN' | translate}}</button>
+        <button style="width:45%;float:right" ion-button  (click)="onback();" color="">{{'STR_BACK' | translate}}</button>
         <div class="clearfix"></div>
     </div>
 

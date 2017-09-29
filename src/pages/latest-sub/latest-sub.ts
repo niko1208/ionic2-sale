@@ -18,6 +18,7 @@ import { SearchPage } from './../search/search';
 import { ReviewPage } from './../review/review';
 import { AddonsPage } from './../addons/addons';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 
 import { Http } from '@angular/http';
 
@@ -91,7 +92,7 @@ export class LatestSubPage  implements ServerDataModelDelegate{
   public flag: any;
   public badge = '0';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private loading:LoadingController, public datamodel:ServerDataModel, public _http:Http, private alertCtrl: AlertController, private ev: Events) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private loading:LoadingController, public datamodel:ServerDataModel, public _http:Http, private alertCtrl: AlertController, private ev: Events, public translate: TranslateService) {
     this.navCtrl = navCtrl;
 
     this.flag = Global.flag;

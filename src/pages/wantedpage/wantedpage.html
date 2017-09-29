@@ -11,9 +11,9 @@
   
   <ion-navbar>
     <ion-title>
-      <div style="float: left; padding-top: 10px">Shops</div>
+      <div style="float: left; padding-top: 10px">{{'STR_SHOPS' | translate}}</div>
       <button color="secondary" ion-button style="margin-right:10px; float:right" (click)="goPostWnatedThing();">
-        ADD YOUR SHOP BANNER NOW
+        {{'STR_Add_SHOP' | translate}}
       </button>
     </ion-title>
   </ion-navbar>
@@ -26,7 +26,7 @@
     <div class="dialog">
       <div class="dialog_header">{{dialog_title}}</div>
       <div class="dbutton dbt-blue" id="bt_call" (click)="dcall()">{{phonenumber}}</div>
-      <div class="dbutton dbt-red" id="bt_cancel" (click)="gocancel()">Cancel</div>
+      <div class="dbutton dbt-red" id="bt_cancel" (click)="gocancel()">{{'STR_CANCEL' | translate}}</div>
     </div>
   </div>
 
@@ -51,7 +51,7 @@
               <ion-icon *ngIf="item['mark']<=3" name="star-outline"></ion-icon>
               <ion-icon *ngIf="item['mark']<=4" name="star-outline"></ion-icon>
           </div>
-          <div style="clear: both" class="reviewcount">{{item['num']}} Reviews</div>
+          <div style="clear: both" class="reviewcount">{{item['num']}} {{STR_REVIEWS}}</div>
         </div>
         <div class="state on_{{item.post_profile_ison}}"></div>
         <div (click)="onfollow(item.post_profile_id, idx, item.post_profile_isfollow);" class="bt_follow on_{{item.post_profile_isfollow}}" id="bt_follow_{{idx}}">
@@ -67,9 +67,9 @@
         <img src="{{item.post_img_url}}" (click)="gotoview(idx)" />
     </div>
     <div class="icon_sec_wanted">
-      <div (click)="callIT('+1-111-1111-1111')">Call</div>
-      <div (click)="sendSMS()">Sms</div>
-      <div (click)="onchat(item.post_profile_id, item.post_img_url)">Chat</div>
+      <div (click)="callIT('+1-111-1111-1111')">{{'STR_CALL' | translate}}</div>
+      <div (click)="sendSMS()">{{'STR_SMS' | translate}}</div>
+      <div (click)="onchat(item.post_profile_id, item.post_img_url)">{{'STR_CHAT' | translate}}</div>
       <div (click)="onlike(item.post_id, item.wanted, item.islike, idx, item)" class="divsel{{likeary[idx]}}" >+Favorite</div>
     </div>
   </div>
@@ -87,7 +87,7 @@
         <div class='center colorb'>{{item.likes}}</div>
       </ion-col>
       <ion-col>
-        <div class='center'>Views</div><br/>
+        <div class='center'>{{'STR_VIEWS' | translate}}</div><br/>
         <div class='center colorb'>{{item.post_viewcount}}</div>
       </ion-col>
     </ion-row>

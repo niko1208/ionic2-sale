@@ -6,6 +6,7 @@ import { NavController, NavParams, Events } from 'ionic-angular';
 import { FViewPage } from './../fview/fview';
 import { Http } from '@angular/http';
 import { Service } from '../../providers/service';
+import { TranslateService } from 'ng2-translate';
 
  import { ServerDataModel, ServerDataModelDelegate } from './../../app/model/ServerDataModel-helper';
 /*
@@ -26,7 +27,7 @@ export class SplashPage {
 
   splash_data : Array<OfferDataModel> = [];
   temp : any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public datamodel:ServerDataModel, public _http:Http, public sv:Service, private ev: Events) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams,public datamodel:ServerDataModel, public _http:Http, public sv:Service, private ev: Events, public translate: TranslateService) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SplashPage');

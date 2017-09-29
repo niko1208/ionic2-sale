@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ViewController, NavController, NavParams } from 'ionic-angular';
 import { Global } from './../../app/model/global';
 import { LoginPage } from '../login/login';
+import { TranslateService } from 'ng2-translate';
 
 @Component({
   selector: 'page-region',
@@ -15,7 +16,7 @@ export class RegionPage {
     public selRegion = "kuwait";
     public selLang = "en";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private viewCtrl: ViewController, public translate: TranslateService) {
 
   }
 

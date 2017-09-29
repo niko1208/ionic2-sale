@@ -9,6 +9,7 @@ import { PostDataModel } from './../../app/model/PostDataModel';
 import { LatestSubPage } from './../latest-sub/latest-sub';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 import * as $ from 'jquery';
 
 @Component({
@@ -26,7 +27,7 @@ export class BidPage {
     public info_text = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events) {
+              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events, public translate: TranslateService) {
                 
 
     this.flag = Global.flag;

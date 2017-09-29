@@ -16,6 +16,7 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Events } from 'ionic-angular';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 import * as $ from 'jquery';
 
 /*
@@ -42,7 +43,7 @@ export class MyadsPage implements ServerDataModelDelegate {
     public flag: any;
     public badge = '0';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public datamodel:ServerDataModel, public alertCtrl: AlertController, private ev: Events) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public datamodel:ServerDataModel, public alertCtrl: AlertController, private ev: Events, public translate: TranslateService) {
 
      this.navCtrl = navCtrl;
     this.flag = Global.flag;

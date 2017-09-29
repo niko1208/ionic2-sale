@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class='info_buttons' *ngIf="isbutton">
-        <div class='info_button' (click)="info_prev()">Previous</div>
-        <div class='info_button' (click)="info_next()">Next</div>
+        <div class='info_button' (click)="info_prev()">{{'STR_PREV' | translate}}</div>
+        <div class='info_button' (click)="info_next()">{{'STR_NEXT' | translate}}</div>
     </div>
 </div>

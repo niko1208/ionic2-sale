@@ -13,6 +13,7 @@ import { SearchPage } from './../search/search';
 import { MembershipPage } from './../membership/membership';
 import { FavoritePage } from '../favorite/favorite';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 import * as $ from 'jquery';
 
 declare var cordova : any;
@@ -40,7 +41,7 @@ export class MyprofileinfoPage {
     public tool_tip = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public toastCtrl: ToastController, public platform: Platform, private ev: Events) {
+              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public toastCtrl: ToastController, public platform: Platform, private ev: Events, public translate: TranslateService) {
 
                 let data = navParams.get("data");
                 this.pnumber = data.phone;

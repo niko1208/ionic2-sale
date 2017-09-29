@@ -11,7 +11,7 @@
   </div>
   
    <ion-navbar color="">
-    <ion-title>Top seller</ion-title>
+    <ion-title>{{'STR_TOP_SELLER' | translate}}</ion-title>
    </ion-navbar>
 
 </ion-header>
@@ -33,7 +33,7 @@
         <div class="div_img" (click)="goprofile(item.profile_id)">
             <img src="{{item.image}}" />
         </div>
-        <div class="ranking">Rank {{i+1}}</div>
+        <div class="ranking">{{'STR_RANK' | translate}} {{i+1}}</div>
 
         <div class="div_item_right">
             <div class="name">{{item.username}}</div>
@@ -51,7 +51,7 @@
                 <ion-icon *ngIf="item['mark']<=3" name="star-outline"></ion-icon>
                 <ion-icon *ngIf="item['mark']<=4" name="star-outline"></ion-icon>
             </div>
-            <div style="clear: both" class="reviewcount">{{item['num']}} Reviews</div>
+            <div style="clear: both" class="reviewcount">{{item['num']}} {{'STR_REVIEWS' | translate}}</div>
             <div class='div_tooltip'>
                 <div class='tooltip' id='tooltip_{{i}}' *ngIf="tool_tip[i]">{{strtooltip}}</div>
             <div class="div_icons1">
@@ -87,14 +87,14 @@
                 </div>
             </div>
             </div>
-            <div class="div_verify">Verified</div>
+            <div class="div_verify">{{'STR_VERIFIED' | translate}}</div>
         </div>
         <div style="clear:both"></div>
         
         <div *ngIf="item.about != ''">
-            <div class="about_title">About</div>
+            <div class="about_title">{{'STR_ABOUT' | translate}}</div>
             <div class="about" id="about{{i}}" text-wrap [innerHTML]="item.about"></div>
-            <div class="about_more" id="about_more{{i}}" (click)="aboutmore(i)">More</div>
+            <div class="about_more" id="about_more{{i}}" (click)="aboutmore(i)">{{'STR_MORE' | translate}}</div>
         </div>
     </ion-item>
 

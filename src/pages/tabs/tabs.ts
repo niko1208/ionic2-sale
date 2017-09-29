@@ -6,6 +6,7 @@ import {MorePage} from '../more/more';
 import {LatestPage} from '../latest/latest';
 import {MychatPage} from '../mychat/mychat';
 import {MyprofilePage} from '../myprofile/myprofile';
+import { TranslateService } from 'ng2-translate';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -19,7 +20,7 @@ export class TabsPage {
   tab4Root: any = MyprofilePage;
   tab5Root: any = LatestPage;
 
-  constructor() {
+  constructor(public translate: TranslateService) {
 
   }
 }

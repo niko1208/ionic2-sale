@@ -10,6 +10,7 @@ import { NavController, NavParams, ActionSheetController, ToastController, Platf
 import { Events } from 'ionic-angular';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 import * as $ from 'jquery';
 declare var cordova : any;
 /*
@@ -36,7 +37,7 @@ export class PostwantedthingPage {
     public flag: any;
     public badge = '0';
 
-  constructor(public model:ServerDataModel, public navCtrl: NavController, public navParams: NavParams, public want_page:WantedPage,public actiionSheetCtrl:ActionSheetController, public toastCtrl: ToastController, public platform: Platform, public loadingCtrl: LoadingController, private ev: Events) {
+  constructor(public model:ServerDataModel, public navCtrl: NavController, public navParams: NavParams, public want_page:WantedPage,public actiionSheetCtrl:ActionSheetController, public toastCtrl: ToastController, public platform: Platform, public loadingCtrl: LoadingController, private ev: Events, public translate: TranslateService) {
     this.flag = Global.flag;
     this.badge = Global.badge;
     this.ev.subscribe('badge', (badge)=>{

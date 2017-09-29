@@ -7,6 +7,7 @@ import { MynotificationPage } from './../notification/notification';
 import { MyprofilePage } from './../myprofile/myprofile';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 import * as $ from 'jquery';
 
 @Component({
@@ -32,7 +33,7 @@ export class ChatPage {
     public badge = '0';
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events) {
+              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events, public translate: TranslateService) {
                 
                 this.recid = navParams.get("rid");
                 this.image = navParams.get("image");

@@ -9,6 +9,7 @@ import { MyprofilePage } from './../myprofile/myprofile';
 import { Http } from '@angular/http';
 import { Events } from 'ionic-angular';
 import { SearchPage } from './../search/search';
+import { TranslateService } from 'ng2-translate';
 import * as $ from 'jquery';
 
 @Component({
@@ -26,7 +27,7 @@ export class MorePage {
     public flag: any;
     public badge = '0';
 
-  constructor(public navCtrl: NavController, public _http:Http, private ev: Events) {
+  constructor(public navCtrl: NavController, public _http:Http, private ev: Events, public translate: TranslateService) {
     this.region = Global.Static_region;
     this.lang = Global.Static_lang;
     this.flag = Global.flag;
@@ -57,6 +58,7 @@ export class MorePage {
 
   sellang(la) {
     Global.Static_lang = la;
+    this.translate.use(la);
   }
 
   ionViewWillEnter() {

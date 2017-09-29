@@ -19,31 +19,31 @@
     <div class="sec">
         <ion-item>
             <ion-icon name ="phone-portrait" item-left></ion-icon>
-            <ion-label>Phone Number</ion-label>
+            <ion-label>{{'STR_PHONENUMBER' | translate}}</ion-label>
             <ion-input [(ngModel)]="pnumber" item-right></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-icon name ="mail" item-left></ion-icon>
-            <ion-label>Email</ion-label>
+            <ion-label>{{'STR_EMAIL' | translate}}</ion-label>
             <ion-input [(ngModel)]="email" item-right></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-icon name ="contact" item-left></ion-icon>
-            <ion-label>Nick Name</ion-label>
+            <ion-label>{{'STR_NICKNAME' | translate}}</ion-label>
             <ion-input [(ngModel)]="username" item-right></ion-input>
         </ion-item>
         <ion-item>
             <ion-icon name ="md-text" item-left></ion-icon>
-            <ion-label>About</ion-label>
+            <ion-label>{{'STR_ABOUT' | translate}}</ion-label>
         </ion-item>
         <ion-item>                                      
-            <ion-textarea [(ngModel)]="about" placeholder="Write about"></ion-textarea>
+            <ion-textarea [(ngModel)]="about" placeholder="{{'STR_WRITEABOUT' | translate}}"></ion-textarea>
         </ion-item>
     </div>
     <div style="padding: 5%">
-        <button style="width:100%;" ion-button (click)="onsave();" color="">Save</button>
+        <button style="width:100%;" ion-button (click)="onsave();" color="">{{'STR_SAVE' | translate}}</button>
     </div>
 
 </ion-content>

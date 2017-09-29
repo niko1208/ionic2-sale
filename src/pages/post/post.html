@@ -28,10 +28,10 @@
 
   <ion-list class="add_post_list">
 
-    <div class="category"  (click) ="gotoWantedPage();">Choose Category</div>
+    <div class="category"  (click) ="gotoWantedPage();">{{'STR_CHOOSE_CATE' | translate}}</div>
     <ion-item class="post_button_upload">
       <ion-scroll scrollX="true" id="upic">
-        <div class="bt_choose_category" (click)="gotoTakePic();">You can add 10 Image(s)</div>
+        <div class="bt_choose_category" (click)="gotoTakePic();">{{'STR_YOUCANADD' | translate}}</div>
         <div *ngFor="let picitem of picitems; let ii = index" class='bt_pic cateblue'>
           <div class='bt_remove' (click) ='removepic(ii);'>X</div>
           <img src='{{picitem.imgurl}}'/>
@@ -54,56 +54,56 @@
 
 
     <ion-item>
-      <ion-label fixed>Title</ion-label>
+      <ion-label fixed>{{'STR_TITLE' | translate}}</ion-label>
       <ion-input type="text" value="" id="Title" [(ngModel)]="post_title" required></ion-input>
     </ion-item>
 
    <ion-item>
-    <ion-label fixed>Price</ion-label>
+    <ion-label fixed>{{'STR_PRICE' | translate}}</ion-label>
     <ion-input type="text" value="" id="Price" [(ngModel)]="post_price" required></ion-input>
   </ion-item>
 
   <ion-item style="height: 200px;">
-    <ion-label fixed>Description</ion-label>
+    <ion-label fixed>{{'STR_DESCRIPTION' | translate}}</ion-label>
     <ion-textarea value="" id="Description" [(ngModel)]="post_desc" required></ion-textarea>
   </ion-item>
 
   <ion-item>
      <ion-checkbox [(ngModel)]="add_detail" (ionChange)="changeDetail()"></ion-checkbox>
-     <ion-label> ADD DETAILS (optional)</ion-label>
+     <ion-label> {{'STR_ADD_DETAILS' | translate}}</ion-label>
   </ion-item>
 
   <ion-row style="position: relative" [ngClass]="{'rover':!add_detail}">
     <div class='rover' *ngIf="!add_detail" ></div>
     <ion-item>
-      <ion-label>CONDITION : </ion-label>
+      <ion-label>{{'STR_CONDITION' | translate}} : </ion-label>
       <ion-label text-right>
         <div class='utab'>
-          <div [ngClass]="{'sel':condition==false}" (click)="condition=false;">Used</div>
-          <div [ngClass]="{'sel':condition==true}" (click)="condition=true;">New</div>
+          <div [ngClass]="{'sel':condition==false}" (click)="condition=false;">{{'STR_USED' | translate}}</div>
+          <div [ngClass]="{'sel':condition==true}" (click)="condition=true;">{{'STR_NEW' | translate}}</div>
         </div>
       </ion-label>
     </ion-item>
     <ion-item>
-     <ion-label style="padding-left: 16px;font-size: 16px;">DELIVERY</ion-label>
+     <ion-label style="padding-left: 16px;font-size: 16px;">{{'STR_DELIVERY' | translate}}</ion-label>
     </ion-item>
     <ion-item>
-    <ion-checkbox [(ngModel)]="isfree" (ionChange)="changeFree()"></ion-checkbox><ion-label>Free</ion-label>
+    <ion-checkbox [(ngModel)]="isfree" (ionChange)="changeFree()"></ion-checkbox><ion-label>{{'STR_FREE' | translate}}</ion-label>
     </ion-item>
     <ion-item>
-    <ion-checkbox [(ngModel)]="isnofree" (ionChange)="changeNoFree()"></ion-checkbox><ion-label>Not Free</ion-label>
+    <ion-checkbox [(ngModel)]="isnofree" (ionChange)="changeNoFree()"></ion-checkbox><ion-label>{{'STR_NOTFREE' | translate}}</ion-label>
     </ion-item>
     <div style="position: absolute; bottom: 10px; right: 10px;">
-      Cost&nbsp;<input class='dcost' type='text' [(ngModel)]='dcost' style="width:50px;padding:3px 5px;font-size: 16px;"/>&nbsp;KD
+      {{'STR_COST' | translate}}&nbsp;<input class='dcost' type='text' [(ngModel)]='dcost' style="width:50px;padding:3px 5px;font-size: 16px;"/>&nbsp;KD
     </div>
   </ion-row>
 
   <ion-item>
-    <button ion-button block class='md-button green' (click)="post_type='free';clickPostButton()">post free ad</button>
+    <button ion-button block class='md-button green' (click)="post_type='free';clickPostButton()">{{'STR_POSTFREE' | translate}}</button>
   </ion-item>
 
   <ion-item>
-    <button ion-button block class='md-button orange' (click)="clickContinue()">upgrade to featured</button>
+    <button ion-button block class='md-button orange' (click)="clickContinue()">{{'STR_UPGRADE_TO_FEATURE' | translate}}</button>
   </ion-item>
 
 </ion-list>
