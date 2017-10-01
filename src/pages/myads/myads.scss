@@ -45,9 +45,9 @@ page-myads {
   padding: 10px 5px;
 }
 .div_img{
-  height:140px;
+  height: 150px;
   overflow: hidden;
-  border-bottom: 2px solid #1dafec;
+  background-size: cover;
 }
 .div_img img{
   width: 100%;
@@ -64,11 +64,11 @@ page-myads {
   font-size: 11px;
 }
 .pprice{
-  color: #1dafec;
+  color: #ff7f27;
   font-size: 11px;
 }
 .ptitle{
-  color: #1dafec;
+  color: #ff7f27;
   font-size: 16px;
   padding-top: 5px;
   white-space: nowrap;

@@ -12,7 +12,7 @@
 </ion-header>
 
 
-<ion-content class="detail_content">
+<ion-content [ngClass]="(service.lang == 'ar') ? 'detail_content cont_rtl':'detail_content'">
     <div class="popup" *ngIf="bpopup">
         <div class="dialog">
         <div class="dialog_header">{{dialog_title}}</div>
@@ -125,7 +125,7 @@
     <div style="padding-bottom: 10px">
         <div class="div_tab">
             <div class="div_30p" (click)="tabclick('ads')" id="tab_ads">{{'STR_SELLER_ADVERTISE' | translate}}({{ads}})</div>
-            <div class="div_30p" (click)="tabclick('rating')" id="tab_rating">Ratings & {{'STR_REVIEWS' | translate}}</div>
+            <div class="div_30p" (click)="tabclick('rating')" id="tab_rating">{{'STR_RATING_REVIEW' | translate}}</div>
         </div>
     </div>
 

@@ -18,10 +18,12 @@ page-about {
 .offer_card
 {
   width: 49%;
-  height: 230px;
+  height: 160px;
   margin: 0.5%;
   float: left;
   background: #fff;
+  overflow: hidden;
+  background-size: cover;
   // background-image: url('../../assets/img/back1.png');
   // background-size: cover;
 }

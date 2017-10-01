@@ -27,8 +27,9 @@
 <ion-card class="late_card" *ngFor="let item of keys; let i = index">
 
     <div class="delete" (click)="click_del(i)">X</div>
-  <div class="div_img">
-    <img  class="late_img" *ngFor="let itemurl of item.post_img_url;" src="{{itemurl}}"/>
+  
+  <div class="div_img" [style.backgroundImage]="'url('+item.post_img_url[0]+')'" >
+    
   </div>
   <div class="div_content"  (click)="click_card(i);">
     <div>

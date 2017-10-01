@@ -179,7 +179,7 @@ ion-icon.bt{
 ion-toolbar ion-row ion-col{
   font-size: 18px;
   color: rgba(255,255,255,0.7);
-  letter-spacing: 1.2px;
+  letter-spacing: 0.5px;
 }
 ion-toolbar ion-row ion-col.sel{
   font-weight: bold;
@@ -193,7 +193,7 @@ ion-content.content-md{
     position: fixed;
     bottom: 70px;
     right: 10px;
-    background: #fe5e4c;
+    background: #fb341f;
     width: 50px;
     height: 50px;
     border-radius: 50px;
@@ -202,6 +202,10 @@ ion-content.content-md{
     z-index: 99;
     text-align: center;
     padding-top: 3px;
+}
+.sell_ar{
+    font-size: 14px;
+    margin-top: -12px;
 }
 .fast_post ion-icon{
     font-size: 36px;

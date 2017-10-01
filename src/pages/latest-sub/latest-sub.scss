@@ -329,11 +329,11 @@ button.md-button.green{
 }
 button.md-button.orange{
   background: #ff7f27;
-  width: 40%;
+  width: 45%;
 }
 button.md-button.red{
   background: #e44f0f;
-  width: 40%;
+  width: 45%;
   float: right;
 }
 
@@ -427,6 +427,35 @@ button.md-button.red{
     position: absolute;
     top: 102px;
     left: 10px;
+}
+ion-content.content-md.cont_rtl{
+  div.seller .div_img{
+    float: right;
+  }
+  div.seller .div_item_right{
+    float: right;
+    padding-left: 0px;
+    padding-right: 20px;
+  }
+  .overall_mark{
+    float: right;
+  }
+  .div_gold{
+    left: 40px;
+    right: auto;
+  }
+  .goprofile{
+    left: 5px;
+    right: auto;
+  }
+  .div_verify{
+    right: 10px;
+    left: auto;
+  }
+  .ranking{
+    left: 35px;
+    right: auto;
+  }
 }
 
 }

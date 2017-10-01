@@ -48,9 +48,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { TranslateLoader, TranslateStaticLoader } from 'ng2-translate/src/translate.service';
-import { Http } from '@angular/http';
+import { Http, HttpModule } from '@angular/http';
+
+import 'rxjs/Rx';
+
 export function createTranslateLoader(http: Http) {
-	return new TranslateStaticLoader(http, '../assets/i18n', '.json');
+	return new TranslateStaticLoader(http, './assets/i18n', '.json');
 }
 
 @NgModule({
@@ -94,9 +97,10 @@ export function createTranslateLoader(http: Http) {
   ],
   imports: [
     IonicModule.forRoot(MyApp),
+    HttpModule,
     TranslateModule.forRoot({
 			provide: TranslateLoader,
-			useFactory: createTranslateLoader,
+      useFactory: (createTranslateLoader),
 			deps: [Http]
 		}),
   ],

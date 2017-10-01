@@ -4,7 +4,6 @@ import { serialize } from '@angular/compiler/src/i18n/serializers/xml_helper';
 import { Global } from './../../app/model/global';
 import { ServerDataModel,ServerDataModelDelegate } from './../../app/model/ServerDataModel-helper';
 import { Http } from '@angular/http';
-import { Service } from './../../providers/service';
 import { Component } from '@angular/core';
 import { DetailPage } from '../detail/detail';
 import { PostPage } from './../post/post';
@@ -18,6 +17,7 @@ import { SearchPage } from './../search/search';
 import { BidPage } from './../bid/bid';
 import { Events, LoadingController } from 'ionic-angular';
 import {MorePage} from '../more/more';
+import { Service } from './../../providers/service';
 import 'rxjs/add/operator/map';
 import * as $ from 'jquery';
 
@@ -55,8 +55,9 @@ export class HomePage implements ServerDataModelDelegate {
     public flag: any;
     public badge = '0';
     info_text = [];
+    public lang: any;
 
-  constructor( public plateform:Platform, public navCtrl: NavController, public viweCtrl : ViewController,public server :Service,public http: Http,public datamodel:ServerDataModel, private ev: Events, public _http:Http, private loading:LoadingController)
+  constructor( public plateform:Platform, public navCtrl: NavController, public viweCtrl : ViewController,public server :Service,public http: Http,public datamodel:ServerDataModel, private ev: Events, public _http:Http, private loading:LoadingController, public service:Service)
    {
      this.navCtrl = navCtrl;
      this.plateform = plateform;
@@ -100,7 +101,8 @@ export class HomePage implements ServerDataModelDelegate {
 
 ionViewWillEnter()
 {
-
+  this.lang = Global.Static_lang;
+  
     if(Global.Static_profile_id == "") {
       $('.fstatusbar img').css('display', 'none');
     }
@@ -129,6 +131,13 @@ ionViewWillEnter()
         res['items'][i]['about'] = res['items'][i]['about'].replace(/\n/g, "<br/>");
         this.list.push(item);
       } 
+      let w = $('.s_cont').width(); console.log(w);
+      w = Math.floor(w / 3);
+      setTimeout(function(){
+        $('.s_cont_wrapper').css('width', (w*10+10)+'px');
+        $('.s_cont_slide').css('width', w+'px');
+      }, 500);
+      
     }, error => {
         alert("Error");
     });

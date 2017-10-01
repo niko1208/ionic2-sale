@@ -19,15 +19,15 @@
         </ion-col>
 
         <ion-col col>
-          <button ion-button color="secondary" (click)="goBidPage();">Bids</button>
+          <button ion-button color="secondary" (click)="goBidPage();">{{'STR_BIDS' | translate}}</button>
         </ion-col>
 
         <ion-col col>
-          <button ion-button color="secondary" (click)="goTopSellerPage();">Top Sellers</button>
+          <button ion-button color="secondary" (click)="goTopSellerPage();">{{'STR_TOPSELLERS' | translate}}</button>
         </ion-col>
 
         <ion-col col>
-          <button color="secondary" ion-button style="margin-left: 2px;" (click)="goWnatedThing();">Shops</button>
+          <button color="secondary" ion-button style="margin-left: 2px;" (click)="goWnatedThing();">{{'STR_SHOPS' | translate}}</button>
         </ion-col>
     </ion-row>
   </ion-navbar>
@@ -37,14 +37,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="home_content" style=" padding: 2px;" >
-  <div class='fast_post' (click)="goPostPage()"><ion-icon name="ios-camera"></ion-icon><small>SELL</small></div>
+<ion-content style=" padding: 2px;" [ngClass]="(lang == 'ar') ? 'home_content cont_rtl':'home_content'" >
+  <div class='fast_post fast_post_{{lang}}' (click)="goPostPage()"><ion-icon name="ios-camera"></ion-icon><small>{{'STR_SELL' | translate}}</small></div>
   <div class="s_cont">
-    <div class="div_title">Recommended TOP SELLERS</div> 
-    <button id='bt_viewall' ion-button small color='blue' (click)="goTopSellerPage()">View ALL</button>
+    <div class="div_title">{{'STR_RECOMMAND_TOP' | translate}}</div> 
+    <button id='bt_viewall' ion-button small color='blue' (click)="goTopSellerPage()">{{'STR_VIEWALL' | translate}}</button>
     <div class="s_cont_wrapper">
       <div class="s_cont_slide" *ngFor="let item of list; let i = index;" (click)="goRProfile(i)">
-        <div class="ranking">Rank {{i+1}}</div>
+        <div class="ranking">{{'STR_RANK' | translate}} {{i+1}}</div>
         <div><img src="{{item.image}}" /></div>
         <div>{{item.username}}</div>
         <div>
@@ -62,10 +62,10 @@
               <ion-icon *ngIf="item['mark']<=3" name="star-outline"></ion-icon>
               <ion-icon *ngIf="item['mark']<=4" name="star-outline"></ion-icon>
           </div>
-          <div style="clear: both" class="reviewcount">{{item['num']}} Reviews</div>
+          <div style="clear: both" class="reviewcount">{{item['num']}} {{'STR_REVIEWS' | translate}}</div>
           <div (click)="onfollow(item.profile_id, i, item.isfollow);" class="bt_follow on_{{item.isfollow}}" id="bt_follow_{{i}}">
-            <span *ngIf="item.isfollow=='1'">Followed</span>
-            <span *ngIf="item.isfollow!='1'">+ Follow</span>
+            <span *ngIf="item.isfollow=='1'">{{'STR_FOLLOW' | translate}}</span>
+            <span *ngIf="item.isfollow!='1'">+ {{'STR_FOLLOW' | translate}}</span>
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@
      </ion-item>-->
 
 <div class="div_sec"></div>
-<div class="div_title">Categories</div>
+<div class="div_title">{{'STR_CATEGORIES' | translate}}</div>
 <ion-card class="home_card" *ngFor="let item of keys; let i = index" (click)="gotoNextPage(item.id, item.cate_name, item.cate_ar_name);">
   
   <ion-card-content>

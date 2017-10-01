@@ -54,6 +54,8 @@ export class MyprofilePage {
 
     public flag: any;
     public badge = '0';
+    public lang: any;
+
     public membership1 = '';
     public membership2 = '';
     public membership3 = '';
@@ -109,6 +111,8 @@ export class MyprofilePage {
 
   ionViewWillEnter()
   {
+    this.lang = Global.Static_lang;
+    
     this.percent1 = "";
     this.percent2 = "";
     this.percent3 = "";
@@ -245,11 +249,11 @@ export class MyprofilePage {
             this.membership3 = res['items'][0]['membership3'];
             this.membership4 = res['items'][0]['membership4'];
 
-            this.membership = "Free";
-            if(this.membership1 != "") this.membership = "Basic";
-            if(this.membership2 != "") this.membership = "Professional";
-            if(this.membership3 != "") this.membership = "Shop";
-            if(this.membership4 != "") this.membership = "Company";
+            this.membership = this.translate.instant('STR_FREE');
+            if(this.membership1 != "") this.membership = this.translate.instant('STR_BASIC');
+            if(this.membership2 != "") this.membership = this.translate.instant('STR_PRO');
+            if(this.membership3 != "") this.membership = this.translate.instant('STR_SHOP');
+            if(this.membership4 != "") this.membership = this.translate.instant('STR_COMPANY');
 
             let points = parseInt(this.points);
             if(points <= 400) {

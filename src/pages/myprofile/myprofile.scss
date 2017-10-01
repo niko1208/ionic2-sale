@@ -207,6 +207,24 @@ div.progress.pro4{
     font-size: 18px;
 }
 
+ion-content.content-md.cont_rtl{
+    .div_30{
+        width: 25%;
+    }
+  .overall_mark,
+  .overall_star .div_star{
+    float: right;
+  }
+  .membership{
+      left: 30px;
+      right: auto;
+  }
+  .bt_editinfo{
+      left: 5px;
+      right: auto;
+  }
+}
+
 }
 
 .info_popup_s{
@@ -219,3 +237,5 @@ div.progress.pro4{
 .info_popup_s .triangle_bottom{
     display: none !important;
 }
+
+

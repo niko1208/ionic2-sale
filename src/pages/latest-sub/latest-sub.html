@@ -25,7 +25,7 @@
 </ion-header>
 
 
-<ion-content class="sub_content" style="background-color:#eee;border-radius:10%;">
+<ion-content [ngClass]="(service.lang == 'ar') ? 'sub_content cont_rtl':'sub_content'" style="background-color:#eee;border-radius:10%;">
   <div class="popup" *ngIf="bpopup">
     <div class="dialog">
       <div class="dialog_header">{{dialog_title}}</div>

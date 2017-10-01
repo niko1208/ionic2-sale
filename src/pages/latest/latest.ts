@@ -41,6 +41,7 @@ export class LatestPage implements ServerDataModelDelegate {
   temp : any;
   pids = [];
   info_text = [];
+    public lang: any;
 
   public clickFollow = false;
   flag : any;
@@ -74,6 +75,8 @@ export class LatestPage implements ServerDataModelDelegate {
 
  ionViewWillEnter()
  {
+   this.lang = Global.Static_lang;
+
    this.service.info_cls = "l";
     this.datamodel.GetPostProducts(this.clickFollow);
     this.datamodel.homedelegate = this;
@@ -156,8 +159,14 @@ export class LatestPage implements ServerDataModelDelegate {
           this.pids.push(this.temp);
           pid = this.temp.pid;
         }
+        this.temp.post_date = this.formatDate(this.temp.post_date);
         this.keys.push(this.temp);
       }
+  }
+
+  formatDate(date) {
+    let ary = date.split(":");
+    return ary[0]+":"+ary[1];
   }
 
   ionViewDidLoad() {

@@ -3,6 +3,10 @@
   "STR_SKIP_LOGIN": "Skip login",
   "STR_CONTINUE": "Continue",
   "STR_BACK": "Back",
+  "STR_USERNAME": "Username",
+  "STR_REGISTER": "Register",
+  "STR_TOP_TOPSELLERS": "TOP SELLERS",
+  "STR_SELL": "SELL",
   
   "STR_LATEST": "Latest",
   "STR_OFFERS": "Offers",
@@ -26,7 +30,7 @@
   "STR_BIDS": "Bids",
   "STR_POSTAD": "Post Ad",
   "STR_SHOPS": "Shops",
-  "STR_TOPSELLERS": "Topsellers",
+  "STR_TOPSELLERS": "Top sellers",
 
   "STR_EDITINFO": "Edit info",
   "STR_WRITEABOUT": "Write About",
@@ -134,7 +138,7 @@
   "STR_SHOP_MEM": "Shop membership",
   "STR_COMPANY_MEM": "Company membership",
   "STR_VIEWALL": "View all",
-  "STR_RECOMMAND_TOP": "recommended top seller ",
+  "STR_RECOMMAND_TOP": "Recommended TOP SELLERS",
   "STR_CATEGORIES": "categories ",
   "STR_REACHED": "Reached",
   "STR_Add_SHOP": "add you shop banner now",

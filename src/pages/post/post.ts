@@ -14,6 +14,7 @@ import { Events } from 'ionic-angular';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
 import { TranslateService } from 'ng2-translate';
+import { Service } from './../../providers/service';
 import * as $ from 'jquery';
 declare var cordova : any; 
 /*
@@ -58,7 +59,7 @@ export class PostPage{
               public want_page1:WantedPage1,
               public actiionSheetCtrl:ActionSheetController,
               public toastCtrl: ToastController,
-              public platform: Platform,
+              public platform: Platform, public service:Service,
               public loadingCtrl: LoadingController,
               public _http:Http, private ev: Events, public translate: TranslateService)
   {

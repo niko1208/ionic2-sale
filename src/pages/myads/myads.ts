@@ -91,12 +91,16 @@ export class MyadsPage implements ServerDataModelDelegate {
     {
 
       this.temp = this.postsDataArray[index];
-
-       this.keys.push(this.temp);
+      this.temp.post_date = this.formatDate(this.temp.post_date);
+      this.keys.push(this.temp);
     }
     // console.log("temp====>",this.keys)
   }
 
+  formatDate(date) {
+    let ary = date.split(":");
+    return ary[0]+":"+ary[1];
+  }
 
 
   ionViewDidLoad() {

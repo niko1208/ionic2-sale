@@ -76,6 +76,7 @@ page-home {
 ion-navbar .button-md{
   height: 3.2rem;
   font-size: 14px;
+  font-weight: bold;
   width: 100%;
 }
 ion-navbar button.button-md{
@@ -178,6 +179,13 @@ div.bt_follow.on_1{
 ion-navbar button ion-icon{
     font-size: 20px;
     margin-right: 5px;
+}
+
+ion-content.content-md.cont_rtl{
+  #bt_viewall{
+    left: 8px;
+    right: auto;
+  }
 }
 
 }

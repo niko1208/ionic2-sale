@@ -1490,6 +1490,22 @@ div.bt_follow{
 .dbt-blue{
   background: #01aa41;
 }
+ion-content.content-md.cont_rtl{
+  .overall_mark,
+  .overall_star .div_star{
+    float: right;
+  }
+  .icon_sec_wanted{
+    padding: 8px 0px;
+  }
+  .icon_sec_wanted div{
+    padding: 3px 5px;
+  }
+  .bt_editinfo{
+      left: 5px;
+      right: auto;
+  }
+}
 
 
 }

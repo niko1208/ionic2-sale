@@ -158,5 +158,11 @@ div.rover{
 ion-row.rover *{
   color: #888;
 }
+ion-header.cont_rtl{
+  div.pp{
+    left: 5px;
+    right: auto;
+  }
+}
 
 }

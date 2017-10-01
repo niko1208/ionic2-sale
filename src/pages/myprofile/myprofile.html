@@ -16,7 +16,7 @@
 </ion-header>
 
 
-<ion-content class="detail_content">
+<ion-content [ngClass]="(lang == 'ar') ? 'detail_content cont_rtl':'detail_content'">
     <div class="membership" *ngIf="0 && membership != ''">{{membership}}</div>
     <div class="membership" *ngIf="(points)>=1500"><img src="assets/img/icon-2.png"/><div>Platinum</div></div>
     <div class="membership" *ngIf="(points)>=1000 && (points)<1500"><img src="assets/img/icon-12.png"/><div>Gold</div></div>
@@ -32,11 +32,11 @@
         </div>
         <div class="fleft div_30" (click)="onfollower()">
             <div style="color:#3474e1">{{follower}}</div>
-            <div>Followers</div>
+            <div>{{'STR_FOLLOWERS' | translate}}</div>
         </div>
         <div class="fleft div_30" (click)="onfollowing()">
             <div style="color:#3474e1">{{following}}</div>
-            <div>Following</div>
+            <div>{{'STR_FOLLOWING' | translate}}</div>
         </div>
     </div>
     <div class="overall_star">
@@ -92,7 +92,7 @@
         </div>
     </div>
     <button id='bt_post_ad' ion-button small color="">
-        <label (click)="onpost();">Post Advertise</label>
+        <label (click)="onpost();">{{'STR_POST_ADVERTISE' | translate}}</label>
     </button>
     <!--
     <div class="div_rank">
@@ -216,7 +216,7 @@
         </div>
         <ion-item (click)="onfreemember();">
             <ion-icon name ="contact" item-left></ion-icon>
-            <ion-label>{{'STR_ACCOUNT' | translate}}&nbsp;<span *ngIf="membership == 'Free'">Free</span> <span *ngIf="membership != 'Free'"><b>{{membership}}</b></span>&nbsp;{{'STR_MEMBER' | translate}}</ion-label>
+            <ion-label>{{'STR_ACCOUNT' | translate}}&nbsp;<span *ngIf="membership == 'Free'">{{'STR_FREE' | translate}}</span> <span *ngIf="membership != 'Free'"><b>{{membership}}</b></span>&nbsp;{{'STR_MEMBER' | translate}}</ion-label>
             <ion-icon name ="arrow-dropright" item-right></ion-icon>
         </ion-item>
 

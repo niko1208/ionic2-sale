@@ -7,8 +7,16 @@
 }
 page-region{
 
-ion-content{
-    background: #055284 !important;
+ion-content.content-md{
+    background: #055284;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#565656+0,cccccc+100 */
+    background: #565656; /* Old browsers */
+    background: -moz-linear-gradient(top,  #565656 0%, #cccccc 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #565656 0%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #565656 0%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#565656', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+
+
 }
 .div_country{
     padding: 5%;

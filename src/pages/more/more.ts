@@ -7,9 +7,10 @@ import { FavoritePage } from '../favorite/favorite';
 import { MynotificationPage } from './../notification/notification';
 import { MyprofilePage } from './../myprofile/myprofile';
 import { Http } from '@angular/http';
-import { Events } from 'ionic-angular';
+import { Events, Platform } from 'ionic-angular';
 import { SearchPage } from './../search/search';
 import { TranslateService } from 'ng2-translate';
+import { Service } from './../../providers/service';
 import * as $ from 'jquery';
 
 @Component({
@@ -27,7 +28,7 @@ export class MorePage {
     public flag: any;
     public badge = '0';
 
-  constructor(public navCtrl: NavController, public _http:Http, private ev: Events, public translate: TranslateService) {
+  constructor(public platform: Platform, public navCtrl: NavController, public _http:Http, private ev: Events, public translate: TranslateService, public service:Service) {
     this.region = Global.Static_region;
     this.lang = Global.Static_lang;
     this.flag = Global.flag;
@@ -58,7 +59,15 @@ export class MorePage {
 
   sellang(la) {
     Global.Static_lang = la;
+    this.service.lang = la;
     this.translate.use(la);
+    if(la == 'en') {
+      window.location.reload();
+    } else {
+      this.platform.setDir('rtl', true);
+    }
+    localStorage.setItem('lang', Global.Static_lang);
+    this.navCtrl.pop();
   }
 
   ionViewWillEnter() {
@@ -95,6 +104,7 @@ export class MorePage {
     this._http.post(temp_url, Form_data).map(res =>res.json())
     .subscribe(res => {
         tt.navCtrl.push(LoginPage,{});
+        $('.tabbar').css('display', 'none');
     }, error => {
 
     });

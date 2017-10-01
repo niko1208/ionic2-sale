@@ -1,7 +1,7 @@
 
 <ion-content class="offer_content">
 
-  <ion-card class="offer_card" *ngFor="let item of putdata; let i=index;">
+  <ion-card class="offer_card" *ngFor="let item of putdata; let i=index;" (click)="gotoview(i)"  [style.backgroundImage]="'url('+item.img_url+')'">
 <!--
   <ion-item class="offer_header">
     <ion-avatar item-left>
@@ -9,7 +9,7 @@
     </ion-avatar>
     <h6>{{item.post_date}}</h6>
   </ion-item>
--->
+
   <img  class="card_img" src="{{item.img_url}}" (click)="gotoview(i)" />
   <!-- gotoview(item.img_url, item.id, item.viewcount)
   <ion-card-content>

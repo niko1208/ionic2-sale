@@ -2,7 +2,6 @@ import { LoadingController } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { NavController, NavParams , ToastController, AlertController} from 'ionic-angular';
 import { PostDataModel } from './../../app/model/PostDataModel';
-import { Service } from './../../providers/service';
 import { MyDataModel } from './../../app/model/DataModel';
 import { ServerDataModel, ServerDataModelDelegate } from './../../app/model/ServerDataModel-helper';
 import { FViewPage } from './../fview/fview';
@@ -19,6 +18,7 @@ import { ReviewPage } from './../review/review';
 import { AddonsPage } from './../addons/addons';
 import {MorePage} from '../more/more';
 import { TranslateService } from 'ng2-translate';
+import { Service } from './../../providers/service';
 
 import { Http } from '@angular/http';
 
@@ -36,7 +36,7 @@ declare var window;
 @Component({
   selector: 'page-latest-sub',
   templateUrl: 'latest-sub.html',
-   providers : [Service,ServerDataModel]
+   providers : [ServerDataModel]
 })
 export class LatestSubPage  implements ServerDataModelDelegate{
 
@@ -92,7 +92,7 @@ export class LatestSubPage  implements ServerDataModelDelegate{
   public flag: any;
   public badge = '0';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private loading:LoadingController, public datamodel:ServerDataModel, public _http:Http, private alertCtrl: AlertController, private ev: Events, public translate: TranslateService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private loading:LoadingController, public datamodel:ServerDataModel, public _http:Http, private alertCtrl: AlertController, private ev: Events, public translate: TranslateService, public service: Service) {
     this.navCtrl = navCtrl;
 
     this.flag = Global.flag;
@@ -166,7 +166,7 @@ export class LatestSubPage  implements ServerDataModelDelegate{
     }
 
     this.loadPostReviews();
-    
+    console.log(this.service.lang);
   }
 
   loadPostReviews() {

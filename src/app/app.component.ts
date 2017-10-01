@@ -12,10 +12,11 @@ import { Http } from '@angular/http';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
 import { TranslateModule } from 'ng2-translate/ng2-translate';
-import { TranslateService } from 'ng2-translate';
+import { TranslateService, TranslatePipe} from 'ng2-translate';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [TranslateService]
 
 })
 export class MyApp {
@@ -34,9 +35,12 @@ export class MyApp {
    providers: [Service]
    
   constructor(public platform: Platform, public push: Push,
-              public alertCtrl: AlertController, public _http:Http, public ev: Events, public service:Service, translate: TranslateService) {
+              public alertCtrl: AlertController, public _http:Http, public ev: Events, public service:Service, public translate: TranslateService) {
 
-    
+      //this.translate.addLangs(["en", "ar"]);
+      this.translate.setDefaultLang('en');
+      this.translate.use('en');
+
       this.ev.subscribe("showinfo", (bshow, idx, cls, ff) => {
         this.info_idx = idx;
         this.showInfo = !(this.showInfo);
@@ -54,10 +58,13 @@ export class MyApp {
       });
 
     platform.ready().then(() => {
-
-      translate.addLangs(["en", "ar"]);
-      translate.setDefaultLang('en');
-      translate.use('en');
+      //platform.setDir('rtl', true);
+      /*var prefix = 'assets/i18n/';
+      var suffix = '.json';
+      this.translate.useStaticFilesLoader(prefix, suffix);
+      */
+      
+      //alert(this.translate.instant('STR_INFO_LATEST12'));
 
       this.initPushNotification();
 
@@ -69,6 +76,9 @@ export class MyApp {
         Global.flag = localStorage.getItem('flag');
         Global.Static_username = localStorage.getItem('username');
         Global.Static_number = localStorage.getItem('number');
+        if(Global.Static_lang == 'ar') {
+          this.platform.setDir('rtl', true);
+        }
         this.rootPage = SplashPage;
       } else {
         this.rootPage = RegionPage;
