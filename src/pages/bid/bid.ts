@@ -25,6 +25,7 @@ export class BidPage {
     public badge = '0';
     public  postsDataArray : Array<PostDataModel> = new Array<PostDataModel>();
     public info_text = [];
+    public lang: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events, public translate: TranslateService) {
@@ -38,6 +39,7 @@ export class BidPage {
       console.log("event : ", badge);
     })
     
+    this.flag = Global.flag;
   }
 
 
@@ -58,6 +60,7 @@ export class BidPage {
 
   ionViewWillEnter()
   {
+    this.lang = Global.Static_lang;
       this.load();
 
     if(Global.Static_profile_id == "") {

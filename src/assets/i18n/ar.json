@@ -95,10 +95,11 @@
   "STR_247SUPPORT": "دعم فني مباشر",
 
   "STR_COMPANY_ACCOUNT": "اشتراك الشركه",
-  "STR_1500POINTS": "نقطهs",
+  "STR_1500POINTS": "نقطه",
   "STR_100MORE": "زياده في الاعلانات",
+  "STR_3PREMIUMPOST": "اعلان مميز بريميوم ",
   "STR_2VIPPOST": "اعلانات مهم وعاجل",
-  "STR_2POSTS": "2 posts in offers",
+  "STR_2POSTS": "اعلانات مثبته",
   "STR_2POSTIN": "صفحه الاولى والعروض",
   "STR_CROWN_BADGE_PLUS": "الحصول على جائزة رتبة التاج المتقدم",
   "STR_VERIFIEDBY": "موثق بالمستندات والسجل الاكترروني",
@@ -165,6 +166,10 @@
   "STR_PAY_NOW": "ادفع الان",
   "STR_CANCEL": "الغاء",
   "STR_ADDONS": "اضافات",
+  "STR_SEND_PRICE": "ارسل عرض السعر النهائي للبائع بسريه",
+  "STR_SEND": "ارسال",
+  "STR_BID":"ابدأ",
+  "STR_BID_PRICE": "سعر الزياده",
 
   
   "STR_NEXT": "التالي",

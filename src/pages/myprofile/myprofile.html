@@ -54,7 +54,7 @@
             <ion-icon *ngIf="myRating<=3" name="star-outline"></ion-icon>
             <ion-icon *ngIf="myRating<=4" name="star-outline"></ion-icon>
         </div>
-        <div style="clear: both">{{ratingCount}} {{'STR_REVIEWS' | translate}}</div>
+        <div style="clear: both; margin-right: 5px;">{{ratingCount}} {{'STR_REVIEWS' | translate}}</div>
         <div class='div_tooltip'>
             <div class='tooltip' *ngIf="tool_tip">{{strtooltip}}</div>
         <div class="div_icons1">
@@ -90,6 +90,7 @@
             </div>
         </div>
         </div>
+        <div style="clear:both"></div>
     </div>
     <button id='bt_post_ad' ion-button small color="">
         <label (click)="onpost();">{{'STR_POST_ADVERTISE' | translate}}</label>

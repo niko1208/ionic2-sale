@@ -15,7 +15,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content [ngClass]="(lang == 'ar') ? 'cont_rtl':''">
   <ion-list id="secmore">
 <!--Region content-->
     <ion-item round>

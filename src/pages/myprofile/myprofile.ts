@@ -91,7 +91,7 @@ export class MyprofilePage {
       this.badge = badge;
       console.log("event : ", badge);
     })
-    
+    this.lang = Global.Static_lang;
   }
 
   gotonotification() {
@@ -258,19 +258,19 @@ export class MyprofilePage {
             let points = parseInt(this.points);
             if(points <= 400) {
               this.p1 = Math.floor(points*100/400).toString() + "%";
-              this.pp1 = this.points + " / 400 points";
+              this.pp1 = this.points + " / 400 "+this.translate.instant('STR_POINTS');
             } else if(points > 400 && points <= 600) {
               this.p1 = "100%";
               this.p2 = Math.floor(points*100/600).toString() + "%";
-              this.pp1 = "400 / 400 points";
-              this.pp2 = this.points + " / 600 points";
+              this.pp1 = "400 / 400"+this.translate.instant('STR_POINTS');
+              this.pp2 = this.points + " / 600"+this.translate.instant('STR_POINTS');
             } else if(points > 600 && points <= 1000) {
               this.p1 = "100%";
               this.p2 = "100%";
               this.p3 = Math.floor(points*100/1000).toString() + "%";
-              this.pp1 = "400 / 400 points";
-              this.pp2 = "600 / 600 points";
-              this.pp3 = this.points + " / 1000 points";
+              this.pp1 = "400 / 400"+this.translate.instant('STR_POINTS');
+              this.pp2 = "600 / 600"+this.translate.instant('STR_POINTS');
+              this.pp3 = this.points + " / 1000"+this.translate.instant('STR_POINTS');
             } else if(points > 1000) {
               this.p1 = "100%";
               this.p2 = "100%";
@@ -280,10 +280,10 @@ export class MyprofilePage {
               } else {
                 this.p4 = "100%";
               }
-              this.pp1 = "400 / 400 points";
-              this.pp2 = "600 / 600 points";
-              this.pp3 = "1000 / 1000 points";
-              this.pp4 = this.points + " / 1500 points";
+              this.pp1 = "400 / 400"+this.translate.instant('STR_POINTS');
+              this.pp2 = "600 / 600"+this.translate.instant('STR_POINTS');
+              this.pp3 = "1000 / 1000"+this.translate.instant('STR_POINTS');
+              this.pp4 = this.points + " / 1500"+this.translate.instant('STR_POINTS');
             }
 
             this.loadFollower();
@@ -296,6 +296,9 @@ export class MyprofilePage {
     });
   }
 
+  onfreemember() {
+    
+  }
   onmembership() {
     this.navCtrl.push(MembershipPage);
   }

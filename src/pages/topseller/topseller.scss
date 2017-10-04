@@ -185,4 +185,18 @@ ion-item.item-md{
   color: #fff;
 }
 */
+.cont_rtl{
+  .overall_mark,
+  .overall_star .div_star{
+    float: right;
+  }
+  .div_item_right{
+    width: calc(100% - 150px);
+  }
+  .back-button.show-back-button{
+      position: absolute;
+      left: 0px;
+      z-index: 1;
+  }
+}
 }

@@ -10,14 +10,14 @@
       <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
   </div>
   
-   <ion-navbar color="">
+   <ion-navbar color="" [ngClass]="(lang == 'ar') ? 'cont_rtl':''">
     <ion-title>{{'STR_TOP_SELLER' | translate}}</ion-title>
    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content class="detail_content">
+<ion-content [ngClass]="(lang == 'ar') ? 'detail_content cont_rtl':'detail_content'">
     
     <ion-item  *ngFor="let item of keys; let i = index" [ngClass]="{'highlight':(item.points>=1000)}">
         <div class="membership" *ngIf="item.membership != '' && item.membership != 'Basic'"><span>{{item.membership}}</span></div>

@@ -31,8 +31,8 @@
         </ion-col>
     </ion-row>
   </ion-navbar>
-  <ion-toolbar>
-    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" (keyup.enter)="search()"></ion-searchbar>
+  <ion-toolbar [ngClass]="(lang == 'ar') ? 'cont_rtl':''">
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" (keyup.enter)="search()" placeholder="{{'STR_SEARCH' | translate}}"></ion-searchbar>
     <ion-icon name="search" class="bt" (click)="search()"></ion-icon>
   </ion-toolbar>
 </ion-header>

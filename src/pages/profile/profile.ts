@@ -91,6 +91,8 @@ export class ProfilePage {
     public dialog_title : any;
     public phonenumber = "+1-1111-111-1111";
 
+    public lang: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public datamodel:ServerDataModel, public toastCtrl: ToastController, public platform: Platform, private ev: Events, public translate: TranslateService, public service:Service) {
 
@@ -102,7 +104,7 @@ export class ProfilePage {
       this.badge = badge;
       console.log("event : ", badge);
     })
-    
+    this.lang = Global.Static_lang;
   }
 
   gotonotification() {
@@ -122,6 +124,7 @@ export class ProfilePage {
   }
   ionViewWillEnter()
   {
+    this.lang = Global.Static_lang;
     if(Global.Static_profile_id == "") {
       this.navCtrl.pop();
       $('.fstatusbar img').css('display', 'none');

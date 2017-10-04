@@ -91,6 +91,7 @@ export class LatestSubPage  implements ServerDataModelDelegate{
 
   public flag: any;
   public badge = '0';
+  public lang: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private loading:LoadingController, public datamodel:ServerDataModel, public _http:Http, private alertCtrl: AlertController, private ev: Events, public translate: TranslateService, public service: Service) {
     this.navCtrl = navCtrl;
@@ -103,6 +104,8 @@ export class LatestSubPage  implements ServerDataModelDelegate{
       console.log("event : ", badge);
     })
     
+    this.lang = Global.Static_lang;
+
     this.sub_content = navParams.get("content");
     this.sub_price   = navParams.get("price");
     this.sub_title   = navParams.get("title");
@@ -154,6 +157,8 @@ export class LatestSubPage  implements ServerDataModelDelegate{
 
   ionViewWillEnter()
   {
+    this.lang = Global.Static_lang;
+
     this.datamodel.updateviews(this.sub_id, this.sub_wanted);
     this.datamodel.homedelegate = this;
 
@@ -238,20 +243,20 @@ export class LatestSubPage  implements ServerDataModelDelegate{
       price = this.bidprice;
     }
     let alertbox = this.alertCtrl.create({
-      title: "Bid a price ",
+      title: this.translate.instant('STR_BID_PRICE'),
       inputs :[
         {
-          name:'price',
-          placeholder: 'Price'
+          name:this.translate.instant('STR_PRICE'),
+          placeholder: this.translate.instant('STR_PRICE'),
         }
       ],
       buttons: [
         {
-          text: 'Cancel',
-          role: 'cancel',
+          text: this.translate.instant('STR_CANCEL'),
+          role: this.translate.instant('STR_CANCEL'),
         },
         {
-          text: 'Bid',
+          text: this.translate.instant('STR_BID'),
           handler: data=> {
             if(data.price != "") {
               if(eval(data.price) < eval(price)) {
@@ -271,17 +276,17 @@ export class LatestSubPage  implements ServerDataModelDelegate{
 
   onprice(){
     let alertbox = this.alertCtrl.create({
-      title: "Send a price to seller",
+      title: this.translate.instant('STR_SEND_PRICE'),
       inputs :[
         {
-          name:'price',
-          placeholder: 'Price'
+          name:this.translate.instant('STR_PRICE'),
+          placeholder: this.translate.instant('STR_PRICE')
         }
       ],
       buttons: [
         {
-          text: 'Cancel',
-          role: 'cancel',
+          text: this.translate.instant('STR_CANCEL'),
+          role: this.translate.instant('STR_CANCEL'),
         },
         {
           text: 'Send',

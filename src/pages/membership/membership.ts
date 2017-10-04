@@ -22,6 +22,7 @@ export class MembershipPage {
     public flag: any;
     public badge = '0';
     loading: Loading;
+    lang: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public toastCtrl: ToastController, public platform: Platform, private ev: Events, private alertCtrl: AlertController, public datamodel:ServerDataModel, public translate: TranslateService) {
@@ -34,6 +35,7 @@ export class MembershipPage {
       this.badge = badge;
       console.log("event : ", badge);
     })
+    this.lang = Global.Static_lang;
     
   }
 
@@ -85,4 +87,8 @@ export class MembershipPage {
     this.navCtrl.push(MorePage);
   }
   
+  ionViewWillEnter()
+  {
+    this.lang = Global.Static_lang;
+  }
 }

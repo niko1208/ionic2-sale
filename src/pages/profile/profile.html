@@ -12,7 +12,7 @@
 </ion-header>
 
 
-<ion-content [ngClass]="(service.lang == 'ar') ? 'detail_content cont_rtl':'detail_content'">
+<ion-content [ngClass]="(lang == 'ar') ? 'detail_content cont_rtl':'detail_content'">
     <div class="popup" *ngIf="bpopup">
         <div class="dialog">
         <div class="dialog_header">{{dialog_title}}</div>

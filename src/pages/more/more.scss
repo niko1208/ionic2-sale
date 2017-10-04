@@ -44,3 +44,13 @@ max-height: 200px; //any size
     display: none;
 }
 
+page-more{
+    .cont_rtl{
+        .select-md{
+            padding-left: 0px;
+        }
+        .select-md .select-icon{
+            margin-right: 10px;
+        }
+    }
+}

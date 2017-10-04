@@ -203,17 +203,18 @@ ion-content.content-md{
     text-align: center;
     padding-top: 3px;
 }
-.sell_ar{
+.fast_post small{
+    margin-top: -7px;
+    display: block;
+    font-size: 10px;
+}
+.fast_post .sell_ar, 
+.fast_post_ar small{
     font-size: 14px;
     margin-top: -12px;
 }
 .fast_post ion-icon{
     font-size: 36px;
-}
-.fast_post small{
-    margin-top: -7px;
-    display: block;
-    font-size: 10px;
 }
 .info_popup{
     position: fixed;

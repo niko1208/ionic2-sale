@@ -78,6 +78,7 @@ export class MyApp {
         Global.Static_number = localStorage.getItem('number');
         if(Global.Static_lang == 'ar') {
           this.platform.setDir('rtl', true);
+          this.translate.use('ar');
         }
         this.rootPage = SplashPage;
       } else {

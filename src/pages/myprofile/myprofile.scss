@@ -102,6 +102,7 @@ div.sec ion-item input{
 .bal{
     color: #f00;
     font-size: 18px;
+    direction: ltr;
 }
 .div_line{
     border-bottom: 1px solid #ff8a65;
@@ -222,6 +223,15 @@ ion-content.content-md.cont_rtl{
   .bt_editinfo{
       left: 5px;
       right: auto;
+  }
+  [text-right]{
+      text-align: left;
+  }
+  .div_tooltip{
+      float: right;
+  }
+  #bt_post_ad{
+      float: left;
   }
 }
 

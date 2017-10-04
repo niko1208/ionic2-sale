@@ -71,6 +71,7 @@ export class MorePage {
   }
 
   ionViewWillEnter() {
+    //this.lang = Global.Static_lang;
     if(Global.Static_profile_id == "") {
       $('.fstatusbar img').css('display', 'none');
     }

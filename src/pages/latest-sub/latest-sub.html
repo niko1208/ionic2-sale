@@ -25,7 +25,7 @@
 </ion-header>
 
 
-<ion-content [ngClass]="(service.lang == 'ar') ? 'sub_content cont_rtl':'sub_content'" style="background-color:#eee;border-radius:10%;">
+<ion-content [ngClass]="(lang == 'ar') ? 'sub_content cont_rtl':'sub_content'" style="background-color:#eee;border-radius:10%;">
   <div class="popup" *ngIf="bpopup">
     <div class="dialog">
       <div class="dialog_header">{{dialog_title}}</div>
@@ -71,9 +71,9 @@
     <ion-row>
       <ion-col *ngIf="sub_wanted=='0'">
         <div class='center'>{{'STR_PRICE' | translate}}</div><br/>
-        <div class='center colorb'>{{sub_price}} KWD</div>
+        <div class='center colorb' style="direction:ltr">{{sub_price}} KWD</div>
         <div *ngIf="delivery == 'free'" text-center style="color:#01aa41">{{'STR_FREE_DELIVERY' | translate}}</div>
-        <div *ngIf="delivery != 'free'" text-center style="color:#01aa41; font-size:12px">{{'STR_DELIVERY' | translate}} {{delivery_cost}}KD</div>
+        <div *ngIf="delivery != 'free'" text-center style="color:#01aa41; font-size:12px">{{'STR_DELIVERY' | translate}} <span style="direction:ltr">{{delivery_cost}}KD</span></div>
       </ion-col>
       <ion-col *ngIf="sub_wanted=='1'">
         <div class='center'>Date/Time</div><br/>
@@ -117,7 +117,10 @@
   <div class="div_sec seller">
     <div (click)="onfollow(sub_profile_id)" class="bt_follow on_{{isfollow}}">+ Follow</div>
     <div class="ranking">{{'STR_RANK' | translate}}</div>
-    <div class="goprofile" (click)="goprofile(sub_profile_id)"><ion-icon name="ios-arrow-forward"></ion-icon></div>
+    <div class="goprofile" (click)="goprofile(sub_profile_id)">
+      <ion-icon name="ios-arrow-forward" *ngIf="lang != 'ar'"></ion-icon>
+      <ion-icon name="ios-arrow-back" *ngIf="lang == 'ar'"></ion-icon>
+    </div>
     <div style="padding-bottom: 5px;"><small>{{'STR_ABOUT_SELLER' | translate}}</small></div>
     <div class="div_plat" *ngIf="(pData.points)>=1500"><img src="assets/img/icon-2.png"/><div>Platinum</div></div>
     <div class="div_gold" *ngIf="(pData.points)>=1000 && (pData.points)<1500"><img src="assets/img/icon-12.png"/><div>Gold</div></div>
@@ -178,7 +181,7 @@
                 <img src="assets/img/icon-15.png" *ngIf="membership4 != 'company'"/>
             </div>
         </div>
-        <div class="div_verify">Verified</div>
+        <div class="div_verify">{{'STR_VERIFIED' | translate}}</div>
     </div>
     <div style="clear:both"></div>
   </div>

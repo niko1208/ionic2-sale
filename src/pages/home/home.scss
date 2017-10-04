@@ -155,6 +155,7 @@ ion-navbar button.button-md{
   font-size: 14px;
   margin-top: 3px;
   margin-left: 1px;
+  min-width: 70px;
 }
 div.bt_follow.on_1{
   color: #fff !important;
@@ -185,6 +186,12 @@ ion-content.content-md.cont_rtl{
   #bt_viewall{
     left: 8px;
     right: auto;
+  }
+}
+.cont_rtl{
+  .bt{
+    right: 17px;
+    left: auto;
   }
 }
 

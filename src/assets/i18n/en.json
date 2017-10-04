@@ -97,6 +97,7 @@
   "STR_COMPANY_ACCOUNT": "Company account",
   "STR_1500POINTS": "1500 points",
   "STR_100MORE": "100 more posts",
+  "STR_3PREMIUMPOST": "3 premium post",
   "STR_2VIPPOST": "2 Vip posts",
   "STR_2POSTS": "2 posts in offers",
   "STR_2POSTIN": "2 first page & offers posts",
@@ -164,6 +165,10 @@
   "STR_PAY_NOW": "Pay now",
   "STR_CANCEL": "Cancel",
   "STR_ADDONS": "Addons",
+  "STR_SEND_PRICE": " Send a price to the seller",
+  "STR_SEND": "send",
+  "STR_BID":"Bid",
+  "STR_BID_PRICE": "Bid a price",
 
   "STR_NEXT": "Next",
   "STR_PREV": "Previous",

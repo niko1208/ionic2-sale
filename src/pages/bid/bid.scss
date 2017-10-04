@@ -5,7 +5,7 @@ page-bid{
   width: 140px;
   height:100px;
   overflow: hidden;
-  border-bottom: 2px solid #1dafec;
+  border-bottom: 2px solid #ff8a65;
 }
 .div_img img{
   width: 100%;
@@ -27,11 +27,11 @@ page-bid{
   display: none;
 }
 .pprice{
-  color: #1dafec;
+  color: #ff8a65;
   font-size: 11px;
 }
 .ptitle{
-  color: #1dafec;
+  color: #ff8a65;
   font-size: 16px;
   padding-top: 5px;
   white-space: nowrap;
@@ -62,4 +62,11 @@ ion-item.item-md{
   font-weight: bold;
 }
 */
+.cont_rtl{
+  .back-button.show-back-button{
+      position: absolute;
+      left: 0px;
+      z-index: 1;
+  }
+}
 }

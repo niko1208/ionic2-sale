@@ -28,6 +28,7 @@ export class TopsellerPage {
     public ii = 0;
     info_text = [];
 
+    public lang: any;
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events, public toastCtrl: ToastController, public translate: TranslateService) {
                 
@@ -38,6 +39,7 @@ export class TopsellerPage {
       this.badge = badge;
       console.log("event : ", badge);
     })
+    this.lang = Global.Static_lang;
     
   }
 
@@ -58,6 +60,8 @@ export class TopsellerPage {
 
   ionViewWillEnter()
   {
+
+    this.lang = Global.Static_lang;
     if(Global.Static_profile_id == "") {
       $('.fstatusbar img').css('display', 'none');
     }
@@ -119,14 +123,14 @@ export class TopsellerPage {
 
   clickicon(i, idx, is) { console.log(i+'--'+idx);
     let msg = ['',
-      'Registered',
-      'Email Verified',
-      'Phone number Verified',
-      'Payment Verified',
-      'Basic membership',
-      'Professional membership',
-      'Shop membership',
-      'Company membership'
+      this.translate.instant('STR_REGISTER'),
+      this.translate.instant('STR_EMAIL_V'),
+      this.translate.instant('STR_PHONE_V'),
+      this.translate.instant('STR_PAYMENT_V'),
+      this.translate.instant('STR_BASIC_MEM'),
+      this.translate.instant('STR_PRO_MEM'),
+      this.translate.instant('STR_SHOP_MEM'),
+      this.translate.instant('STR_COMPANY_MEM'),
     ];
     if(is) {
       for(let  j=0; j<this.keys.length; j++) {
