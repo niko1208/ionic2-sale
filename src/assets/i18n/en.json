@@ -104,6 +104,15 @@
   "STR_CROWN_BADGE_PLUS": "crown badge plus",
   "STR_VERIFIEDBY": "verified by documents and certifications",
 
+  "STR_ACCURACY": "Accuracy",
+  "STR_COMMU": "Communication",
+  "STR_CLEAN": "Cleanliness",
+  "STR_QUALITY": "Quality",
+  "STR_HONESTY": "Honesty",
+  "STR_WRITETITLE": "write a title",
+  "STR_WRITEREVIEW": "write a review",
+  "STR_POSTREVIEW": "Post review",
+
   "STR_CALL": "Call",
   "STR_SMS": "Sms",
   "STR_PRICE": "Pirce",

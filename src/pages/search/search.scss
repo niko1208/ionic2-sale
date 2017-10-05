@@ -135,6 +135,7 @@ page-search{
 .pprice{
   color: #ff7f27;
   font-size: 11px;
+  direction: ltr;
 }
 .ptitle{
   color: #ff7f27;
@@ -333,5 +334,19 @@ ion-item.highlight{
     text-align: right;
     color: #3474e1;
     font-size: 12px;
+}
+.cont_rtl{
+      .overall_mark,
+  .overall_star .div_star{
+    float: right;
+  }
+  .div_item_right{
+    width: calc(100% - 150px);
+  }
+    .back-button.show-back-button{
+      position: absolute;
+      left: 0px;
+      z-index: 1;
+  }
 }
 }

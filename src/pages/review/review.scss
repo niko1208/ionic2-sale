@@ -31,5 +31,12 @@ ion-textarea {
 textarea {
     height: 100px;
 }
+.cont_rtl{
+    .back-button.show-back-button{
+      position: absolute;
+      left: 0px;
+      z-index: 1;
+  }
+}
 
 }

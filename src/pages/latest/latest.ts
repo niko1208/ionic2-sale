@@ -85,21 +85,21 @@ export class LatestPage implements ServerDataModelDelegate {
     }
 
     this.info_text = [];
-    this.info_text.push({title: 'POST AD', text:this.translate.instant('STR_INFO_LATEST1')});
-    this.info_text.push({title: 'BIDS', text:this.translate.instant('STR_INFO_LATEST2')});
-    this.info_text.push({title: 'TOPSELLER', text:this.translate.instant('STR_INFO_LATEST3')});
-    this.info_text.push({title: 'SHOPS', text:this.translate.instant('STR_INFO_LATEST4')});
+    this.info_text.push({title: this.translate.instant('STR_POSTAD'), text:this.translate.instant('STR_INFO_LATEST1')});
+    this.info_text.push({title: this.translate.instant('STR_BIDS'), text:this.translate.instant('STR_INFO_LATEST2')});
+    this.info_text.push({title: this.translate.instant('STR_TOPSELLERS'), text:this.translate.instant('STR_INFO_LATEST3')});
+    this.info_text.push({title: this.translate.instant('STR_SHOPS'), text:this.translate.instant('STR_INFO_LATEST4')});
     
-    this.info_text.push({title: 'ALL', text:this.translate.instant('STR_INFO_LATEST5')});
-    this.info_text.push({title: 'FOLLOWING', text:this.translate.instant('STR_INFO_LATEST6')});
+    this.info_text.push({title: this.translate.instant('STR_ALL'), text:this.translate.instant('STR_INFO_LATEST5')});
+    this.info_text.push({title: this.translate.instant('STR_FOLLOWING'), text:this.translate.instant('STR_INFO_LATEST6')});
 
-    this.info_text.push({title: 'LASTEST', text:this.translate.instant('STR_INFO_LATEST7')});
-    this.info_text.push({title: 'HOME', text:this.translate.instant('STR_INFO_LATEST8')});
-    this.info_text.push({title: 'OFFERS', text:this.translate.instant('STR_INFO_LATEST9')});
-    this.info_text.push({title: 'CHAT', text:this.translate.instant('STR_INFO_LATEST10')});
-    this.info_text.push({title: 'PROFILE', text:this.translate.instant('STR_INFO_LATEST11')});
+    this.info_text.push({title: this.translate.instant('STR_LATEST'), text:this.translate.instant('STR_INFO_LATEST7')});
+    this.info_text.push({title: this.translate.instant('STR_HOME'), text:this.translate.instant('STR_INFO_LATEST8')});
+    this.info_text.push({title: this.translate.instant('STR_OFFERS'), text:this.translate.instant('STR_INFO_LATEST9')});
+    this.info_text.push({title: this.translate.instant('STR_CHAT'), text:this.translate.instant('STR_INFO_LATEST10')});
+    this.info_text.push({title: this.translate.instant('STR_PROFILE'), text:this.translate.instant('STR_INFO_LATEST11')});
 
-    this.info_text.push({title: 'SEARCH', text:this.translate.instant('STR_INFO_LATEST12')});
+    this.info_text.push({title: this.translate.instant('STR_SEARCH'), text:this.translate.instant('STR_INFO_LATEST12')});
     this.info_text.push({title: 'BELL', text:this.translate.instant('STR_INFO_LATEST13')});
     this.info_text.push({title: 'FLAQ', text:this.translate.instant('STR_INFO_LATEST14')});
     this.info_text.push({title: 'MENU', text:this.translate.instant('STR_INFO_LATEST15')});

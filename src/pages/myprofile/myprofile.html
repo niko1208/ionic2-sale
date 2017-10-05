@@ -154,7 +154,8 @@
         <ion-item (click)="onmyads();">
             <ion-icon name ="megaphone" item-left></ion-icon>
             <ion-label>{{'STR_MY_ACTIVE_POSTS' | translate}}</ion-label>
-            <ion-icon name ="arrow-dropright" item-right></ion-icon>
+            <ion-icon name ="arrow-dropright" item-right *ngIf="lang != 'ar'"></ion-icon>
+            <ion-icon name ="arrow-dropleft" item-right *ngIf="lang == 'ar'"></ion-icon>
         </ion-item>
 
         <ion-item>
@@ -166,13 +167,15 @@
         <ion-item (click)="onmyfav();">
             <ion-icon name ="happy" item-left></ion-icon>
             <ion-label>{{'STR_FAVORITE' | translate}}</ion-label>
-            <ion-icon name ="arrow-dropright" item-right></ion-icon>
+            <ion-icon name ="arrow-dropright" item-right *ngIf="lang != 'ar'"></ion-icon>
+            <ion-icon name ="arrow-dropleft" item-right *ngIf="lang == 'ar'"></ion-icon>
         </ion-item>
 
         <ion-item (click)="onmychat();">
             <ion-icon name ="chatboxes" item-left></ion-icon>
             <ion-label>{{'STR_MY_CHAT' | translate}}</ion-label>
-            <ion-icon name ="arrow-dropright" item-right></ion-icon>
+            <ion-icon name ="arrow-dropright" item-right *ngIf="lang != 'ar'"></ion-icon>
+            <ion-icon name ="arrow-dropleft" item-right *ngIf="lang == 'ar'"></ion-icon>
         </ion-item>
 
         <ion-item (click)="onclearbid();">
@@ -218,19 +221,22 @@
         <ion-item (click)="onfreemember();">
             <ion-icon name ="contact" item-left></ion-icon>
             <ion-label>{{'STR_ACCOUNT' | translate}}&nbsp;<span *ngIf="membership == 'Free'">{{'STR_FREE' | translate}}</span> <span *ngIf="membership != 'Free'"><b>{{membership}}</b></span>&nbsp;{{'STR_MEMBER' | translate}}</ion-label>
-            <ion-icon name ="arrow-dropright" item-right></ion-icon>
+            <ion-icon name ="arrow-dropright" item-right *ngIf="lang != 'ar'"></ion-icon>
+            <ion-icon name ="arrow-dropleft" item-right *ngIf="lang == 'ar'"></ion-icon>
         </ion-item>
 
         <ion-item (click)="onmembership();">
             <ion-icon name ="archive" item-left></ion-icon>
             <ion-label>{{'STR_PACKAGES_MEMBERSHIP_SUBSCRIPTION' | translate}}</ion-label>
-            <ion-icon name ="arrow-dropright" item-right></ion-icon>
+            <ion-icon name ="arrow-dropright" item-right *ngIf="lang != 'ar'"></ion-icon>
+            <ion-icon name ="arrow-dropleft" item-right *ngIf="lang == 'ar'"></ion-icon>
         </ion-item>
 
         <ion-item (click)="onrecharge();">
             <ion-icon name ="logo-usd" item-left></ion-icon>
             <ion-label>{{'STR_RECHARGE_YOUR_BALANCE' | translate}}</ion-label>
-            <ion-icon name ="arrow-dropright" item-right></ion-icon>
+            <ion-icon name ="arrow-dropright" item-right *ngIf="lang != 'ar'"></ion-icon>
+            <ion-icon name ="arrow-dropleft" item-right *ngIf="lang == 'ar'"></ion-icon>
         </ion-item>
     </div>
 

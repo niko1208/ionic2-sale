@@ -33,6 +33,8 @@ export class ReviewPage {
     public review = "";
     public profile_id = "";
     public post_id;
+    
+    lang:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, public datamodel:ServerDataModel,public toastCtrl: ToastController) {
@@ -43,6 +45,7 @@ export class ReviewPage {
                 this.mark = '0.0';
 
                 this.flag = Global.flag;
+                this.lang = Global.Static_lang;
     
   }
 
@@ -59,7 +62,7 @@ export class ReviewPage {
 
   ionViewWillEnter()
   {
-
+    this.lang = Global.Static_lang;
     if(Global.Static_profile_id == "") {
       $('.fstatusbar img').css('display', 'none');
     }

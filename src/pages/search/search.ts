@@ -28,7 +28,7 @@ export class SearchPage {
     public searchTerm = "";
     public isPeople = false;
     public  postsDataArray : Array<PostDataModel> = new Array<PostDataModel>();
-
+    lang:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events) {
@@ -45,6 +45,7 @@ export class SearchPage {
       this.searchTerm = navParams.get('searchTerm');
       this.search();
     }
+    this.lang = Global.Static_lang;
     
   }
 
@@ -60,7 +61,7 @@ export class SearchPage {
   
   ionViewWillEnter()
   {
-
+    this.lang = Global.Static_lang;
     if(Global.Static_profile_id == "") {
       $('.fstatusbar img').css('display', 'none');
     }

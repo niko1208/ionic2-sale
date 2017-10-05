@@ -9,8 +9,8 @@
       <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
   </div>
   
-   <ion-navbar color="">
-    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" (keyup.enter)="search()"></ion-searchbar>
+   <ion-navbar color="" [ngClass]="(lang == 'ar') ? 'cont_rtl':''">
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" (keyup.enter)="search()" placeholder="{{'STR_SEARCH' | translate}}"></ion-searchbar>
     <ion-icon name="search" class="bt" (click)="search()"></ion-icon>
    </ion-navbar>
    <ion-toolbar>
@@ -23,7 +23,7 @@
 </ion-header>
 
 
-<ion-content class="detail_content">
+<ion-content [ngClass]="(lang == 'ar') ? 'detail_content cont_rtl':'detail_content'">
 <div *ngIf="isPeople">
     <!--
     <ion-item  *ngFor="let item of keys; let i = index" (click)="goprofile(item.profile_id)">

@@ -138,27 +138,27 @@ export class MyprofilePage {
     this.service.info_cls = "s";
     this.info_text = [];
     if(idx == 0) {
-      this.info_text.push({title: 'AVAILABLE BALANCE', text:this.translate.instant('STR_INFO_PROFILE1')});
+      this.info_text.push({title: this.translate.instant('STR_AVAILABLE_BALANCE'), text:this.translate.instant('STR_INFO_PROFILE1')});
     } else if(idx == 1) {
-      this.info_text.push({title: 'The profile level ', text:'<u>'+this.translate.instant('STR_INFO_PROFILE2_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE2')});
-      this.info_text.push({title: 'The profile level ', text:'<u>'+this.translate.instant('STR_INFO_PROFILE3_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE3')});
-      this.info_text.push({title: 'The profile level ', text:'<u>'+this.translate.instant('STR_INFO_PROFILE4_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE4')});
-      this.info_text.push({title: 'The profile level ', text:'<u>'+this.translate.instant('STR_INFO_PROFILE5_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE5')});
+      this.info_text.push({title: this.translate.instant('STR_PROFILE_LEVEL'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE2_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE2')});
+      this.info_text.push({title: this.translate.instant('STR_PROFILE_LEVEL'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE3_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE3')});
+      this.info_text.push({title: this.translate.instant('STR_PROFILE_LEVEL'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE4_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE4')});
+      this.info_text.push({title: this.translate.instant('STR_PROFILE_LEVEL'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE5_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE5')});
     } else if(idx == 2) {
-      this.info_text.push({title: 'The post ad managment', text:'<u>'+this.translate.instant('STR_INFO_PROFILE6_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE6')});
-      this.info_text.push({title: 'The post ad managment', text:'<u>'+this.translate.instant('STR_INFO_PROFILE7_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE7')});
-      this.info_text.push({title: 'The post ad managment', text:'<u>'+this.translate.instant('STR_INFO_PROFILE8_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE8')});
-      this.info_text.push({title: 'The post ad managment', text:'<u>'+this.translate.instant('STR_INFO_PROFILE9_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE9')});
-      this.info_text.push({title: 'The post ad managment', text:'<u>'+this.translate.instant('STR_INFO_PROFILE10_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE10')});
+      this.info_text.push({title: this.translate.instant('STR_POST_ADVERTISE_MANAGMENT'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE6_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE6')});
+      this.info_text.push({title: this.translate.instant('STR_POST_ADVERTISE_MANAGMENT'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE7_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE7')});
+      this.info_text.push({title: this.translate.instant('STR_POST_ADVERTISE_MANAGMENT'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE8_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE8')});
+      this.info_text.push({title: this.translate.instant('STR_POST_ADVERTISE_MANAGMENT'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE9_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE9')});
+      this.info_text.push({title: this.translate.instant('STR_POST_ADVERTISE_MANAGMENT'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE10_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE10')});
     } else if(idx == 3) {
-      this.info_text.push({title: 'The bar of featured ad', text:'<u>'+this.translate.instant('STR_INFO_PROFILE11_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE11')});
-      this.info_text.push({title: 'The bar of featured ad', text:'<u>'+this.translate.instant('STR_INFO_PROFILE12_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE12')});
-      this.info_text.push({title: 'The bar of featured ad', text:'<u>'+this.translate.instant('STR_INFO_PROFILE13_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE13')});
-      this.info_text.push({title: 'The bar of featured ad', text:'<u>'+this.translate.instant('STR_INFO_PROFILE14_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE14')});
+      this.info_text.push({title: this.translate.instant('STR_AVAILABLE_FEATURED_ADVERTISE'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE11_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE11')});
+      this.info_text.push({title: this.translate.instant('STR_AVAILABLE_FEATURED_ADVERTISE'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE12_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE12')});
+      this.info_text.push({title: this.translate.instant('STR_AVAILABLE_FEATURED_ADVERTISE'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE13_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE13')});
+      this.info_text.push({title: this.translate.instant('STR_AVAILABLE_FEATURED_ADVERTISE'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE14_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE14')});
     } else if(idx == 4) {
-      this.info_text.push({title: 'Upgrade and payment ', text:'<u>'+this.translate.instant('STR_INFO_PROFILE15_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE15')});
-      this.info_text.push({title: 'Upgrade and payment ', text:'<u>'+this.translate.instant('STR_INFO_PROFILE16_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE16')});
-      this.info_text.push({title: 'Upgrade and payment ', text:'<u>'+this.translate.instant('STR_INFO_PROFILE17_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE17')});
+      this.info_text.push({title: this.translate.instant('STR_ACCOUNT_UPGRADE_PAYMENTS'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE15_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE15')});
+      this.info_text.push({title: this.translate.instant('STR_ACCOUNT_UPGRADE_PAYMENTS'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE16_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE16')});
+      this.info_text.push({title: this.translate.instant('STR_ACCOUNT_UPGRADE_PAYMENTS'), text:'<u>'+this.translate.instant('STR_INFO_PROFILE17_T')+'</u>'+this.translate.instant('STR_INFO_PROFILE17')});
     }
     if(idx == 0) {
       this.ev.publish('setinfo', this.info_text, false, false);
