@@ -43,6 +43,7 @@ export class AddonsPage {
 
     public flag: any;
     public badge = '0';
+    public lang: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, public actiionSheetCtrl:ActionSheetController, public toastCtrl: ToastController, public platform: Platform, private ev: Events, public translate: TranslateService) {
@@ -57,10 +58,12 @@ export class AddonsPage {
       this.badge = badge;
       console.log("event : ", badge);
     })
+    this.lang = Global.Static_lang;
     
   }
 
   ionViewWillEnter() {
+    this.lang = Global.Static_lang;
     this.loadProfile();
   }
 

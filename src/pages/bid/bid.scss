@@ -2,10 +2,9 @@ page-bid{
 
 
 .div_img{
-  width: 140px;
-  height:100px;
+  height: 120px;
   overflow: hidden;
-  border-bottom: 2px solid #ff8a65;
+  background-size: cover;
 }
 .div_img img{
   width: 100%;
@@ -27,11 +26,11 @@ page-bid{
   display: none;
 }
 .pprice{
-  color: #ff8a65;
+  color: #ff7f27;
   font-size: 11px;
 }
 .ptitle{
-  color: #ff8a65;
+  color: #ff7f27;
   font-size: 16px;
   padding-top: 5px;
   white-space: nowrap;
@@ -45,8 +44,11 @@ page-bid{
     width: calc(100% - 160px);
     padding-top: 20px;
 }
+.div_right .reach{
+  color: #ff7f27;
+}
 .div_right font{
-    color: #ff8a65;
+    
 }
 ion-card.card-md{
     float: left;

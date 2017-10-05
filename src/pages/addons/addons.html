@@ -8,13 +8,13 @@
       <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
   </div>
   
-  <ion-navbar color ="primary">
+  <ion-navbar color ="" [ngClass]="(lang == 'ar') ? 'cont_rtl':''">
     <ion-title>{{'STR_ADDONS' | translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
+<ion-content padding [ngClass]="(lang == 'ar') ? 'cont_rtl':''">
 
     <h2 class="sec_title">{{'STR_FEATURED_ADVERTISE_TO_SELL' | translate}}</h2>
     <div class="sec">
@@ -22,21 +22,21 @@
             <ion-checkbox [(ngModel)]='check_pin' (ionChange)="pinChecked(check_pin);"></ion-checkbox>
             <ion-icon name ="pin" item-left></ion-icon>
             <ion-label>{{'STR_PINNED_ADVERTISE' | translate}}</ion-label>
-            <ion-label text-right>3 KD</ion-label>
+            <ion-label text-right style="direction: ltr">3 KD</ion-label>
         </ion-item>
 
         <ion-item>
             <ion-checkbox [(ngModel)]='check_pre' (ionChange)="preChecked(check_pre);"></ion-checkbox>
             <ion-icon name ="albums" item-left></ion-icon>
             <ion-label>{{'STR_PREMIUM_ADVERTISE' | translate}}</ion-label>
-            <ion-label text-right>5 KD</ion-label>
+            <ion-label text-right style="direction: ltr">5 KD</ion-label>
         </ion-item>
 
         <ion-item>
             <ion-checkbox [(ngModel)]='check_offer' (ionChange)="offerChecked(check_offer);"></ion-checkbox>
             <ion-icon name ="body" item-left></ion-icon>
             <ion-label>{{'STR_OFFERS_FIRST_PAGE' | translate}}</ion-label>
-            <ion-label text-right>10 KD</ion-label>
+            <ion-label text-right style="direction: ltr">10 KD</ion-label>
         </ion-item>
     </div>
 
@@ -44,11 +44,11 @@
     <div class="sec">
         <ion-item>
             <ion-label>{{'STR_BALANCE' | translate}}</ion-label>
-            <ion-label text-right>{{balance}} KD</ion-label>
+            <ion-label text-right style="direction: ltr">{{balance}} KD</ion-label>
         </ion-item>
         <ion-item *ngIf="false && preads != 0">
             <ion-label>{{'STR_PREMIUM_ADVERTISE' | translate}}</ion-label>
-            <ion-label text-right>{{preads}}</ion-label>
+            <ion-label text-right style="direction: ltr">{{preads}}</ion-label>
         </ion-item>
         <ion-item *ngIf="false && pinads != 0">
             <ion-label>{{'STR_PINNED_ADVERTISE' | translate}}</ion-label>
@@ -68,11 +68,11 @@
     <div class="sec">
         <ion-item>
             <ion-label>{{'STR_TOTAL' | translate}}</ion-label>
-            <ion-label text-right>{{total}} KD</ion-label>
+            <ion-label text-right style="direction: ltr">{{total}} KD</ion-label>
         </ion-item>
         <ion-item>
             <ion-label>{{'STR_AMOUNT_TO_PAY' | translate}}</ion-label>
-            <ion-label text-right>{{amount}} KD</ion-label>
+            <ion-label text-right style="direction: ltr">{{amount}} KD</ion-label>
         </ion-item>
     </div>
 

@@ -4,7 +4,7 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header [ngClass]="(service.lang == 'ar') ? 'cont_rtl':''">
+<ion-header>
 
   <div class="fstatusbar">
       <ion-icon name="menu" (click)="gotoprofile()"></ion-icon>
@@ -14,7 +14,7 @@
       <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
   </div>
   
-  <ion-navbar color ="">
+  <ion-navbar color ="" [ngClass]="(lang == 'ar') ? 'cont_rtl':''">
     <ion-title>post</ion-title>
     <div class="pp">
         <img src="{{image}}"/>
@@ -24,7 +24,7 @@
 </ion-header>
 
 
-<ion-content [ngClass]="(service.lang == 'ar') ? 'add_post_content cont_rtl':'add_post_content'">
+<ion-content [ngClass]="(lang == 'ar') ? 'add_post_content cont_rtl':'add_post_content'">
 
   <ion-list class="add_post_list">
 
@@ -93,8 +93,8 @@
     <ion-item>
     <ion-checkbox [(ngModel)]="isnofree" (ionChange)="changeNoFree()"></ion-checkbox><ion-label>{{'STR_NOTFREE' | translate}}</ion-label>
     </ion-item>
-    <div style="position: absolute; bottom: 10px; right: 10px;">
-      {{'STR_COST' | translate}}&nbsp;<input class='dcost' type='text' [(ngModel)]='dcost' style="width:50px;padding:3px 5px;font-size: 16px;"/>&nbsp;KD
+    <div class="ffright" style="position: absolute; bottom: 10px; right: 10px;">
+      {{'STR_COST' | translate}}&nbsp;<font style="direction: ltr"><input class='dcost' type='text' [(ngModel)]='dcost' style="width:50px;padding:3px 5px;font-size: 16px;"/>&nbsp;KD</font>
     </div>
   </ion-row>
 

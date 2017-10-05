@@ -18,6 +18,7 @@ import { BidPage } from './../bid/bid';
 import { Events, LoadingController } from 'ionic-angular';
 import {MorePage} from '../more/more';
 import { Service } from './../../providers/service';
+import { TranslateService } from 'ng2-translate';
 import 'rxjs/add/operator/map';
 import * as $ from 'jquery';
 
@@ -57,7 +58,7 @@ export class HomePage implements ServerDataModelDelegate {
     info_text = [];
     public lang: any;
 
-  constructor( public plateform:Platform, public navCtrl: NavController, public viweCtrl : ViewController,public server :Service,public http: Http,public datamodel:ServerDataModel, private ev: Events, public _http:Http, private loading:LoadingController, public service:Service)
+  constructor( public plateform:Platform, public navCtrl: NavController, public viweCtrl : ViewController,public server :Service,public http: Http,public datamodel:ServerDataModel, private ev: Events, public _http:Http, private loading:LoadingController, public service:Service, public translate: TranslateService)
    {
      this.navCtrl = navCtrl;
      this.plateform = plateform;
@@ -144,10 +145,10 @@ ionViewWillEnter()
 
   
     this.info_text = [];
-    this.info_text.push({title: 'POST AD', text:'To post an advertisement and list your item in secs'});
-    this.info_text.push({title: 'BIDS', text:'Bids page where you can find all items that in bidding now from different sellers'});
-    this.info_text.push({title: 'TOPSELLER', text:'here to view best and top sellers in the app, according to their achievements and ratings,badges'});
-    this.info_text.push({title: 'SHOPS', text:'To browser officially certificated shops advertisements.'});
+    this.info_text.push({title: this.translate.instant('STR_POSTAD'), text:this.translate.instant('STR_INFO_LATEST1')});
+    this.info_text.push({title: this.translate.instant('STR_BIDS'), text:this.translate.instant('STR_INFO_LATEST2')});
+    this.info_text.push({title: this.translate.instant('STR_TOPSELLERS'), text:this.translate.instant('STR_INFO_LATEST3')});
+    this.info_text.push({title: this.translate.instant('STR_SHOPS'), text:this.translate.instant('STR_INFO_LATEST4')});
     
     this.ev.publish('setinfo', this.info_text, true, true);
 }

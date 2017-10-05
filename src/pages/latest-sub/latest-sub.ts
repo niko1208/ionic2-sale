@@ -93,6 +93,9 @@ export class LatestSubPage  implements ServerDataModelDelegate{
   public badge = '0';
   public lang: any;
 
+    public strtooltip = "";
+    public tool_tip = false;
+    
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private loading:LoadingController, public datamodel:ServerDataModel, public _http:Http, private alertCtrl: AlertController, private ev: Events, public translate: TranslateService, public service: Service) {
     this.navCtrl = navCtrl;
 
@@ -272,6 +275,37 @@ export class LatestSubPage  implements ServerDataModelDelegate{
       ]
     });
     alertbox.present();
+  }
+
+  clickicon(idx, is) { 
+    let msg = ['',
+      this.translate.instant('STR_REGISTER'),
+      this.translate.instant('STR_EMAIL_V'),
+      this.translate.instant('STR_PHONE_V'),
+      this.translate.instant('STR_PAYMENT_V'),
+      this.translate.instant('STR_BASIC_MEM'),
+      this.translate.instant('STR_PRO_MEM'),
+      this.translate.instant('STR_SHOP_MEM'),
+      this.translate.instant('STR_COMPANY_MEM')
+    ];
+    if(is) {
+      this.tool_tip = true;
+      this.strtooltip = msg[idx];
+      let x = 20 + ((idx-1)%4)*30;
+      let y = 100;
+      if(idx>4) y = 130;
+
+      let time1 = setTimeout(() => {
+        //$('.tooltip').css('left', x+'px');
+        //$('.tooltip').css('top', y+'px');
+        clearTimeout(time1);
+      }, 100);
+      
+      let time = setTimeout(() => {
+        this.tool_tip = false;
+        clearTimeout(time);
+      }, 1000)
+    }
   }
 
   onprice(){

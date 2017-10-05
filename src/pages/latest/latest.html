@@ -49,7 +49,7 @@
 </ion-header>
 
 <!-- [ngClass]="(service.lang == 'ar') ? 'late_content cont_rtl':'late_content'"-->
-<ion-content class="late_content">
+<ion-content [ngClass]="(lang == 'ar') ? 'late_content cont_rtl':'late_content'">
 <div class='fast_post fast_post_{{lang}}' (click)="goPostPage()"><ion-icon name="ios-camera"></ion-icon><small [ngClass]="lang == 'ar'? 'sell_ar': ''">{{'STR_SELL' | translate}}</small></div>
 <div *ngIf="!clickFollow">
   <ion-card *ngFor="let item of keys; let i = index" class="late_card" (click)="click_card(i);">

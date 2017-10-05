@@ -158,10 +158,19 @@ div.rover{
 ion-row.rover *{
   color: #888;
 }
-ion-header.cont_rtl{
-  div.pp{
-    left: 5px;
-    right: auto;
+.cont_rtl{
+  .ffright{
+    left: 10px !important;
+    right: auto !important;
+  }
+  .ffright input{
+    float: left;
+    margin-right: 5px;
+  }
+  .back-button.show-back-button{
+      position: absolute;
+      left: 0px;
+      z-index: 1;
   }
 }
 

@@ -39,7 +39,7 @@ export class BidPage {
       console.log("event : ", badge);
     })
     
-    this.flag = Global.flag;
+    this.lang = Global.Static_lang;
   }
 
 

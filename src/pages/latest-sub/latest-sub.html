@@ -62,7 +62,7 @@
     <div class="icon_sec_wanted" *ngIf="sub_wanted=='0'">
       <div (click)="callIT(phonenumber)" class="divsel1">{{'STR_CALL' | translate}}</div>
       <div (click)="sendSMS()" class="divsel1">{{'STR_SMS' | translate}}</div>
-      <div (click)="onchat()" class="divsel1">{{'STR_CHAT' | translate}}</div>
+      <div (click)="onchat()" class="divsel1">{{'STR_CHAT1' | translate}}</div>
       <div (click)="clicklike()" class="divsel{{blike}}" >+{{'STR_FAVORITE' | translate}}</div>
     </div>
   </div>
@@ -72,7 +72,7 @@
       <ion-col *ngIf="sub_wanted=='0'">
         <div class='center'>{{'STR_PRICE' | translate}}</div><br/>
         <div class='center colorb' style="direction:ltr">{{sub_price}} KWD</div>
-        <div *ngIf="delivery == 'free'" text-center style="color:#01aa41">{{'STR_FREE_DELIVERY' | translate}}</div>
+        <div *ngIf="delivery == 'free' || delivery_cost == '' || delivery_cost == '0'" text-center style="color:#01aa41">{{'STR_FREE_DELIVERY' | translate}}</div>
         <div *ngIf="delivery != 'free'" text-center style="color:#01aa41; font-size:12px">{{'STR_DELIVERY' | translate}} <span style="direction:ltr">{{delivery_cost}}KD</span></div>
       </ion-col>
       <ion-col *ngIf="sub_wanted=='1'">
@@ -102,7 +102,7 @@
 
   <div class="div_sec noborder noshadow">
     <button  ion-button full *ngIf="pressedOffer==0" (click)="onenterbid()" class="md-button green">{{'STR_ENTER_BIDDING' | translate}}</button>
-    <button  ion-button full *ngIf="pressedOffer!=0" color="light" (click)="ongobid()" class="md-button green">Offer on bidding, Total {{bidprice}} KD</button>
+    <button  ion-button full *ngIf="pressedOffer!=0" (click)="ongobid()" class="md-button green">{{'STR_OFFERONBIDDING' | translate}}, {{'STR_TOTAL1' | translate}} {{bidprice}} {{'STR_KWD' | translate}}</button>
   </div>
 
   <div class="div_sec noborder noshadow" *ngIf="pressedOffer!=0">
@@ -115,7 +115,7 @@
   </div>
 
   <div class="div_sec seller">
-    <div (click)="onfollow(sub_profile_id)" class="bt_follow on_{{isfollow}}">+ Follow</div>
+    <div (click)="onfollow(sub_profile_id)" class="bt_follow on_{{isfollow}}">+ {{'STR_FOLLOW' | translate}}</div>
     <div class="ranking">{{'STR_RANK' | translate}}</div>
     <div class="goprofile" (click)="goprofile(sub_profile_id)">
       <ion-icon name="ios-arrow-forward" *ngIf="lang != 'ar'"></ion-icon>
@@ -149,37 +149,40 @@
             <ion-icon *ngIf="myRating<=4" name="star-outline"></ion-icon>
         </div>
         <div style="clear: both" class="reviewcount">{{ratingCount}} {{'STR_REVIEWS' | translate}}</div>
+        <div class='div_tooltip'>
+                <div class='tooltip' *ngIf="tool_tip">{{strtooltip}}</div>
         <div class="div_icons1">
-            <div class="div_icon sel">
+            <div class="div_icon sel" (click)='clickicon(1, true)'>
                 <img src="assets/img/icon-verify-1.png" />
             </div>
-            <div class="div_icon">
+            <div class="div_icon" (click)='clickicon(2, false)'>
                 <img src="assets/img/icon-email.png" />
-            </div>
-            <div class="div_icon">
+            </div> 
+            <div class="div_icon" (click)='clickicon(3, true)'>
                 <img src="assets/img/icon-phone.png" />
             </div>
-            <div class="div_icon sel">
+            <div class="div_icon sel" (click)='clickicon(4, true)'>
                 <img src="assets/img/icon-payment-1.png" />
             </div>
         </div>
         <div class="div_icons">
-            <div [ngClass]="(membership1 == 'basic') ? 'div_icon sel' : 'div_icon'">
+            <div [ngClass]="(membership1 == 'basic') ? 'div_icon sel' : 'div_icon'" (click)='clickicon(5, (membership1 == "basic"))'>
                 <img src="assets/img/icon-6-1.png" *ngIf="membership1 == 'basic'"/>
                 <img src="assets/img/icon-6.png" *ngIf="membership1 != 'basic'" />
             </div>
-            <div [ngClass]="(membership2 == 'pro') ? 'div_icon sel' : 'div_icon'">
+            <div [ngClass]="(membership2 == 'pro') ? 'div_icon sel' : 'div_icon'" (click)='clickicon(6, (membership1 == "pro"))'>
                 <img src="assets/img/icon-9-1.png" *ngIf="membership2 == 'pro'"/>
                 <img src="assets/img/icon-9.png" *ngIf="membership2 != 'pro'" />
             </div>
-            <div [ngClass]="(membership3 == 'shop') ? 'div_icon sel' : 'div_icon'">
+            <div [ngClass]="(membership3 == 'shop') ? 'div_icon sel' : 'div_icon'" (click)='clickicon(7, (membership1 == "shop"))'>
                 <img src="assets/img/icon-5-1.png" *ngIf="membership3 == 'shop'"/>
                 <img src="assets/img/icon-5.png" *ngIf="membership3 != 'shop'" />
             </div>
-            <div [ngClass]="(membership4 == 'company') ? 'div_icon sel' : 'div_icon'">
+            <div [ngClass]="(membership4 == 'company') ? 'div_icon sel' : 'div_icon'" (click)='clickicon(8, (membership1 == "company"))'>
                 <img src="assets/img/icon-15-1.png" *ngIf="membership4 == 'company'"/>
                 <img src="assets/img/icon-15.png" *ngIf="membership4 != 'company'"/>
             </div>
+        </div>
         </div>
         <div class="div_verify">{{'STR_VERIFIED' | translate}}</div>
     </div>
@@ -208,8 +211,8 @@
           <div class='rtitle'>{{item['title']}}</div>
           <div class="rcont" *ngIf="ml[i]==0">{{item['shortdesc']}}</div>
           <div class="rcont" *ngIf="ml[i]==1">{{item['review']}}</div>
-          <div class="more" *ngIf="ml[i]==0" (click)="showmore(i)">MORE</div>
-          <div class="more" *ngIf="ml[i]==1" (click)="showless(i)">LESS</div>
+          <div class="more" *ngIf="ml[i]==0" (click)="showmore(i)">{{'STR_MORE' | translate}}</div>
+          <div class="more" *ngIf="ml[i]==1" (click)="showless(i)">{{'STR_LESS' | translate}}</div>
       </ion-item>
     </div>
     <button ion-button full class='md-button green' (click)="goreview()">{{'STR_WRITE_REVIEW' | translate}}</button>

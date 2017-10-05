@@ -8,7 +8,7 @@
       <ion-icon name="search" (click)="gotosearch()"></ion-icon>
       <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
   </div>
-  <ion-navbar color="">
+  <ion-navbar color="" [ngClass]="(lang == 'ar') ? 'cont_rtl':''">
     <ion-title>{{'STR_MORE' | translate}}</ion-title>
     <!--<ion-searchbar>
     </ion-searchbar>-->
@@ -47,7 +47,8 @@
     <ion-item>
         <ion-icon name ="ionitron" item-left></ion-icon>
         <ion-label (click)="onpostad()">{{'STR_POSTAD' | translate}}</ion-label>
-        <ion-icon name ="arrow-dropright" class="arrow_right" item-right></ion-icon>
+        <ion-icon name ="arrow-dropright" class="arrow_right" item-right *ngIf="lang != 'ar'"></ion-icon>
+        <ion-icon name ="arrow-dropleft" class="arrow_right" item-right *ngIf="lang == 'ar'"></ion-icon>
     </ion-item>
 
     
@@ -55,7 +56,8 @@
     <ion-item>
         <ion-icon name ="contact" item-left></ion-icon>
         <ion-label (click)="onprofile()">{{'STR_MYPROFILE' | translate}}</ion-label>
-        <ion-icon name ="arrow-dropright" class="arrow_right" item-right></ion-icon>
+        <ion-icon name ="arrow-dropright" class="arrow_right" item-right *ngIf="lang != 'ar'"></ion-icon>
+        <ion-icon name ="arrow-dropleft" class="arrow_right" item-right *ngIf="lang == 'ar'"></ion-icon>
     </ion-item>
 
 
@@ -63,21 +65,24 @@
     <ion-item>
         <ion-icon name ="happy" item-left></ion-icon>
         <ion-label (click)="onfavorite()">{{'STR_FAVORITE' | translate}}</ion-label>
-        <ion-icon name ="arrow-dropright" class="arrow_right" item-right></ion-icon>
+        <ion-icon name ="arrow-dropright" class="arrow_right" item-right *ngIf="lang != 'ar'"></ion-icon>
+        <ion-icon name ="arrow-dropleft" class="arrow_right" item-right *ngIf="lang == 'ar'"></ion-icon>
     </ion-item>
 
 <!--contact us content-->
     <ion-item>
         <ion-icon name ="mail" item-left></ion-icon>
         <ion-label>{{'STR_CONTACTUS' | translate}}</ion-label>
-        <ion-icon name ="arrow-dropright" class="arrow_right" item-right></ion-icon>
+        <ion-icon name ="arrow-dropright" class="arrow_right" item-right *ngIf="lang != 'ar'"></ion-icon>
+        <ion-icon name ="arrow-dropleft" class="arrow_right" item-right *ngIf="lang == 'ar'"></ion-icon>
     </ion-item>
 
 <!--about us content-->
     <ion-item>
          <ion-icon name ="megaphone" item-left></ion-icon>
         <ion-label>{{'STR_ABOUTUS' | translate}}</ion-label>
-        <ion-icon name ="arrow-dropright" class="arrow_right" item-right></ion-icon>
+        <ion-icon name ="arrow-dropright" class="arrow_right" item-right *ngIf="lang != 'ar'"></ion-icon>
+        <ion-icon name ="arrow-dropleft" class="arrow_right" item-right *ngIf="lang == 'ar'"></ion-icon>
     </ion-item>
 
 <!--Account Login content-->
@@ -85,7 +90,8 @@
         <ion-icon name ="contact" item-left></ion-icon>
         <ion-label [class.hide]="profile_id == ''" (click)="onlogout()">{{'STR_LOGOUT' | translate}}</ion-label>
         <ion-label [class.hide]="profile_id != ''" (click)="onlogin()">{{'STR_LOGOUT' | translate}}</ion-label>
-        <ion-icon name ="arrow-dropright" class="arrow_right" item-right></ion-icon>
+        <ion-icon name ="arrow-dropright" class="arrow_right" item-right *ngIf="lang != 'ar'"></ion-icon>
+        <ion-icon name ="arrow-dropleft" class="arrow_right" item-right *ngIf="lang == 'ar'"></ion-icon>
     </ion-item>
     
   </ion-list>

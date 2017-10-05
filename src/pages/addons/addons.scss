@@ -47,5 +47,15 @@ h2.sec_title{
     margin-left: 3px;
     font-size: 18px;
 }
+.cont_rtl{
+    [text-right]{
+      text-align: left;
+  }
+  .back-button.show-back-button{
+      position: absolute;
+      left: 0px;
+      z-index: 1;
+  }
+}
 
 }

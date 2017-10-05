@@ -68,9 +68,10 @@ export class TopsellerPage {
     this.load();
 
     this.info_text = [];
-    this.info_text.push({title: 'TOPSELLER', text:'The place to grow your business reputation to sell faster and become famous amongst sellers as unique seller, by gaining good ratings/ reviews also building points trust to be TOPSELLER'});
-    this.info_text.push({title: 'The points badge', text:'You will be awarded this badge according to your selling achievement and points, will give you a better rank in TOP SELLERS to gain trust and selling faster'});
-    this.info_text.push({title: 'Rank', text:'This is your profile level  ranking according to your ratings+reviews+points+selling'});
+    this.info_text.push({title: this.translate.instant('STR_TOP_SELLER'), text:this.translate.instant('STR_INFO_TOPSELLER1')});
+    this.info_text.push({title: this.translate.instant('STR_INFO_TOPSELLER2_T'), text:this.translate.instant('STR_INFO_TOPSELLER2')});
+    this.info_text.push({title: this.translate.instant('STR_RANK'), text:this.translate.instant('STR_INFO_TOPSELLER3')});
+    
     this.ev.publish('setinfo', this.info_text, true, true);
   }
 
@@ -87,6 +88,7 @@ export class TopsellerPage {
       });
     }
   }
+  
   load() {
 
     this.loading = this.loadingCtrl.create({

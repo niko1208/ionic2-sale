@@ -66,6 +66,7 @@ export class WantedthingPage  implements ServerDataModelDelegate{
     public flag: any;
     public badge = '0';
     info_text = [];
+    lang: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private loading:LoadingController, public datamodel:ServerDataModel, public _http:Http, private ev: Events, public translate: TranslateService) {
     this.navCtrl = navCtrl;
@@ -93,6 +94,7 @@ export class WantedthingPage  implements ServerDataModelDelegate{
     
     this.catename = "";
     this.flag = Global.flag;
+    this.lang = Global.Static_lang;
 
   }
 
@@ -113,6 +115,7 @@ export class WantedthingPage  implements ServerDataModelDelegate{
 
   ionViewWillEnter()
   {
+    this.lang = Global.Static_lang;
     if(Global.Static_profile_id == "") {
       $('.fstatusbar img').css('display', 'none');
     }

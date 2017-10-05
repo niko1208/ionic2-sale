@@ -51,6 +51,7 @@ export class PostPage{
   condition = false;
   add_detail = false;
   dcost = '';
+  lang: any;
 
   constructor(public model:ServerDataModel,
               public navCtrl: NavController,
@@ -81,6 +82,7 @@ export class PostPage{
 
     localStorage.setItem('pay', '0');
     
+    this.lang = Global.Static_lang;
   }
 
   gotonotification() {
@@ -113,6 +115,7 @@ export class PostPage{
   }
  ionViewWillEnter()
  {
+    this.lang = Global.Static_lang;
    let pay = localStorage.getItem('pay');
 
     if(Global.Static_profile_id == "") {
@@ -125,7 +128,7 @@ export class PostPage{
       this.navCtrl.pop();
      } else {
       if(Global.Static_initPost == "1") {
-          $(".category").text("Choose Category");
+          $(".category").text(this.translate.instant('STR_CHOOSE_CATE'));
       } else {
           $(".category").text(str);
           if(pay != '1') {
@@ -277,7 +280,7 @@ public pathForImage(img) {
       
     }
     gotoTakePic() {
-      if($(".category").text() == "Choose Category") {
+      if($(".category").text() == this.translate.instant('STR_CHOOSE_CATE')) {
         alert("Please select Category");
         return;
       }

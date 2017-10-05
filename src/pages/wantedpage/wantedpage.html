@@ -9,9 +9,9 @@
       <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
   </div>
   
-  <ion-navbar>
+  <ion-navbar [ngClass]="(lang == 'ar') ? 'cont_rtl':''">
     <ion-title>
-      <div style="float: left; padding-top: 10px">{{'STR_SHOPS' | translate}}</div>
+      <div class="ntitle" style="float: left; padding-top: 10px">{{'STR_SHOPS' | translate}}</div>
       <button color="secondary" ion-button style="margin-right:10px; float:right" (click)="goPostWnatedThing();">
         {{'STR_Add_SHOP' | translate}}
       </button>
@@ -21,7 +21,7 @@
 </ion-header>
 
 
-<ion-content class="sub_content" style="background-color:#eee;border-radius:10%;">
+<ion-content [ngClass]="(lang == 'ar') ? 'sub_content cont_rtl':'sub_content'" style="background-color:#eee;border-radius:10%;">
   <div class="popup" *ngIf="bpopup">
     <div class="dialog">
       <div class="dialog_header">{{dialog_title}}</div>
@@ -55,8 +55,8 @@
         </div>
         <div class="state on_{{item.post_profile_ison}}"></div>
         <div (click)="onfollow(item.post_profile_id, idx, item.post_profile_isfollow);" class="bt_follow on_{{item.post_profile_isfollow}}" id="bt_follow_{{idx}}">
-          <span *ngIf="item.post_profile_isfollow=='1'">Followed</span>
-          <span *ngIf="item.post_profile_isfollow!='1'">+ Follow</span>
+          <span *ngIf="item.post_profile_isfollow=='1'">{{'STR_FOLLOWED' | translate}}</span>
+          <span *ngIf="item.post_profile_isfollow!='1'">+ {{'STR_FOLLOW' | translate}}</span>
         </div>
     </div>
   </div>
@@ -70,7 +70,7 @@
       <div (click)="callIT('+1-111-1111-1111')">{{'STR_CALL' | translate}}</div>
       <div (click)="sendSMS()">{{'STR_SMS' | translate}}</div>
       <div (click)="onchat(item.post_profile_id, item.post_img_url)">{{'STR_CHAT' | translate}}</div>
-      <div (click)="onlike(item.post_id, item.wanted, item.islike, idx, item)" class="divsel{{likeary[idx]}}" >+Favorite</div>
+      <div (click)="onlike(item.post_id, item.wanted, item.islike, idx, item)" class="divsel{{likeary[idx]}}" >+{{'STR_FAVORITE' | translate}}</div>
     </div>
   </div>
   <div class="div_sec">

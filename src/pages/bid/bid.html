@@ -23,8 +23,8 @@
     <!--
     <div *ngIf="item.wanted=='1'" class="wanted">wanted</div>
     -->
-    <div class="div_img">
-        <img  class="late_img" *ngFor="let itemurl of item.image_url;" src="{{itemurl}}"/>
+    <div class="div_img" [style.backgroundImage]="'url('+item.image_url[0]+')'">
+        <img  class="late_img" *ngFor="let itemurl of item.image_url;" src="{{itemurl}}" style="display:none"/>
     </div>
     <div class="div_content">
         <div>
@@ -39,8 +39,8 @@
 
     <div class="div_right">
         <div *ngIf="lang != 'ar'">{{item.nums}} {{'STR_BIDS' | translate}}</div>
-        <div *ngIf="lang == 'ar'">{{'STR_BIDS' | translate}} {{item.nums}}</div>
-        <div>{{'STR_REACHED' | translate}}  <font style="direction: ltr">{{item.bidprice}}<span style="color:#333">KWD</span></font></div>
+        <div *ngIf="lang == 'ar'">{{'STR_BIDS1' | translate}} {{item.nums}}</div>
+        <div class="reach">{{'STR_REACHED' | translate}}  <font style="direction: ltr">{{item.bidprice}}<span >{{'STR_KWD' | translate}}</span></font></div>
     </div>
 
 </ion-item>

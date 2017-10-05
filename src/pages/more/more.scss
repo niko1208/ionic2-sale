@@ -52,5 +52,10 @@ page-more{
         .select-md .select-icon{
             margin-right: 10px;
         }
+        .back-button.show-back-button{
+            position: absolute;
+            left: 0px;
+            z-index: 1;
+        }
     }
 }

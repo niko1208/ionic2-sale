@@ -28,9 +28,14 @@
   "STR_ABOUTUS": "About Us",
   "STR_LOGOUT": "Logout",
   "STR_BIDS": "Bids",
+  "STR_BIDS1": "Bids",
   "STR_POSTAD": "Post Ad",
   "STR_SHOPS": "Shops",
   "STR_TOPSELLERS": "Top sellers",
+  "STR_KWD": "KWD",
+  "STR_OFFERONBIDDING" : "offer on bidding",
+  "STR_TOTAL1": "total",
+  
 
   "STR_EDITINFO": "Edit info",
   "STR_WRITEABOUT": "Write About",
@@ -61,6 +66,7 @@
   "STR_PRO": "Professional",
   "STR_SHOP": "Shop",
   "STR_MEMBER": "Member",
+  "STR_MEMBER1": "Member",
   "STR_COMPANY": "Company",
   "STR_PACKAGES_MEMBERSHIP_SUBSCRIPTION": "Packages & membership subcription",
   "STR_RECHARGE_YOUR_BALANCE": "Recharge your balance",
@@ -113,6 +119,9 @@
   "STR_WRITEREVIEW": "write a review",
   "STR_POSTREVIEW": "Post review",
 
+  "STR_ITEMS": "Items",
+  "STR_SELLERORSHOP": "Seller or Shop",
+
   "STR_CALL": "Call",
   "STR_SMS": "Sms",
   "STR_PRICE": "Pirce",
@@ -127,6 +136,7 @@
   "STR_DESCRIPTION": "Description",
   "STR_RANK": "Rank",
   "STR_FOLLOW": "Follow",
+  "STR_FOLLOWED": "Followed",
   "STR_REVIEWS": "Reviews",
   "STR_VERIFIED": "Verified",
   "STR_ABOUT_SELLER": "about seller",
@@ -139,8 +149,9 @@
   "STR_SELLER_ADVERTISE": "Seller advertisements",
   "STR_RATING_REVIEW": "Rating & reviews",
   "STR_MORE": "More",
+  "STR_LESS": "Less",
   "STR_TOP_SELLER": "Top Seller",
-  "STR_PAYMENT_VERIFIED": "Payment verified",
+  "STR_PAYMENT_V": "Payment verified",
   "STR_EMAIL_V": "Email verified",
   "STR_PHONE_V": "Phone number verified",
   "STR_BASIC_MEM": "Basic membership",
@@ -232,5 +243,10 @@
   "STR_INFO_PROFILE16_T": "Packages & Subsriptions",
   "STR_INFO_PROFILE16": "here you can subscripe and choose from our packages to be effective seller and gain reputation as certificated seller",
   "STR_INFO_PROFILE17_T": "Recharge your balance",
-  "STR_INFO_PROFILE17": "To increase your account money balance and use it to grow ur business inside the app,"
+  "STR_INFO_PROFILE17": "To increase your account money balance and use it to grow ur business inside the app,",
+
+  "STR_INFO_TOPSELLER2_T": "The points badge",
+  "STR_INFO_TOPSELLER1": "The place to grow your business reputation to sell faster and become famous amongst sellers as unique seller, by gaining good ratings/ reviews also building points trust to be TOPSELLER",
+  "STR_INFO_TOPSELLER2": "You will be awarded this badge according to your selling achievement and points, will give you a better rank in TOP SELLERS to gain trust and selling faster",
+  "STR_INFO_TOPSELLER3": "This is your profile level  ranking according to your ratings+reviews+points+selling"
 }

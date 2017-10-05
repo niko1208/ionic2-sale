@@ -263,5 +263,35 @@ div.pp .overall_mark{
     padding-left: 15px;
     float: left;
 }
+.cont_rtl{
+  .ntitle{
+    float: right !important;
+  }
+  button{
+    float: left;
+  }
+  .back-button.show-back-button{
+      position: absolute;
+      left: 0px;
+      z-index: 1;
+  }
+  div.pp img,
+  .div_item_right{
+    float: right;
+  }
+  div.pp div.bt_follow{
+    left: 5px;
+    right: auto;
+  }
+  div.pp div.state{
+    right: 10px;
+    left: auto;
+  }
+  div.pp .overall_mark,
+  div.pp div{
+    float: right;
+    padding-right: 5px;
+  }
+}
 
 }

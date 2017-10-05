@@ -495,14 +495,14 @@ public pathForImage(img) {
 
   clickicon(idx, is) { 
     let msg = ['',
-      'Registered',
-      'Email Verified',
-      'Phone number Verified',
-      'Payment Verified',
-      'Basic membership',
-      'Professional membership',
-      'Shop membership',
-      'Company membership'
+      this.translate.instant('STR_REGISTER'),
+      this.translate.instant('STR_EMAIL_V'),
+      this.translate.instant('STR_PHONE_V'),
+      this.translate.instant('STR_PAYMENT_V'),
+      this.translate.instant('STR_BASIC_MEM'),
+      this.translate.instant('STR_PRO_MEM'),
+      this.translate.instant('STR_SHOP_MEM'),
+      this.translate.instant('STR_COMPANY_MEM')
     ];
     if(is) { 
       this.tool_tip = true;

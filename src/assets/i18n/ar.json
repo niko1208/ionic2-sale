@@ -10,7 +10,8 @@
   
   "STR_LATEST": "الاحدث",
   "STR_OFFERS": "عروض",
-  "STR_CHAT": "محدثاتي",
+  "STR_CHAT": "محدثاتي", 
+  "STR_CHAT1": "محادثه",
   "STR_PROFILE": "حسابي",
   "STR_ALL": "الكل",
   "STR_FOLLOWING": "اتابع",
@@ -28,9 +29,14 @@
   "STR_ABOUTUS": "نبذه عنا",
   "STR_LOGOUT": "تسجيل خروج ",
   "STR_BIDS": "المزاد",
+  "STR_BIDS1": "عدد المزايدات الفعاله",
   "STR_POSTAD": "انشر إعلان",
   "STR_SHOPS": "محلات",
   "STR_TOPSELLERS": "افضل بائع",
+  "STR_KWD": "دينار",
+  "STR_OFFERONBIDDING" : "العرض مضاف في المزاد",
+  "STR_TOTAL1": " وصل الاجمالي",
+  
 
   "STR_EDITINFO": "تعديل معلوماتي",
   "STR_WRITEABOUT": "اكتب عن ",
@@ -44,16 +50,16 @@
   "STR_POST_ADVERTISE_MANAGMENT": "ادارة وتعديل الاعلانات",
   "STR_PROFILE_LEVEL": "مستوى وتصنيف حسابك  ",
   "STR_MY_ADVERTISE_MAKE_IT": "My Advertise make it",
-  "STR_MY_ACTIVE_POSTS": "العلانات المرفوعه الفعاله",
+  "STR_MY_ACTIVE_POSTS": "الاعلانات المرفوعه الفعاله",
   "STR_FREE_POSTS_LEFT": "الاعلانات المجانيه المتبقيه",
-  "STR_FAVORITE": "المفضله ",
+  "STR_FAVORITE": "المفضله",
   "STR_MY_CHAT": "محادثاتي",
   "STR_CLEAR_BIDS": "مسح الاعلان المدرج في المزاد",
   "STR_AVAILABLE_FEATURED_ADVERTISE": "الاعلانات المميزه المتوفره",
   "STR_PREMIUM_ADVERTISE": "اعلان مميز بريميوم",
   "STR_PINNED": "اعلان مميز تثبيت",
   "STR_VIP": "اعلان مميز مهم وعاجل",
-  "STR_OFFERS_FIRST_PAGE": " اعلان الصفحه الاولى والعروض",
+  "STR_OFFERS_FIRST_PAGE": "اعلان الصفحه الاولى والعروض",
   "STR_ACCOUNT_UPGRADE_PAYMENTS": "تطوير الحساب والدفع ",
   "STR_ACCOUNT": "حساب",
   "STR_FREE": "مجانا",   
@@ -61,6 +67,7 @@
   "STR_PRO": "محترف",
   "STR_SHOP": "محل",
   "STR_MEMBER": "عضويه",
+  "STR_MEMBER1": "العضويه",
   "STR_COMPANY": "شركه",
   "STR_PACKAGES_MEMBERSHIP_SUBSCRIPTION": "حزم العضويه والاشتراكات",
   "STR_RECHARGE_YOUR_BALANCE": "اشحن رصيدك",
@@ -113,6 +120,9 @@
   "STR_WRITEREVIEW": " اكتب التقييم والتعليق",
   "STR_POSTREVIEW": "اضف",
 
+  "STR_ITEMS": "اشياء او منتجات",
+  "STR_SELLERORSHOP": "محلات او بائع",
+
   "STR_CALL": "اتصال",
   "STR_SMS": "مسج",
   "STR_PRICE": "السعر",
@@ -127,6 +137,7 @@
   "STR_DESCRIPTION": "الوصف",
   "STR_RANK": "المرتبه",
   "STR_FOLLOW": "تابع",
+  "STR_FOLLOWED": "متابع",
   "STR_REVIEWS": "التقيم والتعليقات",
   "STR_VERIFIED": "موثق",
   "STR_ABOUT_SELLER": "نبذه عن البائع",
@@ -139,9 +150,10 @@
   "STR_SELLER_ADVERTISE": "اعلانات البائع",
   "STR_RATING_REVIEW": "كل التقيم والتعليقات",
   "STR_MORE": "المزيد",
+  "STR_LESS": "اقل",
 
   "STR_TOP_SELLER": "افضل بائع",
-  "STR_PAYMENT_VERIFIED": "الدفع موثق  ",
+  "STR_PAYMENT_V": "الدفع موثق  ",
   "STR_EMAIL_V": "البريد الاكتروني موثق",
   "STR_PHONE_V": "الرقم موثق",
   "STR_BASIC_MEM": "عضوية اساسيه",
@@ -234,5 +246,11 @@
   "STR_INFO_PROFILE16_T": "الحزم والاشتراكات",
   "STR_INFO_PROFILE16": "هنا تستطيع اختيار الحزم واشتراك العضويه الذي يناسب اعمالك , لتصبح بائع مؤثر وتكتسب سمعه  ونقاط وتوثيق حسابك",
   "STR_INFO_PROFILE17_T": "لشحن رصيدك داخل البرنامج",
-  "STR_INFO_PROFILE17": "لزيادة رصيد اموالك واستخدامها داخل البرنامج لشراء الخدمات وقريبا  لشراء وبيع المنتجات في امان عن طريق البرنامح"
+  "STR_INFO_PROFILE17": "لزيادة رصيد اموالك واستخدامها داخل البرنامج لشراء الخدمات وقريبا  لشراء وبيع المنتجات في امان عن طريق البرنامح",
+
+  
+  "STR_INFO_TOPSELLER2_T": " شارة (رتبة) النقاط",
+  "STR_INFO_TOPSELLER1": "هنا تستطيع تنمية سمعة تجارتك وشهرتها وتوثيقها للجميع لكسب ثقه اكثر  وبيع اسرع عن طريق الحصول على تقيم  من رضى زبائنك وايضا تجميع نقاط الاشتراكات والرتب للوصول الى اعلى القائمه",
+  "STR_INFO_TOPSELLER2": "سيتم منحك هذه الشارة (الجائزه) وفقا لنجاحك وانجازاتك في البيع ونقاطك، ستمنحك رتبة أعلى في أفضل البائعين للحصول على الثقة والبيع بشكل أسرع",
+  "STR_INFO_TOPSELLER3": "هذا هو مستوى حسابك الشخصي، الترتيب وفقا لتقييمات الخاص بك + ملاحظات + نقاط + بيع"
 }

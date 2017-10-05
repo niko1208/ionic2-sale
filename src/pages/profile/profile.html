@@ -43,11 +43,11 @@
             <button (click)="onfollow(profile_id);" [ngClass]="{'follow_sel':isfollow}" id="bt_follow">+ Follow</button>
             <div style="clear:both">
                 <div class="fright div_30" (click)="onfollower()">
-                    <div>Followers</div>
+                    <div>{{'STR_FOLLOWERS' | translate}}</div>
                     <div style="color:#3474e1">{{follower}}</div>
                 </div>
                 <div class="fright div_30" (click)="onfollowing()">
-                    <div>Following</div>
+                    <div>{{'STR_FOLLOWING' | translate}}</div>
                     <div style="color:#3474e1">{{following}}</div>
                 </div>
             </div>
@@ -110,13 +110,13 @@
         <div class="icon_sec_wanted">
             <div (click)="callIT(phonenumber)" class="divsel1">{{'STR_CALL' | translate}}</div>
             <div (click)="sendSMS()" class="divsel1">{{'STR_SMS' | translate}}</div>
-            <div (click)="onchat()" class="divsel1">{{'STR_CHAT' | translate}}</div>
+            <div (click)="onchat()" class="divsel1">{{'STR_CHAT1' | translate}}</div>
             <div (click)="onblock()" class="bt_follow" >{{'STR_BLOCK' | translate}}</div>
             <div (click)="onreport()" class="bt_follow" >{{'STR_REPORT' | translate}}</div>
         </div>
         
         <div *ngIf="about != ''">
-            <div class="about_title">About</div>
+            <div class="about_title">{{'STR_ABOUT' | translate}}</div>
             <div class="about" id="about" text-wrap [innerHTML]="about"></div>
             <div class="about_more" id="about_more" (click)="aboutmore0()">{{'STR_MORE' | translate}}</div>
         </div>
@@ -187,7 +187,7 @@
                             <div class="bar"></div> <div class="fill"></div>
                         </div>
                     </div>
-                    <div class="ring_title">Accuracy</div>
+                    <div class="ring_title">{{'STR_ACCURACY' | translate}}</div>
                 </div>
                 <div class="div_20">
                     <div class="c100 p{{perc(mark2)}} center orange" id="ring1">
@@ -196,7 +196,7 @@
                             <div class="bar"></div> <div class="fill"></div>
                         </div>
                     </div>
-                    <div class="ring_title">Communication</div>
+                    <div class="ring_title">{{'STR_COMMU' | translate}}</div>
                 </div>
                 <div class="div_20">
                     <div class="c100 p{{perc(mark3)}} center orange" id="ring2">
@@ -205,7 +205,7 @@
                             <div class="bar"></div> <div class="fill"></div>
                         </div>
                     </div>
-                    <div class="ring_title">Cleanliness</div>
+                    <div class="ring_title">{{'STR_CLEAN' | translate}}</div>
                 </div>
                 <div class="div_20">
                     <div class="c100 p{{perc(mark4)}} center orange" id="ring3">
@@ -214,7 +214,7 @@
                             <div class="bar"></div> <div class="fill"></div>
                         </div>
                     </div>
-                    <div class="ring_title">Quality</div>
+                    <div class="ring_title">{{'STR_QUALITY' | translate}}</div>
                 </div>
                 <div class="div_20">
                     <div class="c100 p{{perc(mark5)}} center orange" id="ring4">
@@ -223,7 +223,7 @@
                             <div class="bar"></div> <div class="fill"></div>
                         </div>
                     </div>
-                    <div class="ring_title">Honesty</div>
+                    <div class="ring_title">{{'STR_HONESTY' | translate}}</div>
                 </div>
             </div>
         </div>
@@ -246,8 +246,8 @@
             <div class='rtitle'>{{item['title']}}</div>
             <div class="rcont" *ngIf="ml[i]==0">{{item['shortdesc']}}</div>
             <div class="rcont" *ngIf="ml[i]==1">{{item['review']}}</div>
-            <div class="more" *ngIf="ml[i]==0" (click)="showmore(i)">MORE</div>
-            <div class="more" *ngIf="ml[i]==1" (click)="showless(i)">LESS</div>
+            <div class="more" *ngIf="ml[i]==0" (click)="showmore(i)">{{'STR_MORE' | translate}}</div>
+            <div class="more" *ngIf="ml[i]==1" (click)="showless(i)">{{'STR_LESS' | translate}}</div>
         </ion-item>
     </div>
 <!--

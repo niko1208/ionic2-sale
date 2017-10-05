@@ -386,12 +386,14 @@ export class ProfilePage {
   }
 
   aboutmore0() { 
-    if($('#about_more').text() == "More") {
+    let more = this.translate.instant('STR_MORE');
+    let less = this.translate.instant('STR_LESS');
+    if($('#about_more').text() == more) {
       $('#about').addClass('amore');
-      $('#about_more').text('Less');
+      $('#about_more').text(less);
     } else {
       $('#about').removeClass('amore');
-      $('#about_more').text('More');
+      $('#about_more').text(more);
     }
   }
 
@@ -406,9 +408,9 @@ export class ProfilePage {
     .subscribe(res => {
         this.isfollow = res["items"];
         if(this.isfollow == "1")
-          $('#bt_follow').html("Followed");
+          $('#bt_follow').html(this.translate.instant('STR_FOLLOWED'));
         else 
-          $('#bt_follow').html(" + Follow");
+          $('#bt_follow').html(" + " + this.translate.instant('STR_FOLLOW'));
     }, error => {
         alert("Error");
     });
@@ -427,14 +429,14 @@ export class ProfilePage {
 
   clickicon(idx, is) { 
     let msg = ['',
-      'Registered',
-      'Email Verified',
-      'Phone number Verified',
-      'Payment Verified',
-      'Basic membership',
-      'Professional membership',
-      'Shop membership',
-      'Company membership'
+      this.translate.instant('STR_REGISTER'),
+      this.translate.instant('STR_EMAIL_V'),
+      this.translate.instant('STR_PHONE_V'),
+      this.translate.instant('STR_PAYMENT_V'),
+      this.translate.instant('STR_BASIC_MEM'),
+      this.translate.instant('STR_PRO_MEM'),
+      this.translate.instant('STR_SHOP_MEM'),
+      this.translate.instant('STR_COMPANY_MEM')
     ];
     if(is) {
       this.tool_tip = true;
