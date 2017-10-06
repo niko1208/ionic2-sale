@@ -28,7 +28,7 @@ div.pp div{
     width: 150px;
     padding-top: 15px;
     color: #fff;
-}
+} 
 div.pp div.state{
     position: absolute;
     border: 2px solid #fff;
@@ -94,7 +94,23 @@ div.footer button{
 .div_space{
     height: 42px;
 }
-
+.cont_rtl{
+  .back-button.show-back-button{
+      position: absolute;
+      left: 0px;
+      z-index: 1;
+  }
+  div.pp{
+        left: auto;
+        right: 100px;
+    }
+  div.pp div{
+    float: right;
+  }
+  div.pp img{
+      float: right;
+  }
+}
 @media screen and (max-height: 300px) {
 
 }

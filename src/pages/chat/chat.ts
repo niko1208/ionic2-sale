@@ -32,6 +32,8 @@ export class ChatPage {
     public flag: any;
     public badge = '0';
 
+    lang: any;
+    
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, platform:Platform, private ev: Events, public translate: TranslateService) {
                 
@@ -45,6 +47,7 @@ export class ChatPage {
       this.badge = badge;
     })
     
+    this.lang = Global.Static_lang;
   }
 
 
@@ -72,6 +75,7 @@ export class ChatPage {
   }
   ionViewWillEnter()
   {
+    this.lang = Global.Static_lang;
     if(Global.Static_profile_id == "") {
       $('.fstatusbar img').css('display', 'none');
     }

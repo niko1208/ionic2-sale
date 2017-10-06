@@ -191,6 +191,8 @@
   "STR_SEND": "send",
   "STR_BID":"Bid",
   "STR_BID_PRICE": "Bid a price",
+  "STR_ALERT": "Alert",
+  "STR_PSELECTCATE": "Please select category",
 
   "STR_NOTIFICATION": "Notifications",
   "STR_CLEAR": "Clear",
@@ -257,5 +259,7 @@
   "STR_INFO_TOPSELLER2_T": "The points badge",
   "STR_INFO_TOPSELLER1": "The place to grow your business reputation to sell faster and become famous amongst sellers as unique seller, by gaining good ratings/ reviews also building points trust to be TOPSELLER",
   "STR_INFO_TOPSELLER2": "You will be awarded this badge according to your selling achievement and points, will give you a better rank in TOP SELLERS to gain trust and selling faster",
-  "STR_INFO_TOPSELLER3": "This is your profile level  ranking according to your ratings+reviews+points+selling"
+  "STR_INFO_TOPSELLER3": "This is your profile level  ranking according to your ratings+reviews+points+selling", 
+
+  "STR_INFO_BID1": "contains all activated live bids, to higher the value of your product and  better offer, Click on the image , then click on 'bid on this offer' to join the bidding"
 }

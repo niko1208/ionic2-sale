@@ -14,7 +14,7 @@
       <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
   </div>
   
-  <ion-navbar color="">
+  <ion-navbar color="" [ngClass]="(lang == 'ar') ? 'cont_rtl':''">
     <ion-title>{{'STR_CHAT' | translate}}</ion-title>
     <div class="pp" (click)="goprofile(recid)">
         <img src="{{image}}"/>

@@ -68,7 +68,7 @@ export class BidPage {
     }
 
     this.info_text = [];
-    this.info_text.push({title: 'BID', text:"contains all activated live bids, to higher the value of your product and  better offer, Click on the image , then click on 'bid on this offer' to join the bidding"});
+    this.info_text.push({title: this.translate.instant('STR_BIDS'), text:this.translate.instant('STR_INFO_BID1')});
     this.ev.publish('setinfo', this.info_text, true, true);
   }
 

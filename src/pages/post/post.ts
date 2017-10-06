@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { MynotificationPage } from './../notification/notification';
 import { MyprofilePage } from './../myprofile/myprofile';
-import { NavController, NavParams, ActionSheetController, ToastController, Platform, LoadingController, Loading } from 'ionic-angular';
+import { NavController, NavParams, ActionSheetController, ToastController, Platform, LoadingController, Loading, AlertController } from 'ionic-angular';
 import { Events } from 'ionic-angular';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
@@ -62,6 +62,7 @@ export class PostPage{
               public toastCtrl: ToastController,
               public platform: Platform, public service:Service,
               public loadingCtrl: LoadingController,
+              public alertCtrl: AlertController,
               public _http:Http, private ev: Events, public translate: TranslateService)
   {
 
@@ -281,7 +282,16 @@ public pathForImage(img) {
     }
     gotoTakePic() {
       if($(".category").text() == this.translate.instant('STR_CHOOSE_CATE')) {
-        alert("Please select Category");
+        let alert:any = this.alertCtrl.create({
+            title: this.translate.instant('STR_ALERT'),
+            message: this.translate.instant('STR_PSELECTCATE'),
+            buttons: [
+                {
+                    text: this.translate.instant('STR_OK')
+                }
+            ]
+        });
+        alert.present();
         return;
       }
       this.presentActionSheet();
@@ -341,7 +351,7 @@ public uploadcall(url, idx, postid) {
       var filename = this.picitems[idx].filename;
       let delivery = 'free';
       let delivery_cost = '';
-      if(this.isnofree) {
+      if(this.isnofree && this.add_detail) {
         delivery = 'nofree';
         delivery_cost = this.dcost;
       }
