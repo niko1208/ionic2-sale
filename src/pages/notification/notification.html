@@ -7,14 +7,14 @@
       <div class='badge' *ngIf="badge!='0'">{{badge}}</div>
   </div>
   
-  <ion-navbar color="">
-    <ion-title>My Notifications</ion-title>
-    <div class='bt_clear' (click)="clear()">Clear</div>
+  <ion-navbar color="" [ngClass]="(lang == 'ar') ? 'cont_rtl':''">
+    <ion-title>{{'STR_NOTIFICATION' | translate}}</ion-title>
+    <div class='bt_clear' (click)="clear()">{{'STR_CLEAR' | translate}}</div>
   </ion-navbar>
   
 </ion-header>
 
-<ion-content class="detail_content">
+<ion-content [ngClass]="(lang == 'ar') ? 'detail_content cont_rtl':'detail_content'">
 
     <ion-item *ngFor="let item of keys;" [ngClass]="(item.isread=='0') ? 'unread': ''" (click)="goto(item.type, item.pid, item.id)">
         <div class="div_img">

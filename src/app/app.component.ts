@@ -29,6 +29,7 @@ export class MyApp {
   public isstep = true;
   public isbutton = true;
   public cls = "l";
+  public lang = '';
   
   public rootPage : any;
   
@@ -76,6 +77,7 @@ export class MyApp {
         Global.flag = localStorage.getItem('flag');
         Global.Static_username = localStorage.getItem('username');
         Global.Static_number = localStorage.getItem('number');
+        this.lang = Global.Static_lang;
         if(Global.Static_lang == 'ar') {
           this.platform.setDir('rtl', true);
           this.translate.use('ar');

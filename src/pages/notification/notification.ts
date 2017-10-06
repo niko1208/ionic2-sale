@@ -8,6 +8,7 @@ import { MyprofilePage } from './../myprofile/myprofile';
 import { Service } from '../../providers/service';
 import { SearchPage } from './../search/search';
 import {MorePage} from '../more/more';
+import { TranslateService } from 'ng2-translate';
 import * as $ from 'jquery';
 
 @Component({
@@ -24,9 +25,10 @@ export class MynotificationPage {
     public badge = '0';
     public ss = [];
     public keys = [];
+    lang:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, sv:Service, private ev: Events) {
+              public loadingCtrl: LoadingController, public _http:Http, private viewCtrl: ViewController, sv:Service, private ev: Events, public translate: TranslateService) {
                 
     this.flag = Global.flag;
     
@@ -35,6 +37,7 @@ export class MynotificationPage {
       this.badge = badge;
       console.log("event : ", badge);
     })
+    this.lang = Global.Static_lang;
   }
 
   gotonotification() {
@@ -49,6 +52,7 @@ export class MynotificationPage {
   
   ionViewWillEnter()
   {
+    this.lang = Global.Static_lang;
     if(Global.Static_profile_id == "") {
       $('.fstatusbar img').css('display', 'none');
     }

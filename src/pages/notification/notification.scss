@@ -53,5 +53,24 @@ ion-item{
     top: 20px;
     color: white;
 }
+.cont_rtl{
+
+  .back-button.show-back-button{
+      position: absolute;
+      left: 0px;
+      z-index: 1;
+  }
+  .div_img{
+      float: right;
+  }
+  .bt_clear{
+      left: 50px;
+      right: auto;
+  }
+  .date{
+      left: 5px;
+      right: auto;
+  }
+}
 
 }

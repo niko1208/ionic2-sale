@@ -11,6 +11,7 @@
   "STR_LATEST": "Latest",
   "STR_OFFERS": "Offers",
   "STR_CHAT": "Chat",
+  "STR_CHAT1": "Chat",
   "STR_PROFILE": "Profile",
   "STR_ALL": "All",
   "STR_FOLLOWING": "Following",
@@ -20,6 +21,7 @@
   "STR_LANGUAGE": "Language",
   "STR_ENGLISH": "English",
   "STR_KUWAIT": "Kuwait",
+  "STR_KUWAIT1": "Kuwait",
   "STR_KSA": "KSA",
   "STR_JORDAN": "Jordan",
   "STR_SEARCH": "Search",
@@ -189,6 +191,13 @@
   "STR_SEND": "send",
   "STR_BID":"Bid",
   "STR_BID_PRICE": "Bid a price",
+
+  "STR_NOTIFICATION": "Notifications",
+  "STR_CLEAR": "Clear",
+
+  "STR_FOLLOWED_YOU": "Followed YOU",
+  "STR_UNFOLLOWED_YOU": "Unfollowed YOU",
+  "STR_BID_ON_YOUR": "Bid on your price at Total, ",
 
   "STR_NEXT": "Next",
   "STR_PREV": "Previous",

@@ -21,6 +21,7 @@
   "STR_LANGUAGE": "اللغه",
   "STR_ENGLISH": "انجليزي",
   "STR_KUWAIT": "الكويت",
+  "STR_KUWAIT1": "عربي",
   "STR_KSA": "السعوديه",
   "STR_JORDAN": "الاردن",
   "STR_SEARCH": " بحث",
@@ -191,6 +192,13 @@
   "STR_SEND": "ارسال",
   "STR_BID":"ابدأ",
   "STR_BID_PRICE": "سعر الزياده",
+
+  "STR_NOTIFICATION": "الأشعارات",
+  "STR_CLEAR": "مسح",
+
+  "STR_FOLLOWED_YOU": "قام بمتابعتك",
+  "STR_UNFOLLOWED_YOU": " قام بألغاء المتابعة",
+  "STR_BID_ON_YOUR": " زاد سعر المزاد , اجمال ",
 
   
   "STR_NEXT": "التالي",

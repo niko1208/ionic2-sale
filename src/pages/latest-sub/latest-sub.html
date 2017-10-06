@@ -170,15 +170,15 @@
                 <img src="assets/img/icon-6-1.png" *ngIf="membership1 == 'basic'"/>
                 <img src="assets/img/icon-6.png" *ngIf="membership1 != 'basic'" />
             </div>
-            <div [ngClass]="(membership2 == 'pro') ? 'div_icon sel' : 'div_icon'" (click)='clickicon(6, (membership1 == "pro"))'>
+            <div [ngClass]="(membership2 == 'pro') ? 'div_icon sel' : 'div_icon'" (click)='clickicon(6, (membership2 == "pro"))'>
                 <img src="assets/img/icon-9-1.png" *ngIf="membership2 == 'pro'"/>
                 <img src="assets/img/icon-9.png" *ngIf="membership2 != 'pro'" />
             </div>
-            <div [ngClass]="(membership3 == 'shop') ? 'div_icon sel' : 'div_icon'" (click)='clickicon(7, (membership1 == "shop"))'>
+            <div [ngClass]="(membership3 == 'shop') ? 'div_icon sel' : 'div_icon'" (click)='clickicon(7, (membership3 == "shop"))'>
                 <img src="assets/img/icon-5-1.png" *ngIf="membership3 == 'shop'"/>
                 <img src="assets/img/icon-5.png" *ngIf="membership3 != 'shop'" />
             </div>
-            <div [ngClass]="(membership4 == 'company') ? 'div_icon sel' : 'div_icon'" (click)='clickicon(8, (membership1 == "company"))'>
+            <div [ngClass]="(membership4 == 'company') ? 'div_icon sel' : 'div_icon'" (click)='clickicon(8, (membership4 == "company"))'>
                 <img src="assets/img/icon-15-1.png" *ngIf="membership4 == 'company'"/>
                 <img src="assets/img/icon-15.png" *ngIf="membership4 != 'company'"/>
             </div>

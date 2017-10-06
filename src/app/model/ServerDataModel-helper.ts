@@ -6,6 +6,7 @@ import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { MyDataModel } from './DataModel';
 import { Global } from './../../app/model/global';
+import { TranslateService } from 'ng2-translate';
 
 
 // import { Transfer, File } from 'ionic-native';
@@ -38,7 +39,7 @@ export class ServerDataModel
   public homedelegate :   ServerDataModelDelegate;
 
   // constructor(public _http:Http)
-  constructor(public _http: Http, public loadingCtrl: LoadingController,public toastCtrl: ToastController)
+  constructor(public _http: Http, public loadingCtrl: LoadingController,public toastCtrl: ToastController, public translate: TranslateService)
   {
     // this.my_array = this.initHomeDataArray();
     // this.insertdataToMyDataModel();
@@ -341,9 +342,9 @@ notify_follow(pid, isfollow) {
     var temp_url = 'http://sale4allz.com/ws/send_notification.php';
     var Form_data = new FormData();
     
-    var msg = Global.Static_username + " followed you.";
+    var msg = Global.Static_username + this.translate.instant('STR_FOLLOWED_YOU');
     if(isfollow == '1') {
-        msg = Global.Static_username + " unfollowed you.";
+        msg = Global.Static_username + this.translate.instant('STR_UNFOLLOWED_YOU');
     }
     Form_data.append('id', Global.devicetoken);
     Form_data.append('number', Global.Static_number);
