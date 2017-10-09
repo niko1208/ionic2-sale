@@ -53,7 +53,7 @@
         <img  *ngFor="let imgurl of sub_url; let i=index;" id="img{{i}}" src="{{imgurl}}" (click)="gotoview(i)" />
       </ion-scroll>
       -->
-      <ion-slides pager id='slides' #slides>
+      <ion-slides pager id='slides' #slides  dir="{{dir}}">
         <ion-slide *ngFor="let imgurl of sub_url; let i=index;">
           <img id="img{{i}}" src="{{imgurl}}" (click)="gotoview(i)" />
         </ion-slide>
@@ -72,7 +72,7 @@
       <ion-col *ngIf="sub_wanted=='0'">
         <div class='center'>{{'STR_PRICE' | translate}}</div><br/>
         <div class='center colorb' style="direction:ltr">{{sub_price}} KWD</div>
-        <div *ngIf="delivery == 'free' || delivery == 'free' || delivery_cost == '' || delivery_cost == '0'" text-center style="color:#01aa41">{{'STR_FREE_DELIVERY' | translate}}</div>
+        <div *ngIf="delivery == 'free' || delivery != '' && (delivery_cost == '' || delivery_cost == '0')" text-center style="color:#01aa41">{{'STR_FREE_DELIVERY' | translate}}</div>
         <div *ngIf="delivery != 'free' && delivery != ''" text-center style="color:#01aa41; font-size:12px">{{'STR_DELIVERY' | translate}} <span style="direction:ltr">{{delivery_cost}}KD</span></div>
       </ion-col>
       <ion-col *ngIf="sub_wanted=='1'">

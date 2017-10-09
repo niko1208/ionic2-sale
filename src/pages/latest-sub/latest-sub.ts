@@ -95,6 +95,8 @@ export class LatestSubPage  implements ServerDataModelDelegate{
 
     public strtooltip = "";
     public tool_tip = false;
+
+    dir = 'ltr';
     
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private loading:LoadingController, public datamodel:ServerDataModel, public _http:Http, private alertCtrl: AlertController, private ev: Events, public translate: TranslateService, public service: Service) {
     this.navCtrl = navCtrl;
@@ -108,6 +110,7 @@ export class LatestSubPage  implements ServerDataModelDelegate{
     })
     
     this.lang = Global.Static_lang;
+    if(this.lang == 'ar') this.dir = 'rtl';
 
     this.sub_content = navParams.get("content");
     this.sub_price   = navParams.get("price");
@@ -161,6 +164,7 @@ export class LatestSubPage  implements ServerDataModelDelegate{
   ionViewWillEnter()
   {
     this.lang = Global.Static_lang;
+    if(this.lang == 'ar') this.dir = 'rtl';
 
     this.datamodel.updateviews(this.sub_id, this.sub_wanted);
     this.datamodel.homedelegate = this;
@@ -652,6 +656,9 @@ export class LatestSubPage  implements ServerDataModelDelegate{
     }
     var id = this.sub_id;
     this.datamodel.DeleteMyAds(id);
+    setTimeout(() => {
+      this.navCtrl.pop();
+    }, 1000);
   }
 
   popup() {

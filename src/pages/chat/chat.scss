@@ -106,9 +106,14 @@ div.footer button{
     }
   div.pp div{
     float: right;
+    margin-right: 10px;
   }
   div.pp img{
       float: right;
+  }
+  div.pp div.state{
+      left: auto;
+      right: -5px;
   }
 }
 @media screen and (max-height: 300px) {
